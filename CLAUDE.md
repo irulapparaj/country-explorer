@@ -64,5 +64,6 @@ Rules for editing it:
 
 ## Git
 
-Not a git repository today. If one is initialised, use conventional commits (`feat:`, `fix:`, `docs:`,
-`refactor:`, `test:`, `chore:`) and do not commit unless asked.
+Git repository on branch `main`, remote `origin` → https://github.com/irulapparaj/country-explorer.
+Use conventional commits (`feat:`, `fix:`, `docs:`, `refactor:`, `test:`, `chore:`). Do not commit or
+push unless asked.
