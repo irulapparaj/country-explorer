@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Terra Nova Cartographic — Planetary Intelligence Observatory</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#0b1326;color:#dae2fd;font-family:'Inter',sans-serif;overflow:hidden}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#2d3449;border-radius:2px}
+.nav-link{padding:5px 13px;border-radius:6px;font-size:13px;font-family:'Inter',sans-serif;font-weight:500;color:#9d8f7b;cursor:pointer;transition:all .18s;white-space:nowrap;border:none;background:none}
+.nav-link:hover{color:#dae2fd;background:#222a3d}
+.nav-link.active{color:#fdba45;background:#222a3d}
+.country-path{cursor:pointer;transition:all .22s;stroke-width:0.8;fill:#222a3d;stroke:#2d3449}
+.country-path:hover{fill:#24b2ed33;stroke:#7bd0ff;filter:drop-shadow(0 0 5px rgba(123,208,255,0.4))}
+.country-path.sel{fill:#fdba45!important;stroke:#fdba45!important;filter:drop-shadow(0 0 10px rgba(253,186,69,0.85))}
+#dossier-panel{transition:transform .32s cubic-bezier(0.16,1,0.3,1)}
+.tab-btn{padding:7px 14px;font-size:12px;font-family:'Inter',sans-serif;font-weight:500;color:#9d8f7b;border-bottom:2px solid transparent;cursor:pointer;white-space:nowrap;background:none;border-left:none;border-right:none;border-top:none;transition:all .18s}
+.tab-btn.active{color:#fdba45;border-bottom-color:#fdba45}
+.tab-btn:hover:not(.active){color:#dae2fd}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.stat-card{background:#171f33;border-radius:8px;padding:12px;border:1px solid #222a3d}
+.stat-lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;color:#9d8f7b;text-transform:uppercase;letter-spacing:.08em}
+.stat-val{font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:600;margin-top:3px}
+.stat-sub{font-size:11px;color:#9d8f7b;margin-top:2px}
+.info-lbl{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#9d8f7b;text-transform:uppercase;letter-spacing:.07em;display:block;margin-bottom:3px}
+.info-val{font-family:'Inter',sans-serif;font-size:13px;font-weight:500;color:#dae2fd}
+.info-sub{font-size:11px;color:#9d8f7b}
+.card{background:#171f33;border-radius:10px;border:1px solid #222a3d}
+.hud-btn{width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:6px;background:none;border:none;color:#9d8f7b;cursor:pointer;transition:all .18s}
+.hud-btn:hover{background:#222a3d;color:#fdba45}
+.hud-btn.layer-on{color:#4edea3}
+.quick-chip{font-family:'JetBrains Mono',monospace;font-size:10.5px;padding:3px 9px;border-radius:4px;background:#171f33;color:#9d8f7b;border:1px solid #2d3449;cursor:pointer;transition:all .18s;white-space:nowrap}
+.quick-chip:hover,.quick-chip.active{background:#fdba45;color:#432c00;border-color:#fdba45;font-weight:600}
+.proj-btn{padding:3px 9px;border-radius:5px;font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:3px;transition:all .18s;border:none}
+.proj-btn.active{background:#fdba45;color:#432c00;box-shadow:0 0 12px rgba(253,186,69,.3)}
+.proj-btn:not(.active){background:transparent;color:#9d8f7b}
+.proj-btn:not(.active):hover{color:#dae2fd}
+.search-wrap{transition:all .2s}
+.search-wrap:focus-within{border-color:#fdba45!important;box-shadow:0 0 0 2px rgba(253,186,69,.18)}
+.pyr-bar{height:8px;border-radius:4px;transition:width .6s cubic-bezier(.16,1,.3,1)}
+.viz-bar{width:3px;border-radius:2px;background:#fdba45}
+.viz-bar.on{animation:vp 0.55s ease-in-out infinite alternate}
+.viz-bar:nth-child(2){animation-delay:.08s;background:#4edea3}
+.viz-bar:nth-child(3){animation-delay:.16s}
+.viz-bar:nth-child(4){animation-delay:.24s;background:#7bd0ff}
+.viz-bar:nth-child(5){animation-delay:.32s}
+.viz-bar:nth-child(6){animation-delay:.4s;background:#4edea3}
+.viz-bar:nth-child(7){animation-delay:.48s}
+.viz-bar:nth-child(8){animation-delay:.56s;background:#7bd0ff}
+@keyframes vp{from{transform:scaleY(.2)}to{transform:scaleY(1)}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(1.25)}}
+.pulse{animation:pulse 2s ease-in-out infinite}
+@keyframes spulse{0%,100%{opacity:1}50%{opacity:.35}}
+.spulse{animation:spulse 2.5s ease-in-out infinite}
+.dscroll{overflow-y:auto;overflow-x:hidden;scrollbar-gutter:stable}
+.trivia-card{background:#171f33;border-radius:10px;border:1px solid #222a3d;padding:14px;display:flex;align-items:flex-start;gap:12px}
+.map-lbl{font-family:'JetBrains Mono',monospace;font-size:7.5px;fill:#9d8f7b;pointer-events:none}
+.map-dot{stroke:#0b1326;stroke-width:0.6}
+.challenge-card{background:#171f33;border-radius:8px;padding:12px;border-left:3px solid}
+.amb-grid{background-image:radial-gradient(rgba(253,186,69,.055) 1px,transparent 1px);background-size:28px 28px}
+#map-tooltip{position:fixed;pointer-events:none;z-index:70;background:rgba(30,40,60,.97);backdrop-filter:blur(14px);border:1px solid #2d3449;border-radius:8px;padding:8px 12px;min-width:140px;display:none}
+.sym{font-family:'Material Symbols Outlined';font-weight:normal;font-style:normal;font-size:18px;line-height:1;display:inline-block;vertical-align:middle}
+</style>
+</head>
+<body class="overflow-hidden" style="background:#0b1326">
+
+<!-- ═══ TOPBAR ═══ -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:50;height:56px;display:flex;align-items:center;padding:0 16px;gap:12px;background:rgba(6,14,32,.9);backdrop-filter:blur(20px);border-bottom:1px solid #1a2236">
+
+  <!-- Brand -->
+  <div style="display:flex;align-items:center;gap:8px;flex-shrink:0">
+    <div style="width:28px;height:28px;border-radius:50%;background:#fdba45;display:flex;align-items:center;justify-content:center">
+      <span class="sym" style="font-size:16px;color:#432c00;font-variation-settings:'FILL' 1">public</span>
+    </div>
+    <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:600;color:#fdba45;letter-spacing:-.01em">TERRA NOVA</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#7bd0ff;background:#171f33;padding:2px 6px;border-radius:4px;letter-spacing:.1em">CARTOGRAPHIC</span>
+  </div>
+
+  <!-- Nav -->
+  <nav style="display:flex;gap:2px;margin-left:8px">
+    <button class="nav-link active" onclick="setNav(this)">Atlas Explorer</button>
+    <button class="nav-link" onclick="setNav(this)">Geopolitical Dossiers</button>
+    <button class="nav-link" onclick="setNav(this)">Analytics &amp; Index</button>
+    <button class="nav-link" onclick="setNav(this)">Climate &amp; Terrain</button>
+  </nav>
+
+  <!-- Search -->
+  <div style="flex:1;display:flex;justify-content:center;padding:0 12px;min-width:0">
+    <div class="search-wrap" style="position:relative;display:flex;align-items:center;background:#171f33;border:1px solid #2d3449;border-radius:8px;padding:0 12px;gap:8px;width:100%;max-width:300px">
+      <span class="sym" style="font-size:17px;color:#fdba45;flex-shrink:0">travel_explore</span>
+      <input id="global-search" style="flex:1;background:transparent;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#dae2fd;border:none;outline:none" placeholder="Search ISO, coordinate or nation...">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#7bd0ff;background:#131b2e;padding:1px 5px;border-radius:3px">⌘K</span>
+    </div>
+  </div>
+
+  <!-- Projection -->
+  <div style="display:flex;gap:2px;background:#131b2e;padding:3px;border-radius:7px;flex-shrink:0">
+    <button class="proj-btn active" id="proj-m" onclick="setProj('m')">
+      <span class="sym" style="font-size:12px">map</span>Mercator
+    </button>
+    <button class="proj-btn" id="proj-w" onclick="setProj('w')">
+      <span class="sym" style="font-size:12px">globe_uk</span>Winkel Tripel
+    </button>
+  </div>
+
+  <!-- Avatar -->
+  <div style="width:32px;height:32px;border-radius:50%;background:#d99b26;display:flex;align-items:center;justify-content:center;flex-shrink:0;cursor:pointer">
+    <span class="sym" style="font-size:18px;color:#432c00;font-variation-settings:'FILL' 1">person</span>
+  </div>
+</header>
+
+<!-- ═══ MAIN ═══ -->
+<main style="display:flex;height:100vh;padding-top:56px;padding-bottom:36px">
+
+  <!-- MAP AREA -->
+  <div id="map-area" class="amb-grid" style="position:relative;flex:1;overflow:hidden;background:#0b1326">
+
+    <!-- Graticule decorative lines -->
+    <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.6">
+      <line x1="0" x2="100%" y1="50%" y2="50%" stroke="rgba(253,186,69,.18)" stroke-dasharray="5,4" stroke-width=".9"/>
+      <line x1="0" x2="100%" y1="30%" y2="30%" stroke="rgba(123,208,255,.1)" stroke-dasharray="4,4" stroke-width=".7"/>
+      <line x1="0" x2="100%" y1="70%" y2="70%" stroke="rgba(123,208,255,.1)" stroke-dasharray="4,4" stroke-width=".7"/>
+      <text x="8" y="calc(50% - 4px)" fill="rgba(253,186,69,.4)" font-family="JetBrains Mono" font-size="7" letter-spacing=".05em">EQUATOR 0°</text>
+    </svg>
+
+    <!-- SEARCH OVERLAY TOP-LEFT -->
+    <div style="position:absolute;top:12px;left:12px;z-index:20;display:flex;flex-direction:column;gap:8px;max-width:340px;width:calc(100% - 24px)">
+      <div class="search-wrap" style="display:flex;align-items:center;background:rgba(23,31,51,.92);border:1px solid #2d3449;border-radius:12px;padding:0 12px;gap:8px;backdrop-filter:blur(16px)">
+        <span class="sym pulse" style="font-size:18px;color:#fdba45;flex-shrink:0">radar</span>
+        <input id="map-search" style="flex:1;background:transparent;font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#dae2fd;border:none;outline:none;padding:9px 0" placeholder="Locate nation, coordinates, or territory...">
+        <button id="search-clear" style="display:none;background:none;border:none;color:#9d8f7b;cursor:pointer;padding:0" onclick="clearSearch()">
+          <span class="sym" style="font-size:15px">close</span>
+        </button>
+        <div style="background:#131b2e;padding:1px 5px;border-radius:3px"><span style="font-family:'JetBrains Mono',monospace;font-size:9px;color:#7bd0ff">/</span></div>
+      </div>
+      <!-- Typo Banner -->
+      <div id="typo-banner" style="display:none;background:rgba(34,42,61,.96);border:1px solid #2d3449;border-radius:12px;padding:8px 12px;backdrop-filter:blur(16px);align-items:center;gap:8px">
+        <span class="sym" style="font-size:15px;color:#fdba45;flex-shrink:0">assistant_direction</span>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:#dae2fd;flex:1">No match for <span id="typo-query" style="font-family:'JetBrains Mono',monospace;color:#fdba45;text-decoration:underline"></span> — did you mean <button id="typo-btn" style="font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;color:#4edea3;background:none;border:none;cursor:pointer"></button>?</p>
+        <button onclick="hideBanner()" style="background:none;border:none;color:#9d8f7b;cursor:pointer;flex-shrink:0"><span class="sym" style="font-size:14px">close</span></button>
+      </div>
+      <!-- Quick Chips -->
+      <div style="display:flex;align-items:center;gap:6px;overflow-x:auto;padding-bottom:2px;scrollbar-width:none">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#9d8f7b;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0">Direct Fix:</span>
+        <button class="quick-chip active" data-k="japan" onclick="selC('japan',this)">Japan</button>
+        <button class="quick-chip" data-k="brazil" onclick="selC('brazil',this)">Brazil</button>
+        <button class="quick-chip" data-k="france" onclick="selC('france',this)">France</button>
+        <button class="quick-chip" data-k="canada" onclick="selC('canada',this)">Canada</button>
+        <button class="quick-chip" data-k="india" onclick="selC('india',this)">India</button>
+        <button class="quick-chip" data-k="germany" onclick="selC('germany',this)">Germany</button>
+        <button class="quick-chip" data-k="kenya" onclick="selC('kenya',this)">Kenya</button>
+        <button class="quick-chip" data-k="usa" onclick="selC('usa',this)">USA</button>
+        <button class="quick-chip" data-k="china" onclick="selC('china',this)">China</button>
+        <button class="quick-chip" data-k="australia" onclick="selC('australia',this)">Australia</button>
+      </div>
+    </div>
+
+    <!-- MAP SVG -->
+    <div id="map-vp" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;transition:transform .3s;transform-origin:center;cursor:grab">
+      <svg id="world-svg" viewBox="0 0 1000 520" style="width:100%;height:100%;max-height:calc(100vh - 56px - 36px - 56px);filter:drop-shadow(0 16px 40px rgba(0,0,0,.75));transition:transform .4s">
+        <defs>
+          <radialGradient id="og" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#0e172a"/>
+            <stop offset="100%" stop-color="#060e20"/>
+          </radialGradient>
+          <pattern id="grat" width="50" height="50" patternUnits="userSpaceOnUse">
+            <path d="M50 0L0 0 0 50" fill="none" stroke="rgba(255,255,255,.022)" stroke-width=".5"/>
+          </pattern>
+          <filter id="ga" x="-25%" y="-25%" width="150%" height="150%">
+            <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#fdba45" flood-opacity=".85"/>
+          </filter>
+        </defs>
+        <rect width="1000" height="520" fill="url(#og)"/>
+        <rect width="1000" height="520" fill="url(#grat)" pointer-events="none"/>
+        <g pointer-events="none">
+          <line x1="0" x2="1000" y1="173" y2="173" stroke="rgba(123,208,255,.1)" stroke-dasharray="4,4" stroke-width=".7"/>
+          <line x1="0" x2="1000" y1="260" y2="260" stroke="rgba(253,186,69,.2)" stroke-dasharray="5,4" stroke-width=".9"/>
+          <line x1="0" x2="1000" y1="347" y2="347" stroke="rgba(123,208,255,.1)" stroke-dasharray="4,4" stroke-width=".7"/>
+          <text x="8" y="256" fill="rgba(253,186,69,.4)" font-family="JetBrains Mono" font-size="6.5" letter-spacing=".07em">EQUATOR</text>
+          <text x="8" y="170" fill="rgba(123,208,255,.35)" font-family="JetBrains Mono" font-size="6.5" letter-spacing=".07em">23°N TROPIC</text>
+          <text x="8" y="344" fill="rgba(123,208,255,.3)" font-family="JetBrains Mono" font-size="6.5" letter-spacing=".07em">23°S TROPIC</text>
+        </g>
+        <g id="cg">
+          <!-- Canada -->
+          <path id="cp-canada" data-k="canada" class="country-path" d="M108 58L125 52L160 50L210 48L260 52L275 62L285 78L280 98L265 112L250 130L225 140L195 142L165 148L140 145L120 135L105 118L100 100L102 78Z M80 55L95 52L90 68L75 62Z" onclick="selC('canada',null,event)" onmouseenter="showTip('canada',event)" onmouseleave="hideTip()"/>
+          <!-- USA -->
+          <path id="cp-usa" data-k="usa" class="country-path" d="M110 148L225 143L252 145L248 185L240 205L210 218L175 215L150 210L125 200L112 182Z M78 55L95 52L90 68L75 62Z" onclick="selC('usa',null,event)" onmouseenter="showTip('usa',event)" onmouseleave="hideTip()"/>
+          <!-- Mexico -->
+          <path id="cp-mexico" data-k="mexico" class="country-path" d="M112 218L148 215L165 225L175 238L168 255L145 262L122 255L108 240L108 228Z" onclick="selC('mexico',null,event)" onmouseenter="showTip('mexico',event)" onmouseleave="hideTip()"/>
+          <!-- Colombia -->
+          <path id="cp-colombia" data-k="colombia" class="country-path" d="M185 258L215 252L230 268L220 288L195 290L178 275Z" onclick="selC('colombia',null,event)" onmouseenter="showTip('colombia',event)" onmouseleave="hideTip()"/>
+          <!-- Brazil -->
+          <path id="cp-brazil" data-k="brazil" class="country-path" d="M228 275L260 258L298 248L328 252L355 268L368 295L362 332L346 360L318 374L290 372L268 353L252 318L240 290Z" onclick="selC('brazil',null,event)" onmouseenter="showTip('brazil',event)" onmouseleave="hideTip()"/>
+          <!-- Argentina -->
+          <path id="cp-argentina" data-k="argentina" class="country-path" d="M268 375L290 372L308 385L302 422L286 452L265 462L250 435L246 405L255 385Z" onclick="selC('argentina',null,event)" onmouseenter="showTip('argentina',event)" onmouseleave="hideTip()"/>
+          <!-- UK -->
+          <path id="cp-uk" data-k="uk" class="country-path" d="M462 118L475 115L478 132L470 142L458 135L456 122Z M468 108L477 105L475 115L463 112Z" onclick="selC('uk',null,event)" onmouseenter="showTip('uk',event)" onmouseleave="hideTip()"/>
+          <!-- France -->
+          <path id="cp-france" data-k="france" class="country-path" d="M476 143L500 138L512 152L508 168L494 178L478 172L470 158Z" onclick="selC('france',null,event)" onmouseenter="showTip('france',event)" onmouseleave="hideTip()"/>
+          <!-- Germany -->
+          <path id="cp-germany" data-k="germany" class="country-path" d="M499 128L522 124L530 138L528 155L510 162L499 150Z" onclick="selC('germany',null,event)" onmouseenter="showTip('germany',event)" onmouseleave="hideTip()"/>
+          <!-- Spain -->
+          <path id="cp-spain" data-k="spain" class="country-path" d="M470 175L508 168L518 185L505 200L478 200L464 188Z" onclick="selC('spain',null,event)" onmouseenter="showTip('spain',event)" onmouseleave="hideTip()"/>
+          <!-- Italy -->
+          <path id="cp-italy" data-k="italy" class="country-path" d="M508 168L520 162L530 168L535 185L528 198L518 205L512 195L505 182Z" onclick="selC('italy',null,event)" onmouseenter="showTip('italy',event)" onmouseleave="hideTip()"/>
+          <!-- Russia -->
+          <path id="cp-russia" data-k="russia" class="country-path" d="M525 55L680 45L780 50L840 60L862 90L820 120L758 130L698 125L638 118L568 120L532 110L515 90Z M840 60L880 58L900 72L870 80L848 72Z" onclick="selC('russia',null,event)" onmouseenter="showTip('russia',event)" onmouseleave="hideTip()"/>
+          <!-- Egypt -->
+          <path id="cp-egypt" data-k="egypt" class="country-path" d="M542 202L580 200L582 240L545 240Z" onclick="selC('egypt',null,event)" onmouseenter="showTip('egypt',event)" onmouseleave="hideTip()"/>
+          <!-- Kenya -->
+          <path id="cp-kenya" data-k="kenya" class="country-path" d="M582 268L607 265L612 295L600 312L580 308L572 285Z" onclick="selC('kenya',null,event)" onmouseenter="showTip('kenya',event)" onmouseleave="hideTip()"/>
+          <!-- South Africa -->
+          <path id="cp-south-africa" data-k="south-africa" class="country-path" d="M552 365L600 360L618 390L602 422L572 430L545 410L538 382Z" onclick="selC('south-africa',null,event)" onmouseenter="showTip('south-africa',event)" onmouseleave="hideTip()"/>
+          <!-- India -->
+          <path id="cp-india" data-k="india" class="country-path" d="M685 185L728 178L750 200L752 232L736 265L712 280L695 260L672 222L672 200Z" onclick="selC('india',null,event)" onmouseenter="showTip('india',event)" onmouseleave="hideTip()"/>
+          <!-- China -->
+          <path id="cp-china" data-k="china" class="country-path" d="M720 132L828 128L856 155L856 185L832 210L800 225L762 220L735 198L718 170Z" onclick="selC('china',null,event)" onmouseenter="showTip('china',event)" onmouseleave="hideTip()"/>
+          <!-- Japan -->
+          <path id="cp-japan" data-k="japan" class="country-path sel" d="M862 145L876 138L888 152L892 172L882 195L870 210L860 195L856 172Z M850 132L864 128L862 142L850 142Z M870 215L880 212L875 228L865 224Z" onclick="selC('japan',null,event)" onmouseenter="showTip('japan',event)" onmouseleave="hideTip()"/>
+          <!-- Australia -->
+          <path id="cp-australia" data-k="australia" class="country-path" d="M782 330L868 322L892 350L892 398L858 432L808 438L772 405L762 362Z" onclick="selC('australia',null,event)" onmouseenter="showTip('australia',event)" onmouseleave="hideTip()"/>
+          <!-- Decorative fills (minor continents) -->
+          <path d="M395 255L425 252L430 290L400 292Z M430 268L445 265L445 285L430 285Z" fill="#171f33" opacity=".65" pointer-events="none"/>
+          <path d="M520 202L545 200L545 260L520 258Z M545 215L570 212L565 245L545 248Z M545 262L575 260L562 318L540 316Z" fill="#171f33" opacity=".55" pointer-events="none"/>
+        </g>
+        <!-- City dots for Japan (default) -->
+        <g id="city-dots" pointer-events="none">
+          <circle id="dot-cap" cx="872" cy="168" r="3.5" fill="#fdba45" stroke="#0b1326" stroke-width=".8"/>
+          <text class="map-lbl" id="lbl-cap" x="878" y="171">Tokyo</text>
+          <circle id="dot-c2" cx="864" cy="180" r="2" fill="#4edea3" stroke="#0b1326" stroke-width=".6"/>
+          <text class="map-lbl" id="lbl-c2" x="868" y="183" fill="#4edea3">Osaka</text>
+          <circle id="dot-c3" cx="876" cy="152" r="2" fill="#7bd0ff" stroke="#0b1326" stroke-width=".6"/>
+          <text class="map-lbl" id="lbl-c3" x="880" y="155" fill="#7bd0ff">Sapporo</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- HOVER TOOLTIP -->
+    <div id="map-tooltip">
+      <div style="display:flex;align-items:center;gap:6px;margin-bottom:5px">
+        <span id="tt-flag" style="font-size:18px">🇯🇵</span>
+        <span id="tt-name" style="font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:500;color:#dae2fd">Japan</span>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#9d8f7b;display:flex;gap:10px">
+        <span>Capital: <strong id="tt-cap" style="color:#fdba45">Tokyo</strong></span>
+        <span>Pop: <strong id="tt-pop" style="color:#4edea3">124.5M</strong></span>
+      </div>
+    </div>
+
+    <!-- HUD CONTROLS -->
+    <div style="position:absolute;bottom:14px;left:12px;z-index:20;display:flex;flex-direction:column;gap:2px;background:rgba(23,31,51,.92);border:1px solid #222a3d;border-radius:10px;padding:4px;backdrop-filter:blur(10px)">
+      <button class="hud-btn" onclick="mZoom(1)" title="Zoom In"><span class="sym">add</span></button>
+      <button class="hud-btn" onclick="mZoom(-1)" title="Zoom Out"><span class="sym">remove</span></button>
+      <div style="height:1px;background:#222a3d;margin:2px 0"></div>
+      <button class="hud-btn" onclick="mReset()" title="Reset"><span class="sym" style="font-size:16px">center_focus_strong</span></button>
+      <div style="height:1px;background:#222a3d;margin:2px 0"></div>
+      <button class="hud-btn layer-on" id="lay-terrain" onclick="togL(this)" title="Terrain"><span class="sym" style="font-size:16px">terrain</span></button>
+      <button class="hud-btn" id="lay-climate" onclick="togL(this)" title="Climate"><span class="sym" style="font-size:16px">cloud</span></button>
+      <button class="hud-btn" id="lay-pop" onclick="togL(this)" title="Population"><span class="sym" style="font-size:16px">groups</span></button>
+    </div>
+
+    <!-- Telemetry Strip -->
+    <div style="position:absolute;bottom:14px;right:12px;z-index:10;display:flex;align-items:center;gap:10px;padding:5px 10px;border-radius:7px;font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#9d8f7b;background:rgba(23,31,51,.82);border:1px solid #222a3d;backdrop-filter:blur(8px)">
+      <div style="display:flex;align-items:center;gap:4px">
+        <span class="sym" style="font-size:12px;color:#7bd0ff">explore</span>
+        <span id="tel-coord">LAT/LON: 35.6762° N, 139.6503° E</span>
+      </div>
+      <span style="color:#504535">•</span>
+      <span>ZOOM: <span id="tel-zoom" style="color:#fdba45">1.00x</span></span>
+      <span style="color:#504535">•</span>
+      <span id="tel-proj" style="color:#4edea3;text-transform:uppercase">EQUIDISTANT WGS84</span>
+    </div>
+  </div>
+
+  <!-- ═══ DOSSIER PANEL ═══ -->
+  <aside id="dossier-panel" style="position:absolute;right:0;top:56px;bottom:36px;width:min(580px,100vw);background:rgba(11,18,36,.97);backdrop-filter:blur(28px);border-left:1px solid #1a2236;box-shadow:-20px 0 60px rgba(0,0,0,.65);display:flex;flex-direction:column;z-index:40">
+
+    <!-- Panel top bar -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:8px 14px;border-bottom:1px solid #1a2236;background:rgba(6,14,32,.6);flex-shrink:0">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span style="width:8px;height:8px;border-radius:50%;background:#fdba45" class="pulse"></span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;color:#fdba45;letter-spacing:.1em;text-transform:uppercase">Geopolitical Intelligence Dossier</span>
+      </div>
+      <div style="display:flex;gap:3px">
+        <button class="hud-btn" onclick="togExpand()" id="exp-btn" title="Expand"><span class="sym" style="font-size:16px">open_in_full</span></button>
+        <button class="hud-btn" onclick="closePanel()" title="Close" onmouseover="this.style.background='rgba(147,0,10,.3)';this.style.color='#ffb4ab'" onmouseout="this.style.background='';this.style.color='#9d8f7b'"><span class="sym" style="font-size:18px">close</span></button>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div style="display:flex;border-bottom:1px solid #1a2236;overflow-x:auto;flex-shrink:0;scrollbar-width:none">
+      <button class="tab-btn active" onclick="setTab(this,'overview')">Overview</button>
+      <button class="tab-btn" onclick="setTab(this,'demographics')">Demographics</button>
+      <button class="tab-btn" onclick="setTab(this,'governance')">Governance</button>
+      <button class="tab-btn" onclick="setTab(this,'culture')">Culture</button>
+      <button class="tab-btn" onclick="setTab(this,'curiosities')">Curiosities</button>
+    </div>
+
+    <!-- SCROLLABLE BODY -->
+    <div class="dscroll" style="flex:1;padding:16px;display:flex;flex-direction:column;gap:16px">
+
+      <!-- ─── OVERVIEW TAB ─── -->
+      <div id="tab-overview" class="tab-pane active" style="display:flex;flex-direction:column;gap:14px">
+
+        <!-- HERO IDENTITY -->
+        <div class="card" style="padding:16px;position:relative;overflow:hidden">
+          <div id="d-bgiso" style="position:absolute;right:-12px;bottom:-10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:80px;color:rgba(45,52,73,.3);pointer-events:none;line-height:1;user-select:none">JPN</div>
+          <div style="position:relative;z-index:1">
+            <div style="display:flex;align-items:flex-start;gap:12px">
+              <span id="d-flag" style="font-size:38px;flex-shrink:0">🇯🇵</span>
+              <div>
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px">
+                  <span id="d-iso" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;background:#222a3d;color:#fdba45;padding:2px 7px;border-radius:4px">ISO: JPN-392</span>
+                  <span id="d-cont" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#7bd0ff">East Asia</span>
+                </div>
+                <h1 id="d-name" style="font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:600;color:#dae2fd;line-height:1;letter-spacing:-.01em">Japan</h1>
+                <p id="d-official" style="font-size:11.5px;color:#9d8f7b;margin-top:3px">State of Japan • 日本国 (Nihon-koku)</p>
+              </div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:12px">
+              <span style="display:flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#9d8f7b;background:#131b2e;padding:3px 8px;border-radius:4px;border:1px solid #222a3d">
+                <span class="sym" style="font-size:12px;color:#fdba45">pin_drop</span>
+                <span id="d-coords">35.6762° N, 139.6503° E</span>
+              </span>
+              <span style="display:flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#9d8f7b;background:#131b2e;padding:3px 8px;border-radius:4px;border:1px solid #222a3d">
+                <span class="sym" style="font-size:12px;color:#7bd0ff">schedule</span>
+                <span id="d-tz">UTC+09:00 (JST)</span>
+              </span>
+            </div>
+            <button id="d-cta" style="width:100%;margin-top:12px;padding:10px;border-radius:8px;background:#fdba45;color:#432c00;font-family:'Space Grotesk',sans-serif;font-size:13.5px;font-weight:600;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;box-shadow:0 4px 20px rgba(253,186,69,.3);transition:background .2s"
+              onmouseover="this.style.background='#d99b26'" onmouseout="this.style.background='#fdba45'"
+              onclick="navToDetail()">
+              <span class="sym" style="font-size:17px">menu_book</span>
+              More Details: Full Country Dossier &amp; Map →
+            </button>
+          </div>
+        </div>
+
+        <!-- ANTHEM -->
+        <div class="card" style="padding:14px">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+            <div style="display:flex;align-items:center;gap:6px">
+              <span class="sym" style="font-size:17px;color:#fdba45;font-variation-settings:'FILL' 1">music_note</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;color:#dae2fd;letter-spacing:.07em;text-transform:uppercase">National Anthem Audio Unit</span>
+            </div>
+            <span id="d-anthdur" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#9d8f7b">0:58 min</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;background:#131b2e;border-radius:10px;padding:10px">
+            <button id="anthem-btn" style="width:44px;height:44px;border-radius:50%;background:#fdba45;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;box-shadow:0 0 16px rgba(253,186,69,.3)"
+              onmouseover="this.style.background='#d99b26'" onmouseout="this.style.background='#fdba45'">
+              <span class="sym" id="anthem-icon" style="font-size:22px;color:#432c00;font-variation-settings:'FILL' 1">play_arrow</span>
+            </button>
+            <div style="flex:1;min-width:0">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:4px">
+                <h4 id="d-anthtitle" style="font-family:'Space Grotesk',sans-serif;font-size:12.5px;font-weight:500;color:#dae2fd;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Kimigayo (His Imperial Majesty's Reign)</h4>
+                <span id="anthem-status" style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#4edea3;flex-shrink:0">READY</span>
+              </div>
+              <p id="d-anthlyrics" style="font-size:11px;color:#9d8f7b;font-style:italic;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">"May your reign continue for a thousand, eight thousand generations..."</p>
+              <div style="display:flex;align-items:flex-end;gap:2px;height:18px;margin-top:6px" id="viz">
+                <div class="viz-bar" style="height:6px"></div>
+                <div class="viz-bar" style="height:12px"></div>
+                <div class="viz-bar" style="height:8px"></div>
+                <div class="viz-bar" style="height:16px"></div>
+                <div class="viz-bar" style="height:5px"></div>
+                <div class="viz-bar" style="height:14px"></div>
+                <div class="viz-bar" style="height:10px"></div>
+                <div class="viz-bar" style="height:18px"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GEO METRICS -->
+        <div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+            <span class="sym" style="font-size:16px;color:#7bd0ff">public</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:500;color:#dae2fd">Spatial &amp; Physical Geography</span>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div class="stat-card">
+              <div class="stat-lbl">Capital City</div>
+              <div id="d-capital" class="stat-val" style="color:#dae2fd;font-size:15px">Tokyo</div>
+              <div class="stat-sub">Metropolitan Hub</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-lbl">Total Surface Area</div>
+              <div id="d-area" class="stat-val" style="color:#dae2fd;font-size:15px">377,975 km²</div>
+              <div id="d-areasqmi" class="stat-sub">145,937 sq mi</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-lbl">Terrain &amp; Features</div>
+              <p id="d-terrain" style="font-size:11.5px;color:#9d8f7b;line-height:1.5;margin-top:4px">Stratovolcanic archipelago (6,852 islands), rugged &amp; mountainous.</p>
+            </div>
+            <div class="stat-card">
+              <div class="stat-lbl">Predominant Climate</div>
+              <p id="d-climate" style="font-size:11.5px;color:#9d8f7b;line-height:1.5;margin-top:4px">Humid continental in north to subtropical maritime in south.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── DEMOGRAPHICS TAB ─── -->
+      <div id="tab-demographics" class="tab-pane" style="display:flex;flex-direction:column;gap:14px">
+        <div>
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:8px">
+            <span class="sym" style="font-size:16px;color:#4edea3">groups</span>
+            <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:500;color:#dae2fd">Demographic Dynamics &amp; Vital Stats</span>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:#1a2236;border:1px solid #222a3d;border-radius:10px;padding:12px;margin-bottom:8px">
+            <div style="text-align:center">
+              <div class="stat-lbl">Population</div>
+              <div id="d-pop" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#fdba45;margin-top:4px">124,500,000</div>
+            </div>
+            <div style="text-align:center">
+              <div class="stat-lbl">Density</div>
+              <div id="d-density" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#dae2fd;margin-top:4px">338 /km²</div>
+            </div>
+            <div style="text-align:center">
+              <div class="stat-lbl">Life Expect.</div>
+              <div id="d-life" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#4edea3;margin-top:4px">84.6 yrs</div>
+            </div>
+            <div style="text-align:center">
+              <div class="stat-lbl">M/F Ratio</div>
+              <div id="d-ratio" style="font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:#7bd0ff;margin-top:4px">0.95 M/F</div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+            <div class="stat-card" style="text-align:center">
+              <div class="stat-lbl">Birth Rate</div>
+              <div id="d-birth" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#dae2fd;margin-top:4px">6.6 / 1k</div>
+            </div>
+            <div class="stat-card" style="text-align:center">
+              <div class="stat-lbl">Death Rate</div>
+              <div id="d-death" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#dae2fd;margin-top:4px">11.7 / 1k</div>
+            </div>
+            <div class="stat-card" style="text-align:center">
+              <div class="stat-lbl">Growth Rate</div>
+              <div id="d-growth" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;color:#ffb4ab;margin-top:4px">-0.43%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Population Pyramid -->
+        <div class="card" style="padding:14px">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;color:#fdba45;text-transform:uppercase;letter-spacing:.07em">Population Pyramid &amp; Age Distribution</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#9d8f7b">Cohort Split %</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-family:'JetBrains Mono',monospace;font-size:11px">
+            <div>
+              <div style="display:flex;justify-content:space-between;color:#9d8f7b;margin-bottom:4px">
+                <span>Senior (65+)</span><span id="pyr-s" style="font-weight:600;color:#fdba45">29.1%</span>
+              </div>
+              <div style="background:#131b2e;border-radius:4px;overflow:hidden;height:8px">
+                <div id="bar-s" class="pyr-bar" style="background:#fdba45;width:29.1%"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;color:#9d8f7b;margin-bottom:4px">
+                <span>Working Age (15–64)</span><span id="pyr-w" style="font-weight:600;color:#7bd0ff">59.3%</span>
+              </div>
+              <div style="background:#131b2e;border-radius:4px;overflow:hidden;height:8px">
+                <div id="bar-w" class="pyr-bar" style="background:#7bd0ff;width:59.3%"></div>
+              </div>
+            </div>
+            <div>
+              <div style="display:flex;justify-content:space-between;color:#9d8f7b;margin-bottom:4px">
+                <span>Youth (0–14)</span><span id="pyr-y" style="font-weight:600;color:#4edea3">11.6%</span>
+              </div>
+              <div style="background:#131b2e;border-radius:4px;overflow:hidden;height:8px">
+                <div id="bar-y" class="pyr-bar" style="background:#4edea3;width:11.6%"></div>
+              </div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+            <div class="challenge-card" style="border-color:#ffb4ab">
+              <div style="display:flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;color:#ffb4ab;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">
+                <span class="sym" style="font-size:13px">warning</span>Challenge
+              </div>
+              <p id="d-challenge" style="font-size:11px;color:#9d8f7b;line-height:1.55">Hyper-aging demographic structure coupled with shrinking domestic workforce.</p>
+            </div>
+            <div class="challenge-card" style="border-color:#4edea3">
+              <div style="display:flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;color:#4edea3;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px">
+                <span class="sym" style="font-size:13px">verified</span>Mitigation
+              </div>
+              <p id="d-solution" style="font-size:11px;color:#9d8f7b;line-height:1.55">Eldercare robotics, automation, and targeted immigration reforms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── GOVERNANCE TAB ─── -->
+      <div id="tab-governance" class="tab-pane" style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">
+          <span class="sym" style="font-size:16px;color:#fdba45">account_balance</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:500;color:#dae2fd">Governance &amp; Historical Epochs</span>
+        </div>
+        <div class="card" style="padding:14px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+            <div>
+              <span class="info-lbl">Government System</span>
+              <span id="d-gov" class="info-val">Unitary Parliamentary Constitutional Monarchy</span>
+            </div>
+            <div>
+              <span class="info-lbl">National Foundation</span>
+              <span id="d-formation" class="info-val">660 BCE / 1947 Const.</span>
+            </div>
+            <div>
+              <span class="info-lbl">Colonial / Occupation</span>
+              <span id="d-colonial" class="info-val" style="color:#d5c4af">Allied Occupation (1945–1952)</span>
+            </div>
+            <div>
+              <span class="info-lbl">Admin Divisions</span>
+              <span id="d-subdivisions" class="info-val">47 Prefectures (Todōfuken)</span>
+            </div>
+          </div>
+          <div style="margin-top:12px">
+            <span class="info-lbl">Key National Doctrines &amp; Strategic Policies</span>
+            <p id="d-policies" style="font-size:12px;color:#9d8f7b;line-height:1.6;background:#131b2e;padding:8px 10px;border-radius:6px;margin-top:4px">Article 9 Non-Aggression Principle, Green Transformation (GX), and Free and Open Indo-Pacific strategy.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CULTURE TAB ─── -->
+      <div id="tab-culture" class="tab-pane" style="display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">
+          <span class="sym" style="font-size:16px;color:#7bd0ff">palette</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:500;color:#dae2fd">Society, Culture &amp; National Emblems</span>
+        </div>
+        <div class="card" style="padding:14px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+            <div>
+              <span class="info-lbl">Official Languages</span>
+              <span id="d-lang" class="info-val">Japanese (Nihongo)</span>
+            </div>
+            <div>
+              <span class="info-lbl">Currency</span>
+              <span id="d-currency" class="info-val" style="color:#fdba45">Japanese Yen (¥, JPY)</span>
+            </div>
+            <div>
+              <span class="info-lbl">Major Religions</span>
+              <span id="d-religions" class="info-val" style="font-size:12px;color:#d5c4af">Shinto (48%), Buddhism (46%)</span>
+            </div>
+            <div>
+              <span class="info-lbl">Metro Hubs</span>
+              <span id="d-cities" class="info-val" style="font-size:12px;color:#d5c4af">Tokyo, Osaka, Nagoya, Yokohama</span>
+            </div>
+          </div>
+          <span class="info-lbl" style="display:block;margin-bottom:7px">Iconic National Symbols</span>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+            <div style="background:#131b2e;border:1px solid #222a3d;border-radius:7px;padding:8px 4px;text-align:center">
+              <div class="stat-lbl">Animal</div>
+              <div id="d-fauna" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;color:#dae2fd;margin-top:3px">Green Pheasant</div>
+            </div>
+            <div style="background:#131b2e;border:1px solid #222a3d;border-radius:7px;padding:8px 4px;text-align:center">
+              <div class="stat-lbl">Fruit</div>
+              <div id="d-fruit" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;color:#dae2fd;margin-top:3px">Persimmon</div>
+            </div>
+            <div style="background:#131b2e;border:1px solid #222a3d;border-radius:7px;padding:8px 4px;text-align:center">
+              <div class="stat-lbl">Tree / Flora</div>
+              <div id="d-tree" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;color:#dae2fd;margin-top:3px">Sakura</div>
+            </div>
+            <div style="background:#131b2e;border:1px solid #222a3d;border-radius:7px;padding:8px 4px;text-align:center">
+              <div class="stat-lbl">Sport</div>
+              <div id="d-sport" style="font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;color:#dae2fd;margin-top:3px">Sumo / Baseball</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─── CURIOSITIES TAB ─── -->
+      <div id="tab-curiosities" class="tab-pane" style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:6px;margin-bottom:2px">
+          <span class="sym" style="font-size:16px;color:#fdba45;font-variation-settings:'FILL' 1">lightbulb</span>
+          <span style="font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:500;color:#dae2fd">Curated Planetary Curiosities</span>
+        </div>
+        <div class="trivia-card">
+          <span class="sym" style="font-size:20px;color:#fdba45;flex-shrink:0;margin-top:1px;font-variation-settings:'FILL' 1">tips_and_updates</span>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;color:#fdba45;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">Geopolitical Anomaly</div>
+            <p id="d-t1" style="font-size:12px;color:#dae2fd;line-height:1.65">Japan is home to the world's oldest continuously operating company, Kongō Gumi, founded in 578 CE.</p>
+          </div>
+        </div>
+        <div class="trivia-card">
+          <span class="sym" style="font-size:20px;color:#4edea3;flex-shrink:0;margin-top:1px;font-variation-settings:'FILL' 1">auto_awesome</span>
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:600;color:#4edea3;text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">Techno-Cultural Phenomenon</div>
+            <p id="d-t2" style="font-size:12px;color:#dae2fd;line-height:1.65">Over 70% of Japan's landmass consists of rugged volcanic mountain forests.</p>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end scroll -->
+  </aside>
+</main>
+
+<!-- FOOTER -->
+<footer style="position:fixed;bottom:0;left:0;right:0;z-index:30;height:36px;display:flex;align-items:center;padding:0 16px;justify-content:space-between;background:rgba(6,14,32,.9);backdrop-filter:blur(14px);border-top:1px solid #1a2236">
+  <div style="display:flex;align-items:center;gap:10px">
+    <div style="display:flex;align-items:center;gap:5px">
+      <span style="width:7px;height:7px;border-radius:50%;background:#4edea3" class="spulse"></span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#4edea3;letter-spacing:.1em;text-transform:uppercase">Geodetic Feed Active</span>
+    </div>
+    <span style="color:#504535;font-size:10px">|</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#9d8f7b">WGS84 Reference Ellipsoid</span>
+    <span style="color:#504535;font-size:10px">|</span>
+    <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;color:#7bd0ff">Epoch 2025.2</span>
+  </div>
+  <span style="font-family:'Inter',sans-serif;font-size:10.5px;color:#9d8f7b">© 2025 Terra Nova Cartographic Laboratory. Real-time Planetary Telemetry &amp; Geopolitical Observatory.</span>
+</footer>
+
+<script>
+// ── COUNTRY DATABASE ────────────────────────────────────────────────────────
+const DB={
+  japan:{name:"Japan",official:"State of Japan • 日本国 (Nihon-koku)",iso:"JPN-392",cont:"East Asia",flag:"🇯🇵",coords:"35.6762° N, 139.6503° E",tz:"UTC+09:00 (JST)",capital:"Tokyo",pop:"124.5M",popE:"124,500,000",density:"338 /km²",area:"377,975 km²",areaSqmi:"145,937 sq mi",terrain:"Stratovolcanic archipelago (6,852 islands), rugged & mountainous.",climate:"Humid continental in north to subtropical maritime in south.",life:"84.6 yrs",ratio:"0.95 M/F",birth:"6.6 / 1k",death:"11.7 / 1k",growth:"-0.43%",gPos:false,pyr:{s:"29.1%",w:"59.3%",y:"11.6%"},challenge:"Hyper-aging demographic structure coupled with a shrinking domestic workforce and depopulation in rural prefectures.",solution:"Extensive eldercare robotics, digital productivity automation, targeted immigration reforms, and regional revitalization grants.",gov:"Unitary Parliamentary Constitutional Monarchy",formation:"660 BCE (Emperor Jimmu) / 1947 Const.",colonial:"Allied Occupation administration (1945–1952)",subdivisions:"47 Prefectures (Todōfuken)",policies:"Article 9 Non-Aggression Principle, Green Transformation (GX), and Free and Open Indo-Pacific strategy.",lang:"Japanese (Nihongo)",currency:"Japanese Yen (¥, JPY)",religions:"Shinto (48%), Buddhism (46%), Others (6%)",cities:"Tokyo, Osaka, Nagoya, Yokohama, Kyoto",fauna:"Green Pheasant",fruit:"Japanese Persimmon",tree:"Cherry Blossom (Sakura)",sport:"Sumo Wrestling / Baseball",anthem:{title:"Kimigayo (His Imperial Majesty's Reign)",dur:"0:58 min",lyrics:"May your reign continue for a thousand, eight thousand generations...",chords:[261.63,293.66,329.63,392.00,440.00]},t1:"Japan is home to the world's oldest continuously operating company, Kongō Gumi, founded in 578 CE.",t2:"Over 70% of Japan's landmass consists of rugged volcanic mountain forests.",capCoords:{cx:872,cy:168},cities2:[{lbl:"Osaka",cx:864,cy:180,col:"#4edea3"},{lbl:"Sapporo",cx:876,cy:152,col:"#7bd0ff"}]},
+  brazil:{name:"Brazil",official:"Federative Republic of Brazil • República Federativa do Brasil",iso:"BRA-076",cont:"South America",flag:"🇧🇷",coords:"15.7975° S, 47.8919° W",tz:"UTC-02:00 to UTC-05:00 (BRT)",capital:"Brasília",pop:"216.4M",popE:"216,422,000",density:"25.4 /km²",area:"8,515,767 km²",areaSqmi:"3,287,956 sq mi",terrain:"Vast Amazon Basin lowlands, Cerrado savannas, and southeastern coastal plateaus.",climate:"Mostly tropical and equatorial with temperate southern interior.",life:"76.2 yrs",ratio:"0.96 M/F",birth:"12.8 / 1k",death:"6.8 / 1k",growth:"+0.52%",gPos:true,pyr:{s:"10.2%",w:"69.1%",y:"20.7%"},challenge:"Accelerating urban migration leading to peripheral favela congestion and rapid demographic aging expected by 2040.",solution:"Bolsa Família social security expansions, clean Amazon bio-economy modernization, and municipal infrastructure renewal.",gov:"Federal Presidential Constitutional Republic",formation:"September 7, 1822 (Empire of Brazil)",colonial:"Portuguese Empire colony (1500–1822)",subdivisions:"26 States & 1 Federal District",policies:"Amazon Zero-Deforestation Accord, BRICS multilateral cooperation, and renewable ethanol mandate.",lang:"Portuguese",currency:"Brazilian Real (R$, BRL)",religions:"Roman Catholic (50%), Evangelical (31%), None (10%)",cities:"São Paulo, Rio de Janeiro, Salvador, Belo Horizonte, Manaus",fauna:"Rufous-bellied Thrush & Jaguar",fruit:"Cupuaçu & Açaí",tree:"Brazilwood (Pau-Brasil)",sport:"Football (Futebol)",anthem:{title:"Hino Nacional Brasileiro",dur:"3:22 min",lyrics:"The peaceful shores of the Ipiranga heard the resounding cry of a heroic people...",chords:[293.66,369.99,440.00,587.33]},t1:"Brazil contains the world's most biodiverse tropical rainforest, hosting approximately 10% of all known species on Earth.",t2:"Brasília was constructed in just 41 months (1956–1960) and is shaped like an aircraft from satellite orbit.",capCoords:{cx:300,cy:310},cities2:[{lbl:"São Paulo",cx:312,cy:328,col:"#4edea3"},{lbl:"Rio",cx:328,cy:338,col:"#7bd0ff"}]},
+  france:{name:"France",official:"French Republic • République française",iso:"FRA-250",cont:"Western Europe",flag:"🇫🇷",coords:"48.8566° N, 2.3522° E",tz:"UTC+01:00 (CET/CEST)",capital:"Paris",pop:"68.0M",popE:"68,042,000",density:"106 /km²",area:"643,801 km²",areaSqmi:"248,573 sq mi",terrain:"Northern plains and river valleys, Massif Central highlands, southern Alps and Pyrenees.",climate:"Temperate oceanic in west, continental in east, Mediterranean in south.",life:"82.5 yrs",ratio:"0.96 M/F",birth:"10.7 / 1k",death:"9.8 / 1k",growth:"-0.05%",gPos:false,pyr:{s:"21.2%",w:"61.3%",y:"17.5%"},challenge:"Persistent pension system reform tensions and regional economic disparity between Paris and rural departments.",solution:"Reindustrialisation France 2030 plan and European strategic autonomy diplomatic framework.",gov:"Unitary Semi-Presidential Republic",formation:"October 4, 1958 (Fifth Republic)",colonial:"Extensive colonial empire across Africa, Asia, Americas (1534–1962)",subdivisions:"18 Régions (13 metropolitan, 5 overseas)",policies:"EU Strategic Autonomy, Grand Paris Express urban mobility, and nuclear energy renaissance.",lang:"French",currency:"Euro (€, EUR)",religions:"Catholicism (55%), No religion (35%), Islam (8%)",cities:"Paris, Marseille, Lyon, Toulouse, Nice",fauna:"Gallic Rooster",fruit:"Golden Delicious Apple",tree:"Oak (Chêne)",sport:"Football, Cycling (Tour de France)",anthem:{title:"La Marseillaise",dur:"1:22 min",lyrics:"Allons enfants de la Patrie, le jour de gloire est arrivé...",chords:[261.63,311.13,349.23,392.00]},t1:"France is consistently ranked the world's most visited country, attracting over 90 million international tourists annually.",t2:"The Louvre is the world's largest and most visited art museum, housing over 380,000 objects across 15km of corridors.",capCoords:{cx:490,cy:155},cities2:[{lbl:"Marseille",cx:494,cy:168,col:"#4edea3"},{lbl:"Lyon",cx:496,cy:162,col:"#7bd0ff"}]},
+  canada:{name:"Canada",official:"Canada",iso:"CAN-124",cont:"North America",flag:"🇨🇦",coords:"56.1304° N, 106.3468° W",tz:"UTC-03:30 to UTC-08:00",capital:"Ottawa",pop:"40.5M",popE:"40,528,000",density:"4.2 /km²",area:"9,984,670 km²",areaSqmi:"3,855,103 sq mi",terrain:"Vast boreal forests and tundra, Prairie grasslands, Rocky Mountains, and Arctic archipelago.",climate:"Boreal and subarctic in north, humid continental in south, Pacific maritime in west.",life:"82.7 yrs",ratio:"0.99 M/F",birth:"10.1 / 1k",death:"8.5 / 1k",growth:"+2.7%",gPos:true,pyr:{s:"18.5%",w:"64.9%",y:"16.6%"},challenge:"Housing affordability crisis in major metros and reconciliation with First Nations Indigenous peoples.",solution:"National Housing Strategy and Indigenous self-governance frameworks under UNDRIP implementation.",gov:"Federal Parliamentary Constitutional Monarchy",formation:"July 1, 1867 (Confederation)",colonial:"French & British colonial rule (1534–1867)",subdivisions:"10 Provinces & 3 Territories",policies:"Emission Reduction Plan 2030, Canada-US Clean Energy corridor, and immigration growth targets.",lang:"English & French (bilingual)",currency:"Canadian Dollar ($, CAD)",religions:"Catholic (29.9%), Protestant (18.3%), No religion (34.6%)",cities:"Toronto, Montreal, Vancouver, Calgary, Ottawa",fauna:"Beaver & Common Loon",fruit:"McIntosh Apple",tree:"Sugar Maple",sport:"Ice Hockey, Lacrosse",anthem:{title:"O Canada",dur:"1:10 min",lyrics:"O Canada! Our home and native land! True patriot love in all of us command...",chords:[261.63,329.63,392.00,523.25]},t1:"Canada has the world's longest coastline at 202,080 kilometres, bordering three oceans simultaneously.",t2:"Canada contains over 60% of the world's natural lakes, holding approximately 20% of the global fresh surface water supply.",capCoords:{cx:210,cy:130},cities2:[{lbl:"Toronto",cx:222,cy:148,col:"#4edea3"},{lbl:"Vancouver",cx:118,cy:140,col:"#7bd0ff"}]},
+  india:{name:"India",official:"Republic of India • भारत गणराज्य",iso:"IND-356",cont:"South Asia",flag:"🇮🇳",coords:"20.5937° N, 78.9629° E",tz:"UTC+05:30 (IST)",capital:"New Delhi",pop:"1.43B",popE:"1,428,627,000",density:"464 /km²",area:"3,287,263 km²",areaSqmi:"1,269,219 sq mi",terrain:"Himalayan ranges in north, vast Indo-Gangetic plains, Deccan Plateau, and tropical coastlines.",climate:"Diverse: Alpine in north, tropical monsoon in south and east, arid in northwest.",life:"70.8 yrs",ratio:"1.08 M/F",birth:"17.4 / 1k",death:"7.3 / 1k",growth:"+0.81%",gPos:true,pyr:{s:"7.5%",w:"67.2%",y:"25.3%"},challenge:"Youth unemployment pressure and water scarcity stress across major river basins.",solution:"Digital India stack, green hydrogen economy, and semiconductor manufacturing incentive clusters.",gov:"Federal Parliamentary Republic",formation:"August 15, 1947 (Independence) / January 26, 1950 (Republic)",colonial:"British Raj (1858–1947)",subdivisions:"28 States & 8 Union Territories",policies:"Atmanirbhar Bharat (Self-Reliance), PM GatiShakti infrastructure, and Net-Zero 2070 pledge.",lang:"Hindi & English (+ 21 scheduled languages)",currency:"Indian Rupee (₹, INR)",religions:"Hindu (79.8%), Muslim (14.2%), Christian (2.3%)",cities:"Mumbai, Delhi, Bangalore, Hyderabad, Chennai",fauna:"Bengal Tiger & Indian Peacock",fruit:"Mango",tree:"Banyan (Ficus benghalensis)",sport:"Cricket, Field Hockey",anthem:{title:"Jana Gana Mana",dur:"1:02 min",lyrics:"Thou art the ruler of the minds of all people, dispenser of India's destiny...",chords:[293.66,329.63,392.00,440.00]},t1:"India is the world's largest democracy and has surpassed China as the most populous nation on Earth as of 2023.",t2:"The game of chess was invented in India around the 6th century CE, known originally as Chaturanga.",capCoords:{cx:700,cy:208},cities2:[{lbl:"Mumbai",cx:692,cy:238,col:"#4edea3"},{lbl:"Bangalore",cx:704,cy:260,col:"#7bd0ff"}]},
+  germany:{name:"Germany",official:"Federal Republic of Germany • Bundesrepublik Deutschland",iso:"DEU-276",cont:"Western Europe",flag:"🇩🇪",coords:"51.1657° N, 10.4515° E",tz:"UTC+01:00 (CET/CEST)",capital:"Berlin",pop:"84.4M",popE:"84,432,000",density:"236 /km²",area:"357,114 km²",areaSqmi:"137,882 sq mi",terrain:"Low northern plains, central uplands, Bavarian Alps in south, Rhine and Danube river systems.",climate:"Temperate seasonal; cool in north, warmer and drier in south, cold winters.",life:"81.2 yrs",ratio:"0.97 M/F",birth:"9.2 / 1k",death:"11.3 / 1k",growth:"-0.14%",gPos:false,pyr:{s:"22.7%",w:"63.6%",y:"13.7%"},challenge:"Industrial energy transition away from Russian fossil fuels and shortage of skilled workers.",solution:"Energiewende renewable transformation and skilled immigration reform through Chancenkarte system.",gov:"Federal Parliamentary Republic",formation:"October 3, 1990 (Reunification) / 1949 Basic Law",colonial:"Colonial possession (1884–1919)",subdivisions:"16 Bundesländer (Federal States)",policies:"Zeitenwende defense doctrine, Green Deal alignment, and Hydrogen Strategy 2050.",lang:"German",currency:"Euro (€, EUR)",religions:"Catholic (26.7%), Protestant (24.3%), No religion (38.8%)",cities:"Berlin, Hamburg, Munich, Cologne, Frankfurt",fauna:"White Stork & Golden Eagle",fruit:"Apple",tree:"Oak (Eiche)",sport:"Football (Bundesliga)",anthem:{title:"Das Lied der Deutschen (3rd Stanza)",dur:"1:15 min",lyrics:"Unity and justice and freedom for the German fatherland...",chords:[261.63,329.63,392.00,523.25]},t1:"Germany was the first country in the world to adopt Daylight Saving Time in 1916 during World War I.",t2:"Over 65% of the famous German Autobahn highway network carries no mandatory speed limit.",capCoords:{cx:513,cy:138},cities2:[{lbl:"Munich",cx:515,cy:152,col:"#4edea3"},{lbl:"Hamburg",cx:508,cy:128,col:"#7bd0ff"}]},
+  kenya:{name:"Kenya",official:"Republic of Kenya • Jamhuri ya Kenya",iso:"KEN-404",cont:"East Africa",flag:"🇰🇪",coords:"1.2921° S, 36.8219° E",tz:"UTC+03:00 (EAT)",capital:"Nairobi",pop:"55.1M",popE:"55,100,000",density:"94 /km²",area:"580,367 km²",areaSqmi:"224,081 sq mi",terrain:"Low plains rising to central highlands bisected by the Great Rift Valley; Mount Kenya pinnacle.",climate:"Varies from tropical coastal to arid inland savannah.",life:"66.7 yrs",ratio:"0.99 M/F",birth:"27.1 / 1k",death:"5.5 / 1k",growth:"+1.9%",gPos:true,pyr:{s:"4.2%",w:"57.8%",y:"38.0%"},challenge:"Climate-induced drought cycles and creating formal tech jobs for an expanding young urban demographic.",solution:"Geothermal energy expansion (90%+ renewable grid) and Silicon Savannah fintech innovation hubs.",gov:"Unitary Presidential Republic",formation:"December 12, 1963 (Independence)",colonial:"British East Africa Protectorate (1895–1963)",subdivisions:"47 Semi-autonomous Counties",policies:"Vision 2030, Great Green Wall reforestation, and East African Community customs integration.",lang:"Swahili (Kiswahili) & English",currency:"Kenyan Shilling (KSh, KES)",religions:"Christianity (85%), Islam (11%), Indigenous (2%)",cities:"Nairobi, Mombasa, Kisumu, Nakuru, Eldoret",fauna:"East African Lion & Lilac-breasted Roller",fruit:"Passion Fruit",tree:"Acacia Tortilis",sport:"Athletics (Long-distance Running), Rugby Sevens",anthem:{title:"Ee Mungu Nguvu Yetu (Oh God of All Creation)",dur:"1:05 min",lyrics:"O God of all creation, bless this our land and nation...",chords:[293.66,329.63,440.00,587.33]},t1:"Kenya generates over 90% of its electricity from renewable sources, primarily geothermal and wind power.",t2:"Nairobi is the only city on Earth that borders a free-roaming wildlife national park with lions and black rhinos.",capCoords:{cx:593,cy:288},cities2:[{lbl:"Mombasa",cx:600,cy:300,col:"#4edea3"},{lbl:"Kisumu",cx:582,cy:282,col:"#7bd0ff"}]},
+  usa:{name:"United States",official:"United States of America",iso:"USA-840",cont:"North America",flag:"🇺🇸",coords:"38.8951° N, 77.0364° W",tz:"UTC-05:00 to UTC-10:00",capital:"Washington, D.C.",pop:"339.9M",popE:"339,996,563",density:"37 /km²",area:"9,833,517 km²",areaSqmi:"3,796,742 sq mi",terrain:"Vast central plains, Appalachian and Rocky mountain belts, Pacific coastline, and Alaskan tundra.",climate:"Mostly temperate; tropical in Hawaii & Florida, arctic in Alaska, arid in Southwest.",life:"77.5 yrs",ratio:"0.98 M/F",birth:"11.0 / 1k",death:"10.2 / 1k",growth:"+0.50%",gPos:true,pyr:{s:"17.3%",w:"64.5%",y:"18.2%"},challenge:"Healthcare expenditure inflation and geographical inequality across deindustrialized regions.",solution:"CHIPS Act domestic manufacturing resurgence and clean infrastructure investments.",gov:"Federal Presidential Constitutional Republic",formation:"July 4, 1776 (Declaration of Independence)",colonial:"Thirteen British Colonies (1607–1776)",subdivisions:"50 States, 1 Federal District, 5 Territories",policies:"Global Alliance Defense, Space Exploration (Artemis), and Open AI Innovation.",lang:"English (de facto)",currency:"US Dollar ($, USD)",religions:"Protestant (40%), Catholic (21%), Unaffiliated (29%)",cities:"New York, Los Angeles, Chicago, Houston, San Francisco",fauna:"Bald Eagle & American Bison",fruit:"Blueberry",tree:"Oak",sport:"American Football, Baseball, Basketball",anthem:{title:"The Star-Spangled Banner",dur:"1:25 min",lyrics:"O say can you see by the dawn's early light...",chords:[261.63,329.63,392.00,523.25]},t1:"The US holds over 400 national park sites covering roughly 85 million acres of preserved wildlands.",t2:"The interstate highway system is engineered with straight stretches designed for tactical emergency aviation landings.",capCoords:{cx:200,cy:180},cities2:[{lbl:"New York",cx:218,cy:175,col:"#4edea3"},{lbl:"Los Angeles",cx:142,cy:185,col:"#7bd0ff"}]},
+  china:{name:"China",official:"People's Republic of China • 中华人民共和国",iso:"CHN-156",cont:"East Asia",flag:"🇨🇳",coords:"39.9042° N, 116.4074° E",tz:"UTC+08:00 (CST)",capital:"Beijing",pop:"1.41B",popE:"1,412,360,000",density:"147 /km²",area:"9,596,960 km²",areaSqmi:"3,705,407 sq mi",terrain:"Vast deserts and steppes in west, major river plains, Tibetan plateau, and eastern coastal lowlands.",climate:"Diverse: tropical in south, subarctic in north, alpine in Tibet, arid in northwest.",life:"77.4 yrs",ratio:"1.06 M/F",birth:"6.8 / 1k",death:"7.1 / 1k",growth:"-0.04%",gPos:false,pyr:{s:"14.9%",w:"68.6%",y:"16.5%"},challenge:"Rapidly aging population following the one-child policy era, and property sector deleveraging.",solution:"Three-child policy incentives, domestic consumption stimulus, and Belt & Road infrastructure investment.",gov:"Unitary One-Party Socialist Republic",formation:"October 1, 1949 (PRC Proclamation)",colonial:"Treaty port era / Japanese occupation (1842–1945)",subdivisions:"22 Provinces, 5 Autonomous Regions, 4 Municipalities",policies:"Made in China 2025, Dual Circulation strategy, and Carbon Neutrality before 2060.",lang:"Mandarin Chinese (Pǔtōnghuà)",currency:"Renminbi / Chinese Yuan (¥, CNY)",religions:"Buddhist (18%), Christian (5%), Folk (22%), Unaffiliated (52%)",cities:"Beijing, Shanghai, Guangzhou, Shenzhen, Chongqing",fauna:"Giant Panda & Red-crowned Crane",fruit:"Kiwi fruit / Lychee",tree:"Ginkgo Biloba",sport:"Table Tennis, Badminton",anthem:{title:"March of the Volunteers (义勇军进行曲)",dur:"1:20 min",lyrics:"Arise, ye who refuse to be slaves, with our flesh and blood...",chords:[261.63,311.13,392.00,466.16]},t1:"China's Great Wall is over 21,000 kilometres long in total, though many sections have crumbled over centuries.",t2:"China invented paper, printing, gunpowder, and the compass — four inventions that fundamentally changed human civilization.",capCoords:{cx:788,cy:155},cities2:[{lbl:"Shanghai",cx:810,cy:175,col:"#4edea3"},{lbl:"Guangzhou",cx:800,cy:200,col:"#7bd0ff"}]},
+  australia:{name:"Australia",official:"Commonwealth of Australia",iso:"AUS-036",cont:"Oceania",flag:"🇦🇺",coords:"35.2809° S, 149.1300° E",tz:"UTC+08:00 to UTC+10:30",capital:"Canberra",pop:"26.6M",popE:"26,638,000",density:"3.4 /km²",area:"7,692,024 km²",areaSqmi:"2,969,907 sq mi",terrain:"Mostly low plateau with deserts; Great Dividing Range in east; Great Barrier Reef offshore.",climate:"Arid to semiarid in centre; temperate in south and east; tropical in north.",life:"83.3 yrs",ratio:"0.99 M/F",birth:"11.7 / 1k",death:"6.7 / 1k",growth:"+1.90%",gPos:true,pyr:{s:"16.8%",w:"64.8%",y:"18.4%"},challenge:"Water scarcity across the Murray-Darling basin and vulnerability to extreme bushfire cycles.",solution:"Massive green hydrogen export terminals and advanced desalination grid infrastructure.",gov:"Federal Parliamentary Constitutional Monarchy",formation:"January 1, 1901 (Federation of Colonies)",colonial:"British penal and settlement colonies (1788–1901)",subdivisions:"6 States & 2 Internal Territories",policies:"AUKUS strategic defense pact and Pacific Island diplomatic climate assistance.",lang:"English",currency:"Australian Dollar ($, AUD)",religions:"Christianity (43.9%), No religion (38.9%), Islam (3.2%)",cities:"Sydney, Melbourne, Brisbane, Perth, Adelaide",fauna:"Red Kangaroo & Emu",fruit:"Finger Lime",tree:"Golden Wattle (Acacia pycnantha)",sport:"Cricket, Australian Rules Football (AFL), Rugby",anthem:{title:"Advance Australia Fair",dur:"1:10 min",lyrics:"Australians all let us rejoice, for we are one and free...",chords:[293.66,369.99,440.00,587.33]},t1:"Australia is home to the Great Barrier Reef, the largest living biological structure observable from low earth orbit.",t2:"Over 80% of Australia's native mammals and reptiles are endemic and found nowhere else on planet Earth.",capCoords:{cx:845,cy:388},cities2:[{lbl:"Sydney",cx:860,cy:390,col:"#4edea3"},{lbl:"Melbourne",cx:842,cy:402,col:"#7bd0ff"}]},
+  mexico:{name:"Mexico",official:"United Mexican States • Estados Unidos Mexicanos",iso:"MEX-484",cont:"North America",flag:"🇲🇽",coords:"23.6345° N, 102.5528° W",tz:"UTC-06:00 to UTC-08:00",capital:"Mexico City",pop:"128.5M",popE:"128,455,000",density:"66 /km²",area:"1,964,375 km²",areaSqmi:"758,449 sq mi",terrain:"High central plateaus, rugged Sierra Madre ranges, coastal plains, and Yucatán lowlands.",climate:"Tropical in south, desert in north, temperate in central highlands.",life:"73.1 yrs",ratio:"0.95 M/F",birth:"14.9 / 1k",death:"5.6 / 1k",growth:"+0.75%",gPos:true,pyr:{s:"8.8%",w:"65.9%",y:"25.3%"},challenge:"Organized crime pressure on regional governance and income inequality between north and south.",solution:"Near-shoring manufacturing boom from US supply chain re-localization and USMCA trade frameworks.",gov:"Federal Presidential Republic",formation:"September 16, 1810 (Independence)",colonial:"Spanish Viceroyalty of New Spain (1521–1821)",subdivisions:"31 States & 1 Federal Entity",policies:"Tren Maya tourism infrastructure, oil sector modernization, and energy sovereignty doctrine.",lang:"Spanish",currency:"Mexican Peso ($, MXN)",religions:"Catholic (77.7%), Protestant (11.2%), No religion (8.1%)",cities:"Mexico City, Guadalajara, Monterrey, Puebla, Tijuana",fauna:"Golden Eagle & Xoloitzcuintli dog",fruit:"Avocado",tree:"Ahuehuete (Montezuma Cypress)",sport:"Football (Liga MX), Boxing",anthem:{title:"Himno Nacional Mexicano",dur:"2:32 min",lyrics:"Mexicanos, al grito de guerra el acero aprestad y el bridón...",chords:[261.63,329.63,440.00,523.25]},t1:"Mexico City was built on the site of the ancient Aztec capital Tenochtitlán, constructed on an island in Lake Texcoco.",t2:"Mexico is the world's largest producer and exporter of avocados, producing over 30% of global supply annually.",capCoords:{cx:140,cy:240},cities2:[{lbl:"Guadalajara",cx:128,cy:245,col:"#4edea3"},{lbl:"Monterrey",cx:148,cy:232,col:"#7bd0ff"}]},
+  russia:{name:"Russia",official:"Russian Federation • Российская Федерация",iso:"RUS-643",cont:"Eastern Europe / North Asia",flag:"🇷🇺",coords:"61.5240° N, 105.3188° E",tz:"UTC+02:00 to UTC+12:00",capital:"Moscow",pop:"144.4M",popE:"144,444,000",density:"8.4 /km²",area:"17,098,242 km²",areaSqmi:"6,601,670 sq mi",terrain:"Vast Western Siberian plains, Ural Mountains, eastern taiga, permafrost tundra, and Caucasus ranges.",climate:"Subarctic continental dominates; varies from humid continental in west to polar in far north.",life:"71.3 yrs",ratio:"0.86 M/F",birth:"9.8 / 1k",death:"14.2 / 1k",growth:"-0.43%",gPos:false,pyr:{s:"16.0%",w:"66.9%",y:"17.1%"},challenge:"Western economic sanctions impact and demographic contraction accelerating population decline.",solution:"Arctic resource corridor development and pivot to BRICS multilateral economic architecture.",gov:"Federal Semi-Presidential Republic",formation:"1547 (Tsardom) / December 25, 1991 (Current Federation)",colonial:"Imperial expansionism across Eurasia and Central Asia (17th–19th century)",subdivisions:"85 Federal Subjects (oblasts, republics, krais)",policies:"Arctic Silk Road, Eurasian Economic Union integration, and import substitution industrialization.",lang:"Russian",currency:"Russian Ruble (₽, RUB)",religions:"Russian Orthodox (71%), Islam (10%), Other Christian (2%)",cities:"Moscow, Saint Petersburg, Novosibirsk, Yekaterinburg, Kazan",fauna:"Eurasian Brown Bear & Siberian Tiger",fruit:"Apple",tree:"Siberian Larch (Larix sibirica)",sport:"Ice Hockey, Association Football",anthem:{title:"Gosudarstvenny gimn Rossiyskoy Federatsii",dur:"1:20 min",lyrics:"Russia — our sacred state, Russia — our beloved land...",chords:[261.63,311.13,349.23,440.00]},t1:"Russia spans 11 time zones across 17 million km², covering approximately 1/8 of the Earth's total land surface.",t2:"Lake Baikal in Siberia contains roughly 20% of the world's unfrozen surface fresh water and is the deepest lake on Earth.",capCoords:{cx:570,cy:90},cities2:[{lbl:"St. Petersburg",cx:540,cy:80,col:"#4edea3"},{lbl:"Novosibirsk",cx:648,cy:95,col:"#7bd0ff"}]},
+  egypt:{name:"Egypt",official:"Arab Republic of Egypt • جمهورية مصر العربية",iso:"EGY-818",cont:"North Africa",flag:"🇪🇬",coords:"30.0444° N, 31.2357° E",tz:"UTC+03:00 (EEST)",capital:"Cairo",pop:"112.7M",popE:"112,716,000",density:"113 /km²",area:"1,002,450 km²",areaSqmi:"387,050 sq mi",terrain:"Vast hyper-arid desert plateau bisected by the fertile green ribbon of the Nile River valley and delta.",climate:"Desert; hot dry summers with moderate winter periods along the coast.",life:"71.3 yrs",ratio:"1.04 M/F",birth:"20.6 / 1k",death:"5.8 / 1k",growth:"+1.45%",gPos:true,pyr:{s:"5.3%",w:"62.4%",y:"32.3%"},challenge:"Intense population concentration along the 5% arable land of the Nile banks and freshwater security.",solution:"New Administrative Capital construction and Toshka agricultural land reclamation programme.",gov:"Unitary Semi-Presidential Republic",formation:"c.3100 BCE (First Dynasty) / June 18, 1953 (Republic)",colonial:"Ottoman, French, and British Protectorate (1882–1922)",subdivisions:"27 Governorates (Muhafazah)",policies:"Suez Canal Maritime Strategic Corridor and Decent Life initiative (Hayah Karima).",lang:"Arabic (Egyptian Arabic)",currency:"Egyptian Pound (E£, EGP)",religions:"Islam (Sunni 90%), Coptic Christian (10%)",cities:"Cairo, Alexandria, Giza, Port Said, Luxor, Aswan",fauna:"Steppe Eagle (Saladin Eagle)",fruit:"Date Palm",tree:"Doum Palm",sport:"Football, Squash",anthem:{title:"Bilady, Bilady, Bilady (My Homeland)",dur:"1:20 min",lyrics:"My homeland, my homeland, my homeland, you have my love and my heart...",chords:[261.63,311.13,392.00,466.16]},t1:"The Great Pyramid of Giza was the tallest human-made structure for over 3,800 years until Lincoln Cathedral was built.",t2:"The Suez Canal handles approximately 12% of all global maritime trade, bypassing the entire African continent.",capCoords:{cx:562,cy:218},cities2:[{lbl:"Alexandria",cx:554,cy:208,col:"#4edea3"},{lbl:"Luxor",cx:566,cy:228,col:"#7bd0ff"}]},
+  'south-africa':{name:"South Africa",official:"Republic of South Africa",iso:"ZAF-710",cont:"Southern Africa",flag:"🇿🇦",coords:"30.5595° S, 22.9375° E",tz:"UTC+02:00 (SAST)",capital:"Pretoria / Cape Town / Bloemfontein",pop:"60.6M",popE:"60,602,000",density:"50 /km²",area:"1,219,090 km²",areaSqmi:"470,693 sq mi",terrain:"Interior plateau (Highveld), Great Escarpment, Drakensberg peaks, and two ocean coastlines.",climate:"Semi-arid in interior, Mediterranean in southwest, subtropical in east coast.",life:"64.4 yrs",ratio:"0.96 M/F",birth:"19.9 / 1k",death:"9.6 / 1k",growth:"+1.5%",gPos:true,pyr:{s:"5.9%",w:"65.0%",y:"29.1%"},challenge:"Persistent unemployment above 30% and severe inequality legacy from apartheid-era wealth concentration.",solution:"Renewable energy corridors (Hydrogen Valley) and African Continental Free Trade Area leadership.",gov:"Unitary Presidential Constitutional Republic",formation:"May 31, 1910 (Union) / April 27, 1994 (Democratic elections)",colonial:"Dutch/British Cape Colony and Boer Republics (1652–1961)",subdivisions:"9 Provinces",policies:"Just Energy Transition, Operation Vulindlela reforms, and BRICS rotating presidency.",lang:"11 official languages (Zulu, Xhosa, Afrikaans, English + 7 more)",currency:"South African Rand (R, ZAR)",religions:"Christian (86%), Indigenous beliefs (5.4%), Islam (1.9%)",cities:"Johannesburg, Cape Town, Durban, Pretoria, Port Elizabeth",fauna:"Springbok & African Penguin",fruit:"Bael Fruit / Rooibos",tree:"Real Yellowwood (Podocarpus latifolius)",sport:"Rugby Union, Cricket, Football",anthem:{title:"Nkosi Sikelel' iAfrika",dur:"1:35 min",lyrics:"God bless Africa, guide her leaders, guard her children and give her peace...",chords:[261.63,293.66,349.23,392.00]},t1:"South Africa is the only country that has voluntarily dismantled its own nuclear weapons programme.",t2:"The Cradle of Humankind near Johannesburg contains the world's highest concentration of early human ancestral fossils.",capCoords:{cx:575,cy:395},cities2:[{lbl:"Cape Town",cx:556,cy:415,col:"#4edea3"},{lbl:"Durban",cx:592,cy:405,col:"#7bd0ff"}]},
+  colombia:{name:"Colombia",official:"Republic of Colombia • República de Colombia",iso:"COL-170",cont:"South America",flag:"🇨🇴",coords:"4.5709° N, 74.2973° W",tz:"UTC-05:00 (COT)",capital:"Bogotá",pop:"52.2M",popE:"52,215,000",density:"45.9 /km²",area:"1,141,748 km²",areaSqmi:"440,831 sq mi",terrain:"Three Andean cordilleras, Caribbean and Pacific coastal lowlands, and eastern Llanos plains.",climate:"Tropical along coasts, cooler in Andean highlands; no distinct seasons.",life:"77.1 yrs",ratio:"0.98 M/F",birth:"14.6 / 1k",death:"5.7 / 1k",growth:"+0.65%",gPos:true,pyr:{s:"9.1%",w:"67.2%",y:"23.7%"},challenge:"Transition from decades of FARC conflict and coca-economy dependency in rural regions.",solution:"Total Peace policy, coffee and tourism diversification, and Andean renewable hydro expansion.",gov:"Unitary Presidential Republic",formation:"July 20, 1810 (Independence)",colonial:"Spanish Viceroyalty of New Granada (1717–1819)",subdivisions:"32 Departments & 1 Capital District",policies:"Total Peace policy, border integration with Venezuela, and Amazon biodiversity corridor.",lang:"Spanish",currency:"Colombian Peso ($, COP)",religions:"Catholic (79%), Protestant (13.4%), No religion (6.2%)",cities:"Bogotá, Medellín, Cali, Barranquilla, Cartagena",fauna:"Andean Condor & Spectacled Bear",fruit:"Lulo / Feijoa",tree:"Wax Palm (Ceroxylon quindiuense)",sport:"Football, Cycling, Tejo",anthem:{title:"Himno Nacional de Colombia (Oh Gloria Inmarcesible!)",dur:"1:32 min",lyrics:"Oh unfading glory! Oh immortal jubilation! In furrows of pain the good germinates already...",chords:[261.63,329.63,440.00,523.25]},t1:"Colombia is the only country in South America with coastlines on both the Pacific Ocean and the Caribbean Sea.",t2:"Colombia is the world's second most biodiverse country, home to approximately 10% of all plant species on Earth.",capCoords:{cx:200,cy:268},cities2:[{lbl:"Medellín",cx:192,cy:278,col:"#4edea3"},{lbl:"Cali",cx:194,cy:288,col:"#7bd0ff"}]}
+};
+
+// ── AUDIO SYNTH ──────────────────────────────────────────────────────────────
+class Synth{
+  constructor(){this.ctx=null;this.on=false;this.t=null}
+  init(){if(!this.ctx){this.ctx=new(window.AudioContext||window.webkitAudioContext)()}}
+  play(chords,done){
+    this.init();
+    if(this.ctx.state==='suspended')this.ctx.resume();
+    this.stop();this.on=true;
+    let i=0;const n=chords||[261.63,293.66,329.63,392,440];
+    const next=()=>{
+      if(!this.on)return;
+      const now=this.ctx.currentTime;
+      const o=this.ctx.createOscillator(),g=this.ctx.createGain();
+      o.type='triangle';o.frequency.value=n[i%n.length];
+      g.gain.setValueAtTime(.001,now);
+      g.gain.exponentialRampToValueAtTime(.18,now+.1);
+      g.gain.exponentialRampToValueAtTime(.001,now+.65);
+      o.connect(g);g.connect(this.ctx.destination);
+      o.start(now);o.stop(now+.7);
+      i++;
+      if(i<10&&this.on){this.t=setTimeout(next,580);}
+      else{this.on=false;if(done)done();}
+    };next();
+  }
+  stop(){this.on=false;if(this.t)clearTimeout(this.t)}
+}
+const synth=new Synth();
+
+// ── LEVENSHTEIN ───────────────────────────────────────────────────────────────
+function lev(a,b){
+  const m=[];
+  for(let i=0;i<=b.length;i++)m[i]=[i];
+  for(let j=0;j<=a.length;j++)m[0][j]=j;
+  for(let i=1;i<=b.length;i++)for(let j=1;j<=a.length;j++){
+    m[i][j]=b[i-1].toLowerCase()===a[j-1].toLowerCase()?m[i-1][j-1]:Math.min(m[i-1][j-1]+1,m[i][j-1]+1,m[i-1][j]+1);
+  }
+  return m[b.length][a.length];
+}
+function fuzz(q){
+  if(!q)return null;
+  const c=q.trim().toLowerCase();
+  const ks=Object.keys(DB);
+  for(const k of ks){if(DB[k].name.toLowerCase()===c||k===c)return{k,exact:true};}
+  for(const k of ks){if(DB[k].name.toLowerCase().startsWith(c)||DB[k].name.toLowerCase().includes(c))return{k,exact:true};}
+  let best=null,md=999;
+  for(const k of ks){const d=Math.min(lev(c,DB[k].name.toLowerCase()),lev(c,k));if(d<md&&d<=3){md=d;best=k;}}
+  if(best)return{k:best,exact:false};
+  return null;
+}
+
+// ── STATE ─────────────────────────────────────────────────────────────────────
+let cur='japan',mScale=1,expanded=false;
+
+// ── POPULATE ──────────────────────────────────────────────────────────────────
+function fill(key){
+  const d=DB[key];if(!d)return;
+  cur=key;synth.stop();resetAnthem();
+
+  setText('d-bgiso',d.iso.split('-')[0]);
+  setText('d-flag',d.flag);
+  setText('d-iso','ISO: '+d.iso);
+  setText('d-cont',d.cont);
+  setText('d-name',d.name);
+  setText('d-official',d.official);
+  setText('d-coords',d.coords);
+  setText('d-tz',d.tz);
+  setText('d-anthdur',d.anthem.dur);
+  setText('d-anthtitle',d.anthem.title);
+  setText('d-anthlyrics','"'+d.anthem.lyrics+'"');
+  setText('d-capital',d.capital);
+  setText('d-area',d.area);
+  setText('d-areasqmi',d.areaSqMi||d.areaSqmi);
+  setText('d-terrain',d.terrain);
+  setText('d-climate',d.climate);
+  setText('d-pop',d.popE);
+  setText('d-density',d.density);
+  setText('d-life',d.life);
+  setText('d-ratio',d.ratio);
+  setText('d-birth',d.birth);
+  setText('d-death',d.death);
+  const ge=document.getElementById('d-growth');
+  ge.textContent=d.growth;ge.style.color=d.gPos?'#4edea3':'#ffb4ab';
+  setText('pyr-s',d.pyr.s);setText('pyr-w',d.pyr.w);setText('pyr-y',d.pyr.y);
+  setW('bar-s',d.pyr.s);setW('bar-w',d.pyr.w);setW('bar-y',d.pyr.y);
+  setText('d-challenge',d.challenge);setText('d-solution',d.solution);
+  setText('d-gov',d.gov);setText('d-formation',d.formation);
+  setText('d-colonial',d.colonial);setText('d-subdivisions',d.subdivisions);
+  setText('d-policies',d.policies);
+  setText('d-lang',d.lang);setText('d-currency',d.currency);
+  setText('d-religions',d.religions);setText('d-cities',d.cities);
+  setText('d-fauna',d.fauna);setText('d-fruit',d.fruit);
+  setText('d-tree',d.tree);setText('d-sport',d.sport);
+  setText('d-t1',d.t1);setText('d-t2',d.t2);
+  setText('tel-coord','LAT/LON: '+d.coords);
+
+  // city dots
+  const cap=d.capCoords;
+  document.getElementById('dot-cap').setAttribute('cx',cap.cx);
+  document.getElementById('dot-cap').setAttribute('cy',cap.cy);
+  document.getElementById('lbl-cap').setAttribute('x',cap.cx+5);
+  document.getElementById('lbl-cap').setAttribute('y',cap.cy+3);
+  document.getElementById('lbl-cap').textContent=d.capital.split(',')[0].split('/')[0].trim();
+  if(d.cities2&&d.cities2[0]){
+    document.getElementById('dot-c2').setAttribute('cx',d.cities2[0].cx);
+    document.getElementById('dot-c2').setAttribute('cy',d.cities2[0].cy);
+    document.getElementById('lbl-c2').setAttribute('x',d.cities2[0].cx+4);
+    document.getElementById('lbl-c2').setAttribute('y',d.cities2[0].cy+3);
+    document.getElementById('lbl-c2').textContent=d.cities2[0].lbl;
+    document.getElementById('lbl-c2').setAttribute('fill',d.cities2[0].col);
+    document.getElementById('dot-c2').setAttribute('fill',d.cities2[0].col);
+  }
+  if(d.cities2&&d.cities2[1]){
+    document.getElementById('dot-c3').setAttribute('cx',d.cities2[1].cx);
+    document.getElementById('dot-c3').setAttribute('cy',d.cities2[1].cy);
+    document.getElementById('lbl-c3').setAttribute('x',d.cities2[1].cx+4);
+    document.getElementById('lbl-c3').setAttribute('y',d.cities2[1].cy+3);
+    document.getElementById('lbl-c3').textContent=d.cities2[1].lbl;
+    document.getElementById('lbl-c3').setAttribute('fill',d.cities2[1].col);
+    document.getElementById('dot-c3').setAttribute('fill',d.cities2[1].col);
+  }
+
+  hlMap(key);openPanel();
+}
+function setText(id,v){const e=document.getElementById(id);if(e)e.textContent=v;}
+function setW(id,v){const e=document.getElementById(id);if(e)e.style.width=v;}
+
+// ── MAP HIGHLIGHT ─────────────────────────────────────────────────────────────
+function hlMap(k){
+  document.querySelectorAll('.country-path').forEach(p=>{p.classList.remove('sel');});
+  const el=document.getElementById('cp-'+k);
+  if(el)el.classList.add('sel');
+}
+
+// ── SELECT ────────────────────────────────────────────────────────────────────
+function selC(k,chipEl,e){
+  if(e)e.stopPropagation();
+  document.querySelectorAll('.quick-chip').forEach(c=>c.classList.remove('active'));
+  if(chipEl)chipEl.classList.add('active');
+  else document.querySelectorAll('.quick-chip').forEach(c=>{if(c.dataset.k===k)c.classList.add('active');});
+  if(DB[k])fill(k);
+}
+
+// ── PANEL ─────────────────────────────────────────────────────────────────────
+function openPanel(){document.getElementById('dossier-panel').style.transform='translateX(0)';}
+function closePanel(){document.getElementById('dossier-panel').style.transform='translateX(100%)';synth.stop();}
+function togExpand(){
+  expanded=!expanded;
+  document.getElementById('dossier-panel').style.width=expanded?'min(800px,100vw)':'min(580px,100vw)';
+  const i=document.getElementById('exp-btn').querySelector('.sym');
+  i.textContent=expanded?'close_fullscreen':'open_in_full';
+}
+
+// ── TABS ──────────────────────────────────────────────────────────────────────
+function setTab(btn,id){
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-pane').forEach(p=>{p.style.display='none';p.classList.remove('active');});
+  const p=document.getElementById('tab-'+id);
+  if(p){p.style.display='flex';p.classList.add('active');}
+}
+
+// ── ANTHEM ────────────────────────────────────────────────────────────────────
+function resetAnthem(){
+  setText('anthem-icon','play_arrow');
+  document.getElementById('anthem-status').textContent='READY';
+  document.getElementById('anthem-status').style.color='#4edea3';
+  document.querySelectorAll('.viz-bar').forEach(b=>b.classList.remove('on'));
+}
+document.getElementById('anthem-btn').addEventListener('click',()=>{
+  const ic=document.getElementById('anthem-icon');
+  const st=document.getElementById('anthem-status');
+  if(synth.on){
+    synth.stop();ic.textContent='play_arrow';st.textContent='PAUSED';st.style.color='#9d8f7b';
+    document.querySelectorAll('.viz-bar').forEach(b=>b.classList.remove('on'));
+  } else {
+    ic.textContent='stop';st.textContent='TRANSMITTING';st.style.color='#fdba45';
+    document.querySelectorAll('.viz-bar').forEach(b=>b.classList.add('on'));
+    const d=DB[cur];
+    synth.play(d&&d.anthem.chords,()=>{
+      ic.textContent='play_arrow';st.textContent='FINISHED';st.style.color='#4edea3';
+      document.querySelectorAll('.viz-bar').forEach(b=>b.classList.remove('on'));
+    });
+  }
+});
+
+// ── SEARCH ────────────────────────────────────────────────────────────────────
+function hideBanner(){const b=document.getElementById('typo-banner');b.style.display='none';}
+function clearSearch(){
+  document.getElementById('map-search').value='';
+  document.getElementById('search-clear').style.display='none';
+  hideBanner();
+}
+function doSearch(v){
+  hideBanner();
+  if(!v)return;
+  const r=fuzz(v);
+  if(!r)return;
+  if(r.exact){selC(r.k,null);}
+  else{
+    document.getElementById('typo-query').textContent=v;
+    document.getElementById('typo-btn').textContent=DB[r.k].name;
+    const b=document.getElementById('typo-banner');b.style.display='flex';
+    document.getElementById('typo-btn').onclick=()=>{selC(r.k,null);hideBanner();clearSearch();};
+  }
+}
+document.getElementById('map-search').addEventListener('input',function(){
+  document.getElementById('search-clear').style.display=this.value?'block':'none';
+  doSearch(this.value.trim());
+});
+document.getElementById('global-search').addEventListener('input',function(){
+  document.getElementById('map-search').value=this.value;
+  document.getElementById('search-clear').style.display=this.value?'block':'none';
+  doSearch(this.value.trim());
+});
+document.addEventListener('keydown',e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();document.getElementById('map-search').focus();}
+  if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){e.preventDefault();document.getElementById('map-search').focus();}
+  if(document.activeElement.tagName==='INPUT')return;
+  if(e.key==='='||e.key==='+')mZoom(1);
+  if(e.key==='-')mZoom(-1);
+  if(e.key==='0')mReset();
+});
+
+// ── MAP CONTROLS ──────────────────────────────────────────────────────────────
+function mZoom(d){
+  mScale=Math.min(2.8,Math.max(.7,mScale+d*.2));
+  document.getElementById('map-vp').style.transform=`scale(${mScale})`;
+  document.getElementById('tel-zoom').textContent=mScale.toFixed(2)+'x';
+}
+function mReset(){
+  mScale=1;
+  document.getElementById('map-vp').style.transform='scale(1)';
+  document.getElementById('tel-zoom').textContent='1.00x';
+}
+function togL(btn){btn.classList.toggle('layer-on');}
+
+// ── TOOLTIP ───────────────────────────────────────────────────────────────────
+function showTip(k,e){
+  const d=DB[k];if(!d)return;
+  const t=document.getElementById('map-tooltip');
+  document.getElementById('tt-flag').textContent=d.flag;
+  document.getElementById('tt-name').textContent=d.name;
+  document.getElementById('tt-cap').textContent=d.capital.split('/')[0].trim();
+  document.getElementById('tt-pop').textContent=d.pop;
+  t.style.display='block';
+  moveTip(e);
+}
+function hideTip(){document.getElementById('map-tooltip').style.display='none';}
+function moveTip(e){
+  const t=document.getElementById('map-tooltip');
+  if(t.style.display!=='block')return;
+  t.style.left=(e.clientX)+'px';
+  t.style.top=(e.clientY-68)+'px';
+}
+document.addEventListener('mousemove',moveTip);
+
+// ── PROJECTION ────────────────────────────────────────────────────────────────
+function setProj(p){
+  document.getElementById('proj-m').classList.toggle('active',p==='m');
+  document.getElementById('proj-w').classList.toggle('active',p==='w');
+  document.getElementById('tel-proj').textContent=p==='m'?'EQUIDISTANT WGS84':'WINKEL TRIPEL';
+  const svg=document.getElementById('world-svg');
+  svg.style.transform=p==='w'?'scaleX(.94) scaleY(1.04)':'scaleX(1) scaleY(1)';
+}
+
+// ── NAV ───────────────────────────────────────────────────────────────────────
+function setNav(el){document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active'));el.classList.add('active');}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+// ── NAVIGATION TO DETAIL PAGE ─────────────────────────────────────────────────
+function navToDetail(){
+  window.location.href='country-detail.html?c='+cur;
+}
+
+window.addEventListener('DOMContentLoaded',()=>fill('japan'));
+</script>
+</body>
+</html>

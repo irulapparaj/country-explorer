@@ -1,0 +1,340 @@
+#world-map-mount {
+  position: absolute;
+  inset: 0;
+  z-index: 0; /* its own stacking context: map overlays can never paint above the side panel */
+  background: var(--color-ocean);
+}
+
+.world-map-svg {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+
+.world-map-svg:active {
+  cursor: grabbing;
+}
+
+.elevation-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.elevation-canvas[hidden] {
+  display: none;
+}
+
+.ocean {
+  fill: var(--color-ocean);
+}
+
+/* ---- Countries ---------------------------------------------------------------------- */
+
+.country-path {
+  stroke: var(--map-border);
+  stroke-width: 0.6px;
+  vector-effect: non-scaling-stroke;
+  cursor: pointer;
+}
+
+/* Political: neighbor-safe pastel coloring (the original look). */
+.world-map-svg[data-map-mode='political'] .country-path[data-color='0'] { fill: var(--map-1); }
+.world-map-svg[data-map-mode='political'] .country-path[data-color='1'] { fill: var(--map-2); }
+.world-map-svg[data-map-mode='political'] .country-path[data-color='2'] { fill: var(--map-3); }
+.world-map-svg[data-map-mode='political'] .country-path[data-color='3'] { fill: var(--map-4); }
+.world-map-svg[data-map-mode='political'] .country-path[data-color='4'] { fill: var(--map-5); }
+.world-map-svg[data-map-mode='political'] .country-path[data-color='5'] { fill: var(--map-6); }
+.world-map-svg[data-map-mode='political'] .country-path[data-color='6'] { fill: var(--map-7); }
+.world-map-svg[data-map-mode='political'] .country-path[data-iso3='ATA'] { fill: var(--color-ice); }
+
+/* Geographic regions: every country takes its continent's color, and borders between
+   countries of one continent fade back so the continent reads as a single block. */
+.world-map-svg[data-map-mode='geographic'] .country-path {
+  fill: var(--map-nodata);
+  stroke: var(--map-border-soft);
+}
+.world-map-svg[data-map-mode='geographic'] .country-path[data-continent='africa'] { fill: var(--continent-africa); }
+.world-map-svg[data-map-mode='geographic'] .country-path[data-continent='antarctica'] { fill: var(--continent-antarctica); }
+.world-map-svg[data-map-mode='geographic'] .country-path[data-continent='asia'] { fill: var(--continent-asia); }
+.world-map-svg[data-map-mode='geographic'] .country-path[data-continent='europe'] { fill: var(--continent-europe); }
+.world-map-svg[data-map-mode='geographic'] .country-path[data-continent='north-america'] { fill: var(--continent-north-america); }
+.world-map-svg[data-map-mode='geographic'] .country-path[data-continent='oceania'] { fill: var(--continent-oceania); }
+.world-map-svg[data-map-mode='geographic'] .country-path[data-continent='south-america'] { fill: var(--continent-south-america); }
+
+/* Elevation: the terrain canvas behind the SVG shows through; the shapes keep only
+   their (thin, light) outlines and stay fully clickable. */
+.world-map-svg[data-map-mode='elevation'] .ocean {
+  fill: transparent;
+}
+.world-map-svg[data-map-mode='elevation'] .country-path {
+  fill: transparent;
+  stroke: oklch(20% 0.02 60 / 0.55);
+}
+
+/* Shapes with no matching data (disputed areas): named, never clickable. Must come after
+   the mode fills above so it wins at equal specificity. */
+.world-map-svg[data-map-mode='political'] .country-path[data-iso3=''],
+.world-map-svg[data-map-mode='geographic'] .country-path[data-iso3=''] {
+  fill: var(--map-nodata);
+}
+.country-path[data-iso3=''] {
+  pointer-events: none;
+}
+
+.continent-borders {
+  display: none;
+  fill: none;
+  stroke: var(--map-border);
+  stroke-width: 1.1px;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.world-map-svg[data-map-mode='geographic'] .continent-borders {
+  display: block;
+}
+
+/* Selection: the fill lives on the country's own shape; the outline is a copy drawn above
+   every country so no neighbor's border can half-cover it. */
+.country-path.selected {
+  fill: var(--color-selection) !important;
+}
+
+.world-map-svg[data-map-mode='elevation'] .country-path.selected {
+  fill: oklch(53% 0.21 30 / 0.16) !important;
+}
+
+.selection-outline {
+  fill: none;
+  stroke: var(--color-selection-ink);
+  stroke-width: 1.8px;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+/* Hover pop-out: an overlay, never a transform on the real shape (see WorldMap.js). Each
+   piece grows a little around its own center and gets one soft shadow for the group. */
+.hover-layer,
+.hover-pop,
+.hover-part {
+  pointer-events: none;
+}
+
+.hover-pop {
+  filter: drop-shadow(0 3px 5px oklch(22% 0.015 60 / 0.35));
+}
+
+.hover-part {
+  stroke: var(--map-border);
+  stroke-width: 0.6px;
+  vector-effect: non-scaling-stroke;
+  transform: scale(1);
+  transition: transform var(--duration-fast) var(--ease-out-expo);
+}
+
+.hover-pop.active .hover-part {
+  transform: scale(var(--hover-scale, 1.03));
+}
+
+/* ---- Geographic reference overlays -------------------------------------------------- */
+
+.polar-caps-layer,
+.graticule-layer,
+.special-lines-layer,
+.water-labels-layer,
+.continent-labels-layer,
+.labels-layer {
+  pointer-events: none;
+}
+
+.polar-cap {
+  fill: var(--polar-cap-tint);
+}
+
+.world-map-svg[data-map-mode='elevation'] .polar-cap {
+  display: none;
+}
+
+.graticule-line {
+  fill: none;
+  stroke: var(--map-graticule);
+  stroke-width: 0.5px;
+  vector-effect: non-scaling-stroke;
+}
+
+.special-line {
+  fill: none;
+  stroke: var(--map-line-special);
+  stroke-width: 1px;
+  stroke-dasharray: 6 4;
+  vector-effect: non-scaling-stroke;
+  opacity: 0.85;
+}
+
+.special-line[data-kind='equator'] {
+  stroke-width: 1.5px;
+  stroke-dasharray: 9 3;
+}
+
+.world-map-svg[data-map-mode='elevation'] .graticule-line {
+  stroke: oklch(100% 0 0 / 0.35);
+}
+
+.water-label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  fill: var(--color-water-label);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: oklch(96% 0.02 232 / 0.7);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}
+
+.water-label-ocean {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.water-label-sea {
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+}
+
+.world-map-svg[data-map-mode='elevation'] .water-label {
+  fill: oklch(96% 0.01 235);
+  stroke: oklch(25% 0.05 245 / 0.55);
+}
+
+.continent-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  fill: var(--color-ink);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: oklch(99% 0.003 75 / 0.75);
+  stroke-width: 3.5px;
+  stroke-linejoin: round;
+}
+
+/* ---- Country names ---------------------------------------------------------------------- */
+
+.map-label text {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  fill: var(--color-ink);
+  text-anchor: middle;
+  dominant-baseline: middle;
+  paint-order: stroke;
+  stroke: oklch(99% 0.003 75 / 0.75);
+  stroke-width: 2px;
+}
+
+/* ---- Tooltip, zoom buttons, off-map marker --------------------------------------------- */
+
+.map-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  font-size: var(--text-xs);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  opacity: 0;
+  transition: opacity var(--duration-fast) ease-out;
+  z-index: 5;
+}
+
+.map-tooltip.visible {
+  opacity: 1;
+}
+
+/* Fade in, but vanish instantly: a name must never linger once the pointer has left its country. */
+.map-tooltip:not(.visible) {
+  transition: none;
+}
+
+.map-hud {
+  position: absolute;
+  z-index: 6;
+  left: calc(var(--frame-left) + var(--space-3));
+  bottom: calc(var(--frame-bottom) + var(--space-3));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-1);
+  box-shadow: var(--shadow-sm);
+}
+
+.map-hud-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg);
+  color: var(--color-ink-muted);
+  border-radius: var(--radius-sm);
+}
+
+.map-hud-btn:hover {
+  background: var(--color-surface-sunken);
+  color: var(--color-ink);
+}
+
+.off-map-dot {
+  fill: var(--color-selection);
+}
+
+.off-map-ring {
+  fill: none;
+  stroke: var(--color-selection);
+  stroke-width: 2px;
+  animation: map-pulse 1.8s ease-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .off-map-ring {
+    animation: none;
+    opacity: 0.6;
+  }
+}
+
+@keyframes map-pulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  100% { transform: scale(2.6); opacity: 0; }
+}
+
+.off-map-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  fill: var(--color-ink);
+  paint-order: stroke;
+  stroke: oklch(99% 0.003 75 / 0.8);
+  stroke-width: 2px;
+}

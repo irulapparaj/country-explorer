@@ -1,0 +1,114 @@
+#search-mount {
+  position: absolute;
+  top: var(--space-4);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 25;
+  width: min(420px, calc(100vw - 2 * var(--space-4)));
+  transition: left var(--duration-normal) var(--ease-out-expo);
+}
+
+@media (min-width: 769px) {
+  #view-map.panel-open #search-mount {
+    left: calc((100% - var(--panel-width)) / 2);
+  }
+}
+
+.search-bar {
+  position: relative;
+}
+
+.search-input-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-md);
+  padding-inline: var(--space-4);
+}
+
+.search-input-wrap:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px oklch(62% 0.15 55 / 0.2), var(--shadow-md);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding-block: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-ink);
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: var(--color-ink-faint);
+}
+
+.search-clear {
+  font-size: var(--text-lg);
+  line-height: 1;
+  color: var(--color-ink-faint);
+  padding: var(--space-1);
+  border-radius: 50%;
+}
+
+.search-clear:hover {
+  color: var(--color-ink);
+  background: var(--color-surface-sunken);
+}
+
+.search-listbox {
+  position: absolute;
+  top: calc(100% + var(--space-2));
+  left: 0;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  max-height: 320px;
+  overflow-y: auto;
+  padding: var(--space-1);
+}
+
+.search-option {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.search-option:hover,
+.search-option[aria-selected='true'] {
+  background: var(--color-surface-sunken);
+}
+
+.search-message {
+  margin-top: var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-ink-muted);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-message:empty {
+  display: none;
+}
+
+.search-suggestion-btn {
+  font-weight: 600;
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  #search-mount {
+    top: var(--space-2);
+  }
+}

@@ -1,0 +1,4975 @@
+[
+  {
+    "iso3": "ABW",
+    "iso2": "AW",
+    "isoNumeric": "533",
+    "names": {
+      "common": "Aruba",
+      "official": "Aruba",
+      "alt": [
+        "Country of Aruba",
+        "Island of Aruba",
+        "aw"
+      ]
+    },
+    "coord": {
+      "lat": 12.515,
+      "lng": -69.975
+    }
+  },
+  {
+    "iso3": "AFG",
+    "iso2": "AF",
+    "isoNumeric": "004",
+    "names": {
+      "common": "Afghanistan",
+      "official": "Islamic Emirate of Afghanistan",
+      "alt": [
+        "Affghanistan",
+        "Affghanisthan",
+        "Affghaunistan",
+        "Afghania",
+        "Afghanisthan",
+        "Afghaunistan",
+        "Afghaunistaun"
+      ]
+    },
+    "coord": {
+      "lat": 33,
+      "lng": 66
+    }
+  },
+  {
+    "iso3": "AGO",
+    "iso2": "AO",
+    "isoNumeric": "024",
+    "names": {
+      "common": "Angola",
+      "official": "Republic of Angola",
+      "alt": [
+        "Ngola",
+        "Republic of Angola",
+        "ao"
+      ]
+    },
+    "coord": {
+      "lat": -12.35,
+      "lng": 17.35
+    }
+  },
+  {
+    "iso3": "AIA",
+    "iso2": "AI",
+    "isoNumeric": "660",
+    "names": {
+      "common": "Anguilla",
+      "official": "Anguilla",
+      "alt": [
+        "AIA",
+        "Malliouhana",
+        "ai"
+      ]
+    },
+    "coord": {
+      "lat": 18.227222222222,
+      "lng": -63.048888888889
+    }
+  },
+  {
+    "iso3": "ALA",
+    "iso2": "AX",
+    "isoNumeric": "248",
+    "names": {
+      "common": "Åland",
+      "official": "Åland",
+      "alt": [
+        "Aaland",
+        "Aaland Islands",
+        "Ahvenanmaa",
+        "Aland",
+        "Aland Islands",
+        "Aland Isles",
+        "ax",
+        "Åland Islands",
+        "Åland region"
+      ]
+    },
+    "coord": {
+      "lat": 60.25,
+      "lng": 20
+    }
+  },
+  {
+    "iso3": "ALB",
+    "iso2": "AL",
+    "isoNumeric": "008",
+    "names": {
+      "common": "Albania",
+      "official": "Albania",
+      "alt": [
+        "People's Republic of Albania",
+        "People's Socialist Republic of Albania",
+        "Republic of Albania",
+        "Republika Popullore Socialiste e Shqiperise",
+        "Republika Popullore e Shqiperise",
+        "Shqipërisë"
+      ]
+    },
+    "coord": {
+      "lat": 41,
+      "lng": 20
+    }
+  },
+  {
+    "iso3": "AND",
+    "iso2": "AD",
+    "isoNumeric": "020",
+    "names": {
+      "common": "Andorra",
+      "official": "Andorra",
+      "alt": [
+        "Principality of Andorra",
+        "Principality of the Valleys of Andorra"
+      ]
+    },
+    "coord": {
+      "lat": 42.558333333333,
+      "lng": 1.5552777777778
+    }
+  },
+  {
+    "iso3": "ARE",
+    "iso2": "AE",
+    "isoNumeric": "784",
+    "names": {
+      "common": "United Arab Emirates",
+      "official": "United Arab Emirates",
+      "alt": [
+        "Emirates",
+        "U.A.E.",
+        "ae",
+        "the Emirates",
+        "the U.A.E.",
+        "the UAE",
+        "the United Arab Emirates"
+      ]
+    },
+    "coord": {
+      "lat": 24.4,
+      "lng": 54.3
+    }
+  },
+  {
+    "iso3": "ARG",
+    "iso2": "AR",
+    "isoNumeric": "032",
+    "names": {
+      "common": "Argentina",
+      "official": "Argentina",
+      "alt": [
+        "Argentine Republic",
+        "Republic of Argentina",
+        "Republica Argentina"
+      ]
+    },
+    "coord": {
+      "lat": -34,
+      "lng": -64
+    }
+  },
+  {
+    "iso3": "ARM",
+    "iso2": "AM",
+    "isoNumeric": "051",
+    "names": {
+      "common": "Armenia",
+      "official": "Republic of Armenia",
+      "alt": [
+        "Hayastan",
+        "Hayastani Hanrapetut’yun",
+        "Republic of Armenia",
+        "Հայաստան"
+      ]
+    },
+    "coord": {
+      "lat": 40.383333,
+      "lng": 44.95
+    }
+  },
+  {
+    "iso3": "ASM",
+    "iso2": "AS",
+    "isoNumeric": "016",
+    "names": {
+      "common": "American Samoa",
+      "official": "American Samoa",
+      "alt": [
+        "American Sāmoa",
+        "East Samoa",
+        "ISO 3166-1:AS",
+        "Samoa (American)",
+        "Samoa, United States",
+        "Territory of American Samoa",
+        "U.S. Samoa",
+        "US Samoa",
+        "as"
+      ]
+    },
+    "coord": {
+      "lat": -14.295833,
+      "lng": -170.7075
+    }
+  },
+  {
+    "iso3": "ATA",
+    "iso2": "AQ",
+    "isoNumeric": "010",
+    "names": {
+      "common": "Antarctica",
+      "official": "Antarctica",
+      "alt": []
+    },
+    "coord": {
+      "lat": -90,
+      "lng": 0
+    }
+  },
+  {
+    "iso3": "ATF",
+    "iso2": "TF",
+    "isoNumeric": "260",
+    "names": {
+      "common": "French Southern and Antarctic Lands",
+      "official": "French Southern and Antarctic Lands",
+      "alt": [
+        "French Southern Territories",
+        "tf"
+      ]
+    },
+    "coord": {
+      "lat": -43,
+      "lng": 67
+    }
+  },
+  {
+    "iso3": "ATG",
+    "iso2": "AG",
+    "isoNumeric": "028",
+    "names": {
+      "common": "Antigua and Barbuda",
+      "official": "Antigua and Barbuda",
+      "alt": [
+        "Antigua & Barbuda",
+        "Antigua-Barbuda",
+        "Antigua–Barbuda"
+      ]
+    },
+    "coord": {
+      "lat": 17.116666666667,
+      "lng": -61.85
+    }
+  },
+  {
+    "iso3": "AUS",
+    "iso2": "AU",
+    "isoNumeric": "036",
+    "names": {
+      "common": "Australia",
+      "official": "Australia",
+      "alt": [
+        "'Straya",
+        "Aussieland",
+        "Commonwealth of Australia",
+        "Down Under",
+        "New Holland",
+        "New Hollandia",
+        "Nova Hollandia",
+        "Oz",
+        "Stralia",
+        "Straya",
+        "Stria",
+        "The Commonwealth of Australia"
+      ]
+    },
+    "coord": {
+      "lat": -25,
+      "lng": 133
+    }
+  },
+  {
+    "iso3": "AUT",
+    "iso2": "AT",
+    "isoNumeric": "040",
+    "names": {
+      "common": "Austria",
+      "official": "Austria",
+      "alt": [
+        "Republic of Austria"
+      ]
+    },
+    "coord": {
+      "lat": 48,
+      "lng": 14
+    }
+  },
+  {
+    "iso3": "AZE",
+    "iso2": "AZ",
+    "isoNumeric": "031",
+    "names": {
+      "common": "Azerbaijan",
+      "official": "Azerbaijan",
+      "alt": [
+        "Republic of Azerbaijan"
+      ]
+    },
+    "coord": {
+      "lat": 40.3,
+      "lng": 47.7
+    }
+  },
+  {
+    "iso3": "BDI",
+    "iso2": "BI",
+    "isoNumeric": "108",
+    "names": {
+      "common": "Burundi",
+      "official": "Republic of Burundi",
+      "alt": [
+        "Gouvernement du Burundi",
+        "Republic of Burundi",
+        "Republika y'Uburundi",
+        "bi"
+      ]
+    },
+    "coord": {
+      "lat": -3.666667,
+      "lng": 29.816667
+    }
+  },
+  {
+    "iso3": "BEL",
+    "iso2": "BE",
+    "isoNumeric": "056",
+    "names": {
+      "common": "Belgium",
+      "official": "Belgium",
+      "alt": [
+        "Kingdom of Belgium"
+      ]
+    },
+    "coord": {
+      "lat": 50.641111111111,
+      "lng": 4.6680555555556
+    }
+  },
+  {
+    "iso3": "BEN",
+    "iso2": "BJ",
+    "isoNumeric": "204",
+    "names": {
+      "common": "Benin",
+      "official": "Republic of Benin",
+      "alt": [
+        "Republic of Benin"
+      ]
+    },
+    "coord": {
+      "lat": 8.8333333333333,
+      "lng": 2.1833333333333
+    }
+  },
+  {
+    "iso3": "BES",
+    "iso2": "BQ",
+    "isoNumeric": "535",
+    "names": {
+      "common": "Caribbean Netherlands",
+      "official": "Caribbean Netherlands",
+      "alt": [
+        "BES islands",
+        "Bonaire, Saint Eustatius and Saba"
+      ]
+    },
+    "coord": {
+      "lat": 12.183333333333,
+      "lng": -68.233333333333
+    }
+  },
+  {
+    "iso3": "BFA",
+    "iso2": "BF",
+    "isoNumeric": "854",
+    "names": {
+      "common": "Burkina Faso",
+      "official": "Burkina Faso",
+      "alt": [
+        "Republic of Burkina Faso",
+        "Republic of Upper Volta (-1984)",
+        "bf"
+      ]
+    },
+    "coord": {
+      "lat": 12.266667,
+      "lng": -2.066667
+    }
+  },
+  {
+    "iso3": "BGD",
+    "iso2": "BD",
+    "isoNumeric": "050",
+    "names": {
+      "common": "Bangladesh",
+      "official": "Bangladesh",
+      "alt": [
+        "Bangla Desh",
+        "Country of Bengal",
+        "Land of Bengal",
+        "People's Republic of Bangladesh",
+        "bd"
+      ]
+    },
+    "coord": {
+      "lat": 24.016666666667,
+      "lng": 89.866666666667
+    }
+  },
+  {
+    "iso3": "BGR",
+    "iso2": "BG",
+    "isoNumeric": "100",
+    "names": {
+      "common": "Bulgaria",
+      "official": "Republic of Bulgaria",
+      "alt": [
+        "Bulgarian Republic",
+        "Republic of Bulgaria"
+      ]
+    },
+    "coord": {
+      "lat": 42.75,
+      "lng": 25.5
+    }
+  },
+  {
+    "iso3": "BHR",
+    "iso2": "BH",
+    "isoNumeric": "048",
+    "names": {
+      "common": "Bahrain",
+      "official": "Kingdom of Bahrain",
+      "alt": [
+        "Bahrein Islands",
+        "Dawlat al-Bahrain",
+        "ISO 3166-1:BH",
+        "Kingdom of Bahrain",
+        "Mamlakat al-Baḥrayn",
+        "bh"
+      ]
+    },
+    "coord": {
+      "lat": 26.0675,
+      "lng": 50.551111
+    }
+  },
+  {
+    "iso3": "BHS",
+    "iso2": "BS",
+    "isoNumeric": "044",
+    "names": {
+      "common": "The Bahamas",
+      "official": "Commonwealth of the Bahamas",
+      "alt": [
+        "Bahama Islands",
+        "Bahamas",
+        "Bahamas, The",
+        "Commonwealth of The Bahamas",
+        "Commonwealth of the Bahamas",
+        "bs"
+      ]
+    },
+    "coord": {
+      "lat": 25,
+      "lng": -77.4
+    }
+  },
+  {
+    "iso3": "BIH",
+    "iso2": "BA",
+    "isoNumeric": "070",
+    "names": {
+      "common": "Bosnia and Herzegovina",
+      "official": "Bosnia and Herzegovina",
+      "alt": [
+        "B&H",
+        "Bosnia & Herzegovina",
+        "Bosnia and Hercegovina",
+        "Bosnia-Herzegovina",
+        "ba"
+      ]
+    },
+    "coord": {
+      "lat": 44,
+      "lng": 18
+    }
+  },
+  {
+    "iso3": "BLM",
+    "iso2": "BL",
+    "isoNumeric": "652",
+    "names": {
+      "common": "Saint Barthélemy",
+      "official": "Saint Barthélemy",
+      "alt": [
+        "Collectivite de Saint-Barthelemy",
+        "Collectivity of Saint Barthelemy",
+        "Collectivity of Saint Barthélemy",
+        "Collectivité de Saint-Barthélemy",
+        "Ile Saint-Barthelemy",
+        "Ile Saint-Barthélemy",
+        "Ouanalao",
+        "Saint Barth",
+        "Saint Barths",
+        "Saint Barthélémy",
+        "Saint Barts",
+        "Saint Bartz",
+        "Saint-Barthélémy",
+        "St barthelemy",
+        "St barths",
+        "St barts",
+        "St. Barth",
+        "St. Barthelemy",
+        "St. Barths",
+        "St. Barthélemy",
+        "St. Barts",
+        "Île Saint-Barthélemy"
+      ]
+    },
+    "coord": {
+      "lat": 17.897728,
+      "lng": -62.8342438
+    }
+  },
+  {
+    "iso3": "BLR",
+    "iso2": "BY",
+    "isoNumeric": "112",
+    "names": {
+      "common": "Belarus",
+      "official": "Belarus",
+      "alt": [
+        "Belorussia",
+        "Bielaruś",
+        "Bielorussia",
+        "Byeloruss",
+        "Byelorussia",
+        "Republic of Belarus",
+        "Respublika Belarus'",
+        "Respublika Bielaruś",
+        "White Russia",
+        "White Ruthenia",
+        "by"
+      ]
+    },
+    "coord": {
+      "lat": 53.528333333333,
+      "lng": 28.046666666667
+    }
+  },
+  {
+    "iso3": "BLZ",
+    "iso2": "BZ",
+    "isoNumeric": "084",
+    "names": {
+      "common": "Belize",
+      "official": "Belize",
+      "alt": [
+        "bz"
+      ]
+    },
+    "coord": {
+      "lat": 17.066666666667,
+      "lng": -88.7
+    }
+  },
+  {
+    "iso3": "BMU",
+    "iso2": "BM",
+    "isoNumeric": "060",
+    "names": {
+      "common": "Bermuda",
+      "official": "Bermuda",
+      "alt": [
+        "Atlantic/Bermuda",
+        "Barmuda",
+        "Barmuda I.",
+        "Barmuda Isl.",
+        "Barmuda Islands",
+        "Barmudas",
+        "Bermoothes",
+        "Bermuda Islands",
+        "Bermudas",
+        "Bermudian Islands",
+        "Colony of Bermuda",
+        "Devil's Isles",
+        "Isle of Devils",
+        "Somers Islands",
+        "Somers Isles",
+        "Summer's Isles",
+        "Summers' Isles",
+        "Territory of Bermuda",
+        "The Somers Isles",
+        "Virgineola",
+        "bm"
+      ]
+    },
+    "coord": {
+      "lat": 32.32,
+      "lng": -64.74
+    }
+  },
+  {
+    "iso3": "BOL",
+    "iso2": "BO",
+    "isoNumeric": "068",
+    "names": {
+      "common": "Bolivia",
+      "official": "Plurinational State of Bolivia",
+      "alt": [
+        "Bolivia (Plurinational State of)",
+        "Plurinational State of Bolivia",
+        "Republic of Bolivia"
+      ]
+    },
+    "coord": {
+      "lat": -17.056869611111,
+      "lng": -64.991228611111
+    }
+  },
+  {
+    "iso3": "BRA",
+    "iso2": "BR",
+    "isoNumeric": "076",
+    "names": {
+      "common": "Brazil",
+      "official": "Brazil",
+      "alt": [
+        "Federative Republic of Brazil"
+      ]
+    },
+    "coord": {
+      "lat": -14,
+      "lng": -53
+    }
+  },
+  {
+    "iso3": "BRB",
+    "iso2": "BB",
+    "isoNumeric": "052",
+    "names": {
+      "common": "Barbados",
+      "official": "Barbados",
+      "alt": [
+        "BAR",
+        "Barbadoes",
+        "bb"
+      ]
+    },
+    "coord": {
+      "lat": 13.17,
+      "lng": -59.5525
+    }
+  },
+  {
+    "iso3": "BRN",
+    "iso2": "BN",
+    "isoNumeric": "096",
+    "names": {
+      "common": "Brunei",
+      "official": "Brunei",
+      "alt": [
+        "Nation of Brunei, the Abode of Peace",
+        "Negara Brunei Darussalam",
+        "bn"
+      ]
+    },
+    "coord": {
+      "lat": 4.4,
+      "lng": 114.566667
+    }
+  },
+  {
+    "iso3": "BTN",
+    "iso2": "BT",
+    "isoNumeric": "064",
+    "names": {
+      "common": "Bhutan",
+      "official": "Kingdom of Bhutan",
+      "alt": [
+        "BHU",
+        "Kingdom of Bhutan",
+        "bt"
+      ]
+    },
+    "coord": {
+      "lat": 27.45,
+      "lng": 90.5
+    }
+  },
+  {
+    "iso3": "BVT",
+    "iso2": "BV",
+    "isoNumeric": "074",
+    "names": {
+      "common": "Bouvet Island",
+      "official": "Bouvet Island",
+      "alt": []
+    },
+    "coord": {
+      "lat": -54.42,
+      "lng": 3.36
+    }
+  },
+  {
+    "iso3": "BWA",
+    "iso2": "BW",
+    "isoNumeric": "072",
+    "names": {
+      "common": "Botswana",
+      "official": "Republic of Botswana",
+      "alt": [
+        "Lefatshe la Botswana",
+        "Republic of Botswana",
+        "bw"
+      ]
+    },
+    "coord": {
+      "lat": -22.2,
+      "lng": 23.7
+    }
+  },
+  {
+    "iso3": "CAF",
+    "iso2": "CF",
+    "isoNumeric": "140",
+    "names": {
+      "common": "Central African Republic",
+      "official": "Central African Republic",
+      "alt": [
+        "Central Africa",
+        "cf"
+      ]
+    },
+    "coord": {
+      "lat": 6.7,
+      "lng": 20.9
+    }
+  },
+  {
+    "iso3": "CAN",
+    "iso2": "CA",
+    "isoNumeric": "124",
+    "names": {
+      "common": "Canada",
+      "official": "Canada",
+      "alt": [
+        "CA",
+        "CAN"
+      ]
+    },
+    "coord": {
+      "lat": 56,
+      "lng": -109
+    }
+  },
+  {
+    "iso3": "CCK",
+    "iso2": "CC",
+    "isoNumeric": "166",
+    "names": {
+      "common": "Cocos (Keeling) Islands",
+      "official": "Cocos Islands",
+      "alt": [
+        "Cocos Islands",
+        "Keeling Islands",
+        "Territory of the Cocos (Keeling) Islands",
+        "cc"
+      ]
+    },
+    "coord": {
+      "lat": -12.1175,
+      "lng": 96.895
+    }
+  },
+  {
+    "iso3": "CHE",
+    "iso2": "CH",
+    "isoNumeric": "756",
+    "names": {
+      "common": "Switzerland",
+      "official": "Swiss Confederation",
+      "alt": [
+        "Confoederatio Helvetica",
+        "Swiss",
+        "Swiss Confederation"
+      ]
+    },
+    "coord": {
+      "lat": 46.798562,
+      "lng": 8.231973
+    }
+  },
+  {
+    "iso3": "CHL",
+    "iso2": "CL",
+    "isoNumeric": "152",
+    "names": {
+      "common": "Chile",
+      "official": "Republic of Chile",
+      "alt": [
+        "CHI",
+        "Republic of Chile"
+      ]
+    },
+    "coord": {
+      "lat": -33,
+      "lng": -71
+    }
+  },
+  {
+    "iso3": "CHN",
+    "iso2": "CN",
+    "isoNumeric": "156",
+    "names": {
+      "common": "China",
+      "official": "China",
+      "alt": [
+        "China PR",
+        "Communist China",
+        "P.R.C.",
+        "PR China",
+        "Red China",
+        "The PRC",
+        "cn",
+        "the People's Republic of China"
+      ]
+    },
+    "coord": {
+      "lat": 35.844722222222,
+      "lng": 103.45194444444
+    }
+  },
+  {
+    "iso3": "CIV",
+    "iso2": "CI",
+    "isoNumeric": "384",
+    "names": {
+      "common": "Ivory Coast",
+      "official": "Republic of Côte d’Ivoire",
+      "alt": [
+        "Cote Ivoire",
+        "Cote d'Ivoire",
+        "Cote d'lvoire",
+        "Cote-d'Ivoire",
+        "Côte-d'Ivoire",
+        "Republic of Cote d'Ivoire",
+        "Republic of Côte d'Ivoire",
+        "Republic of Ivory Coast",
+        "Republic of the Ivory Coast",
+        "The Ivory Coast",
+        "ci"
+      ]
+    },
+    "coord": {
+      "lat": 8,
+      "lng": -6
+    }
+  },
+  {
+    "iso3": "CMR",
+    "iso2": "CM",
+    "isoNumeric": "120",
+    "names": {
+      "common": "Cameroon",
+      "official": "Republic of Cameroon",
+      "alt": [
+        "Republic of Cameroon"
+      ]
+    },
+    "coord": {
+      "lat": 5.1333333333333,
+      "lng": 12.65
+    }
+  },
+  {
+    "iso3": "COD",
+    "iso2": "CD",
+    "isoNumeric": "180",
+    "names": {
+      "common": "Democratic Republic of the Congo",
+      "official": "Democratic Republic of the Congo",
+      "alt": [
+        "COD",
+        "Congo (Kinshasa)",
+        "D.R.C.",
+        "DR Congo",
+        "DRC",
+        "Dem. Rep. Congo",
+        "Dem. Republic of Congo",
+        "Dem. Republic of the Congo",
+        "Democratic Republic of Congo",
+        "cd"
+      ]
+    },
+    "coord": {
+      "lat": -2.88,
+      "lng": 23.656111111111
+    }
+  },
+  {
+    "iso3": "COG",
+    "iso2": "CG",
+    "isoNumeric": "178",
+    "names": {
+      "common": "Republic of the Congo",
+      "official": "Republic of the Congo",
+      "alt": [
+        "CGO",
+        "Congo",
+        "Congo (Brazzaville)",
+        "Congo Republic",
+        "Congo-Brazzaville",
+        "Rep. Congo",
+        "Republic of Congo",
+        "Republique du Congo",
+        "République du Congo",
+        "cg"
+      ]
+    },
+    "coord": {
+      "lat": -0.75,
+      "lng": 15.383330555556
+    }
+  },
+  {
+    "iso3": "COK",
+    "iso2": "CK",
+    "isoNumeric": "184",
+    "names": {
+      "common": "Cook Islands",
+      "official": "Cook Islands",
+      "alt": [
+        "COK",
+        "Cook Group",
+        "Hervey Islands",
+        "ck"
+      ]
+    },
+    "coord": {
+      "lat": -21.233333333333,
+      "lng": -159.78333333333
+    }
+  },
+  {
+    "iso3": "COL",
+    "iso2": "CO",
+    "isoNumeric": "170",
+    "names": {
+      "common": "Colombia",
+      "official": "Republic of Colombia",
+      "alt": [
+        "Colombiá",
+        "Republic of Colombia",
+        "The Republic of Colombia"
+      ]
+    },
+    "coord": {
+      "lat": 4,
+      "lng": -73.25
+    }
+  },
+  {
+    "iso3": "COM",
+    "iso2": "KM",
+    "isoNumeric": "174",
+    "names": {
+      "common": "Comoros",
+      "official": "Union of the Comoros",
+      "alt": [
+        "Juzur al-Qamar",
+        "Juzur al-Qumur",
+        "Massiwa ya komori",
+        "Udzima wa Komori",
+        "Union des Comores",
+        "Union of the Comoros",
+        "al-Ittiḥād al-Qumurī",
+        "km",
+        "ouvoimoja wakomori",
+        "the Comoros"
+      ]
+    },
+    "coord": {
+      "lat": -12.3,
+      "lng": 43.7
+    }
+  },
+  {
+    "iso3": "CPV",
+    "iso2": "CV",
+    "isoNumeric": "132",
+    "names": {
+      "common": "Cape Verde",
+      "official": "Cape Verde",
+      "alt": [
+        "Cape Verde Islands",
+        "Republic of Cabo Verde",
+        "Republic of Cape Verde"
+      ]
+    },
+    "coord": {
+      "lat": 15.3,
+      "lng": -23.7
+    }
+  },
+  {
+    "iso3": "CRI",
+    "iso2": "CR",
+    "isoNumeric": "188",
+    "names": {
+      "common": "Costa Rica",
+      "official": "Republic of Costa Rica",
+      "alt": [
+        "Republic of Costa Rica",
+        "cr"
+      ]
+    },
+    "coord": {
+      "lat": 10,
+      "lng": -84
+    }
+  },
+  {
+    "iso3": "CUB",
+    "iso2": "CU",
+    "isoNumeric": "192",
+    "names": {
+      "common": "Cuba",
+      "official": "Republic of Cuba",
+      "alt": [
+        "Republic of Cuba",
+        "cu"
+      ]
+    },
+    "coord": {
+      "lat": 22,
+      "lng": -79.5
+    }
+  },
+  {
+    "iso3": "CUW",
+    "iso2": "CW",
+    "isoNumeric": "531",
+    "names": {
+      "common": "Curaçao",
+      "official": "Curaçao",
+      "alt": [
+        "Country of Curaçao",
+        "Curacau",
+        "Curazao",
+        "Curaçoa",
+        "Curaςao",
+        "Curocao",
+        "ISO 3166-1:CW",
+        "Island Territory of Curaçao"
+      ]
+    },
+    "coord": {
+      "lat": 12.2,
+      "lng": -69
+    }
+  },
+  {
+    "iso3": "CXR",
+    "iso2": "CX",
+    "isoNumeric": "162",
+    "names": {
+      "common": "Christmas Island",
+      "official": "Christmas Island",
+      "alt": [
+        "Christmas Island, Other Territories",
+        "Christmas Island, Other Territories, Australia",
+        "Territory of Christmas Island",
+        "cx"
+      ]
+    },
+    "coord": {
+      "lat": -10.49,
+      "lng": 105.6275
+    }
+  },
+  {
+    "iso3": "CYM",
+    "iso2": "KY",
+    "isoNumeric": "136",
+    "names": {
+      "common": "Cayman Islands",
+      "official": "Cayman Islands",
+      "alt": [
+        "CAY",
+        "Caymans",
+        "ky"
+      ]
+    },
+    "coord": {
+      "lat": 19.5,
+      "lng": -80.5
+    }
+  },
+  {
+    "iso3": "CYP",
+    "iso2": "CY",
+    "isoNumeric": "196",
+    "names": {
+      "common": "Cyprus",
+      "official": "Republic of Cyprus",
+      "alt": [
+        "Greek Administration of Southern Cyprus",
+        "Greek Cypriot State",
+        "Republic of Cyprus"
+      ]
+    },
+    "coord": {
+      "lat": 35,
+      "lng": 33
+    }
+  },
+  {
+    "iso3": "CZE",
+    "iso2": "CZ",
+    "isoNumeric": "203",
+    "names": {
+      "common": "Czech Republic",
+      "official": "Czech Republic",
+      "alt": [
+        "Czechia",
+        "the Czech Republic"
+      ]
+    },
+    "coord": {
+      "lat": 50,
+      "lng": 15
+    }
+  },
+  {
+    "iso3": "DEU",
+    "iso2": "DE",
+    "isoNumeric": "276",
+    "names": {
+      "common": "Germany",
+      "official": "Germany",
+      "alt": [
+        "BRD",
+        "DE",
+        "DEU",
+        "FRG",
+        "Federal Republic of Germany"
+      ]
+    },
+    "coord": {
+      "lat": 51,
+      "lng": 10
+    }
+  },
+  {
+    "iso3": "DJI",
+    "iso2": "DJ",
+    "isoNumeric": "262",
+    "names": {
+      "common": "Djibouti",
+      "official": "Djibouti",
+      "alt": [
+        "Gabuuti",
+        "Jabuuti",
+        "Jībūtī",
+        "Republic of Djibouti",
+        "dj"
+      ]
+    },
+    "coord": {
+      "lat": 11.8,
+      "lng": 42.433333
+    }
+  },
+  {
+    "iso3": "DMA",
+    "iso2": "DM",
+    "isoNumeric": "212",
+    "names": {
+      "common": "Dominica",
+      "official": "Commonwealth of Dominica",
+      "alt": [
+        "Commonwealth of Dominica",
+        "DOM",
+        "Island of Dominica",
+        "The Commonwealth of Dominica",
+        "Wai'tu kubuli",
+        "Wai‘tu kubuli",
+        "dm"
+      ]
+    },
+    "coord": {
+      "lat": 15.416667,
+      "lng": -61.333333
+    }
+  },
+  {
+    "iso3": "DNK",
+    "iso2": "DK",
+    "isoNumeric": "208",
+    "names": {
+      "common": "Denmark",
+      "official": "Denmark",
+      "alt": [
+        "Danemark",
+        "Dania",
+        "Danmark",
+        "Denmark proper",
+        "TAN",
+        "dk",
+        "metropolitan Denmark"
+      ]
+    },
+    "coord": {
+      "lat": 56,
+      "lng": 10
+    }
+  },
+  {
+    "iso3": "DOM",
+    "iso2": "DO",
+    "isoNumeric": "214",
+    "names": {
+      "common": "Dominican Republic",
+      "official": "Dominican Republic",
+      "alt": [
+        "DomRep",
+        "Dominicana",
+        "RD",
+        "Republica Dominicana",
+        "República Dominicana"
+      ]
+    },
+    "coord": {
+      "lat": 18.8,
+      "lng": -70.2
+    }
+  },
+  {
+    "iso3": "DZA",
+    "iso2": "DZ",
+    "isoNumeric": "012",
+    "names": {
+      "common": "Algeria",
+      "official": "Algeria",
+      "alt": [
+        "Djazaïr",
+        "Dzayer",
+        "People's Democratic Republic of Algeria"
+      ]
+    },
+    "coord": {
+      "lat": 28,
+      "lng": 1
+    }
+  },
+  {
+    "iso3": "ECU",
+    "iso2": "EC",
+    "isoNumeric": "218",
+    "names": {
+      "common": "Ecuador",
+      "official": "Ecuador",
+      "alt": [
+        "Republic of Ecuador",
+        "Republic of Equator",
+        "Republic of the Equator",
+        "The Ecuadorian State"
+      ]
+    },
+    "coord": {
+      "lat": -1,
+      "lng": -78
+    }
+  },
+  {
+    "iso3": "EGY",
+    "iso2": "EG",
+    "isoNumeric": "818",
+    "names": {
+      "common": "Egypt",
+      "official": "Egypt",
+      "alt": [
+        "Arab Rep. Egypt",
+        "Arab Republic of Egypt",
+        "Misr",
+        "Rep. Egypt",
+        "Republic of Egypt"
+      ]
+    },
+    "coord": {
+      "lat": 27,
+      "lng": 29
+    }
+  },
+  {
+    "iso3": "ERI",
+    "iso2": "ER",
+    "isoNumeric": "232",
+    "names": {
+      "common": "Eritrea",
+      "official": "Eritrea",
+      "alt": [
+        "Ertrā",
+        "Iritriyā",
+        "State of Eritrea",
+        "er"
+      ]
+    },
+    "coord": {
+      "lat": 15.483333,
+      "lng": 38.25
+    }
+  },
+  {
+    "iso3": "ESH",
+    "iso2": "EH",
+    "isoNumeric": "732",
+    "names": {
+      "common": "Western Sahara",
+      "official": "Western Sahara",
+      "alt": [
+        "Southern Provinces",
+        "Spanish Sahara",
+        "West Sahara"
+      ]
+    },
+    "coord": {
+      "lat": 25,
+      "lng": -13
+    }
+  },
+  {
+    "iso3": "ESP",
+    "iso2": "ES",
+    "isoNumeric": "724",
+    "names": {
+      "common": "Spain",
+      "official": "Spain",
+      "alt": [
+        "Kingdom of Spain"
+      ]
+    },
+    "coord": {
+      "lat": 40.2,
+      "lng": -3.5
+    }
+  },
+  {
+    "iso3": "EST",
+    "iso2": "EE",
+    "isoNumeric": "233",
+    "names": {
+      "common": "Estonia",
+      "official": "Estonia",
+      "alt": [
+        "Eesti Vabariik",
+        "Estland",
+        "Republic of Estonia",
+        "ee"
+      ]
+    },
+    "coord": {
+      "lat": 59,
+      "lng": 26
+    }
+  },
+  {
+    "iso3": "ETH",
+    "iso2": "ET",
+    "isoNumeric": "231",
+    "names": {
+      "common": "Ethiopia",
+      "official": "Ethiopia",
+      "alt": [
+        "Federal Democratic Republic of Ethiopia",
+        "et"
+      ]
+    },
+    "coord": {
+      "lat": 9,
+      "lng": 40
+    }
+  },
+  {
+    "iso3": "FIN",
+    "iso2": "FI",
+    "isoNumeric": "246",
+    "names": {
+      "common": "Finland",
+      "official": "Finland",
+      "alt": [
+        "Finnia",
+        "Land of Thousand Lakes",
+        "Republic of Finland",
+        "Republiken Finland",
+        "Suomen tasavalta",
+        "fi"
+      ]
+    },
+    "coord": {
+      "lat": 65,
+      "lng": 27
+    }
+  },
+  {
+    "iso3": "FJI",
+    "iso2": "FJ",
+    "isoNumeric": "242",
+    "names": {
+      "common": "Fiji",
+      "official": "Fiji",
+      "alt": [
+        "Fijī",
+        "Fijī Gaṇarājya",
+        "Matanitu Tugalala o Viti",
+        "Republic of Fiji",
+        "Republic of the Fiji Islands",
+        "Viti",
+        "fj"
+      ]
+    },
+    "coord": {
+      "lat": -18,
+      "lng": 178
+    }
+  },
+  {
+    "iso3": "FLK",
+    "iso2": "FK",
+    "isoNumeric": "238",
+    "names": {
+      "common": "Falkland Islands",
+      "official": "Falkland Islands",
+      "alt": [
+        "FK",
+        "FLK",
+        "Falklands",
+        "Islas Malvinas",
+        "Malvinas",
+        "Malvinas Islands"
+      ]
+    },
+    "coord": {
+      "lat": -51.73,
+      "lng": -59.22
+    }
+  },
+  {
+    "iso3": "FRA",
+    "iso2": "FR",
+    "isoNumeric": "250",
+    "names": {
+      "common": "France",
+      "official": "France",
+      "alt": [
+        "French Republic"
+      ]
+    },
+    "coord": {
+      "lat": 47,
+      "lng": 2
+    }
+  },
+  {
+    "iso3": "FRO",
+    "iso2": "FO",
+    "isoNumeric": "234",
+    "names": {
+      "common": "Faroe Islands",
+      "official": "Faroe Islands",
+      "alt": [
+        "Atlantic/Faroe",
+        "Faer Oer",
+        "Faeroe Is",
+        "Faeroe Islands",
+        "Faeroe Isles",
+        "Faeroer",
+        "Faeroerne",
+        "Faeroes",
+        "Faeroyene",
+        "Far Oer",
+        "Fareo islands",
+        "Faroe Island",
+        "Faroe Isles",
+        "Faroer",
+        "Faroes",
+        "Faroese Islands",
+        "Farre",
+        "Farre I.",
+        "Farre Is.",
+        "Farre Isl.",
+        "Farre Islands",
+        "Faröe Islands",
+        "Foroyar",
+        "Färöer",
+        "Fær Øer",
+        "Færeyjar",
+        "Færoes",
+        "Færøer",
+        "Færøerne",
+        "Færøyene",
+        "Føroyar",
+        "Sheep Islands",
+        "fo",
+        "the Faeroe Islands",
+        "the Faroe Islands",
+        "🇫🇴"
+      ]
+    },
+    "coord": {
+      "lat": 61.969944444444,
+      "lng": -6.8444805555556
+    }
+  },
+  {
+    "iso3": "FSM",
+    "iso2": "FM",
+    "isoNumeric": "583",
+    "names": {
+      "common": "Federated States of Micronesia",
+      "official": "Federated States of Micronesia",
+      "alt": [
+        "FSM",
+        "Fed. Sts. Micronesia",
+        "Fed. Sts. of Micronesia",
+        "Federated States of Micronesia, FSM",
+        "Micronesia",
+        "fm"
+      ]
+    },
+    "coord": {
+      "lat": 6.9166666666667,
+      "lng": 158.18333333333
+    }
+  },
+  {
+    "iso3": "GAB",
+    "iso2": "GA",
+    "isoNumeric": "266",
+    "names": {
+      "common": "Gabon",
+      "official": "Gabon",
+      "alt": [
+        "GAB",
+        "Gabonese Republic",
+        "Republique Gabonaise",
+        "République Gabonaise",
+        "ga"
+      ]
+    },
+    "coord": {
+      "lat": -0.68333055555556,
+      "lng": 11.5
+    }
+  },
+  {
+    "iso3": "GBR",
+    "iso2": "GB",
+    "isoNumeric": "826",
+    "names": {
+      "common": "United Kingdom",
+      "official": "United Kingdom of Great Britain and Northern Ireland",
+      "alt": [
+        "G B",
+        "Great Britain",
+        "Great Britain and Northern Ireland",
+        "U K",
+        "United Kingdom of Great Britain and Northern Ireland",
+        "the UK",
+        "the United Kingdom",
+        "the United Kingdom of Great Britain and Northern Ireland"
+      ]
+    },
+    "coord": {
+      "lat": 54.6,
+      "lng": -2
+    }
+  },
+  {
+    "iso3": "GEO",
+    "iso2": "GE",
+    "isoNumeric": "268",
+    "names": {
+      "common": "Georgia",
+      "official": "Georgia",
+      "alt": [
+        "Georgia (Sakartvelo)",
+        "Georgia (country)",
+        "Republic of Georgia",
+        "Sakartvelo"
+      ]
+    },
+    "coord": {
+      "lat": 42,
+      "lng": 44
+    }
+  },
+  {
+    "iso3": "GGY",
+    "iso2": "GG",
+    "isoNumeric": "831",
+    "names": {
+      "common": "Guernsey",
+      "official": "Bailiwick of Guernsey",
+      "alt": [
+        "Bailiwick of Guernsey",
+        "Bailliage de Guernesey",
+        "Bailliage dé Guernési",
+        "GB-GSY",
+        "GBG",
+        "Giernési",
+        "Great Britain Guernsey",
+        "Lisia",
+        "XA-GG",
+        "gg"
+      ]
+    },
+    "coord": {
+      "lat": 49.45,
+      "lng": -2.5833333333333
+    }
+  },
+  {
+    "iso3": "GHA",
+    "iso2": "GH",
+    "isoNumeric": "288",
+    "names": {
+      "common": "Ghana",
+      "official": "Ghana",
+      "alt": []
+    },
+    "coord": {
+      "lat": 7.9465,
+      "lng": -1.0232
+    }
+  },
+  {
+    "iso3": "GIB",
+    "iso2": "GI",
+    "isoNumeric": "292",
+    "names": {
+      "common": "Gibraltar",
+      "official": "Gibraltar",
+      "alt": [
+        "Gib",
+        "gi"
+      ]
+    },
+    "coord": {
+      "lat": 36.14,
+      "lng": -5.35
+    }
+  },
+  {
+    "iso3": "GIN",
+    "iso2": "GN",
+    "isoNumeric": "324",
+    "names": {
+      "common": "Guinea",
+      "official": "Guinea",
+      "alt": [
+        "GUI",
+        "Guinea-Conakry",
+        "Republic of Guinea",
+        "gn"
+      ]
+    },
+    "coord": {
+      "lat": 10,
+      "lng": -11
+    }
+  },
+  {
+    "iso3": "GLP",
+    "iso2": "GP",
+    "isoNumeric": "312",
+    "names": {
+      "common": "Guadeloupe",
+      "official": "Guadeloupe",
+      "alt": [
+        "971",
+        "Gwada",
+        "Gwadloup",
+        "Karukera",
+        "gp"
+      ]
+    },
+    "coord": {
+      "lat": 16.25,
+      "lng": -61.5
+    }
+  },
+  {
+    "iso3": "GMB",
+    "iso2": "GM",
+    "isoNumeric": "270",
+    "names": {
+      "common": "The Gambia",
+      "official": "Republic of The Gambia",
+      "alt": [
+        "Gambia",
+        "Islamic Republic of the Gambia",
+        "Republic of the Gambia"
+      ]
+    },
+    "coord": {
+      "lat": 13.5,
+      "lng": -15.5
+    }
+  },
+  {
+    "iso3": "GNB",
+    "iso2": "GW",
+    "isoNumeric": "624",
+    "names": {
+      "common": "Guinea-Bissau",
+      "official": "Guinea-Bissau",
+      "alt": [
+        "GBS",
+        "Republic of Guinea-Bissau",
+        "gw"
+      ]
+    },
+    "coord": {
+      "lat": 12,
+      "lng": -15
+    }
+  },
+  {
+    "iso3": "GNQ",
+    "iso2": "GQ",
+    "isoNumeric": "226",
+    "names": {
+      "common": "Equatorial Guinea",
+      "official": "Equatorial Guinea",
+      "alt": [
+        "GEQ",
+        "Republic of Equatorial Guinea",
+        "gq"
+      ]
+    },
+    "coord": {
+      "lat": 1.5,
+      "lng": 10
+    }
+  },
+  {
+    "iso3": "GRC",
+    "iso2": "GR",
+    "isoNumeric": "300",
+    "names": {
+      "common": "Greece",
+      "official": "Hellenic Republic",
+      "alt": [
+        "Ellada",
+        "Greek Republic",
+        "Hellas",
+        "Hellas, Greece",
+        "Hellenic Republic",
+        "el",
+        "gr"
+      ]
+    },
+    "coord": {
+      "lat": 38.5,
+      "lng": 23
+    }
+  },
+  {
+    "iso3": "GRD",
+    "iso2": "GD",
+    "isoNumeric": "308",
+    "names": {
+      "common": "Grenada",
+      "official": "Grenada",
+      "alt": [
+        "GRN",
+        "gd"
+      ]
+    },
+    "coord": {
+      "lat": 12.1,
+      "lng": -61.7
+    }
+  },
+  {
+    "iso3": "GRL",
+    "iso2": "GL",
+    "isoNumeric": "304",
+    "names": {
+      "common": "Greenland",
+      "official": "Greenland",
+      "alt": [
+        "GL",
+        "GRL",
+        "Greenlandia",
+        "Groenland",
+        "Kalaallit Nunaat"
+      ]
+    },
+    "coord": {
+      "lat": 72,
+      "lng": -40
+    }
+  },
+  {
+    "iso3": "GTM",
+    "iso2": "GT",
+    "isoNumeric": "320",
+    "names": {
+      "common": "Guatemala",
+      "official": "Guatemala",
+      "alt": [
+        "GT",
+        "GTM",
+        "Republic of Guatemala",
+        "gt"
+      ]
+    },
+    "coord": {
+      "lat": 15.5,
+      "lng": -90.25
+    }
+  },
+  {
+    "iso3": "GUF",
+    "iso2": "GF",
+    "isoNumeric": "254",
+    "names": {
+      "common": "French Guiana",
+      "official": "French Guiana",
+      "alt": [
+        "Guiana",
+        "Guiana, France",
+        "Guyane"
+      ]
+    },
+    "coord": {
+      "lat": 4,
+      "lng": -53
+    }
+  },
+  {
+    "iso3": "GUM",
+    "iso2": "GU",
+    "isoNumeric": "316",
+    "names": {
+      "common": "Guam",
+      "official": "Guam",
+      "alt": [
+        "GU",
+        "GUM",
+        "Guahan",
+        "Guam (USA)",
+        "Guåhan",
+        "Guåhån",
+        "ISO 3166-1:GU",
+        "Island of Guam",
+        "Territory of Guam",
+        "US-GU"
+      ]
+    },
+    "coord": {
+      "lat": 13.5,
+      "lng": 144.8
+    }
+  },
+  {
+    "iso3": "GUY",
+    "iso2": "GY",
+    "isoNumeric": "328",
+    "names": {
+      "common": "Guyana",
+      "official": "Co-operative Republic of Guyana",
+      "alt": [
+        "Co-operative Republic of Guyana",
+        "Republic of Guyana",
+        "gy"
+      ]
+    },
+    "coord": {
+      "lat": 5.733333,
+      "lng": -59.316667
+    }
+  },
+  {
+    "iso3": "HKG",
+    "iso2": "HK",
+    "isoNumeric": "344",
+    "names": {
+      "common": "Hong Kong",
+      "official": "Hong Kong Special Administrative Region of the People's Republic of China",
+      "alt": [
+        "HKSAR",
+        "Hong Kong SAR",
+        "Hong Kong SAR, China",
+        "Hong Kong Special Administrative Region",
+        "Hong Kong Special Administrative Region of the People's Republic of China",
+        "Hong Kong, China",
+        "Hongkong"
+      ]
+    },
+    "coord": {
+      "lat": 22.278333333333,
+      "lng": 114.15861111111
+    }
+  },
+  {
+    "iso3": "HMD",
+    "iso2": "HM",
+    "isoNumeric": "334",
+    "names": {
+      "common": "Heard Island and McDonald Islands",
+      "official": "Heard Island and McDonald Islands",
+      "alt": [
+        "HIMI",
+        "HMD",
+        "Heard and Macdonald Islands",
+        "Heard and McDonald Islands",
+        "Territory of Heard Island and McDonald Islands",
+        "hm"
+      ]
+    },
+    "coord": {
+      "lat": -53.078333333333,
+      "lng": 73.5075
+    }
+  },
+  {
+    "iso3": "HND",
+    "iso2": "HN",
+    "isoNumeric": "340",
+    "names": {
+      "common": "Honduras",
+      "official": "Honduras",
+      "alt": [
+        "HON",
+        "Honduran Republic",
+        "Republic of Honduras",
+        "hn"
+      ]
+    },
+    "coord": {
+      "lat": 14.633333,
+      "lng": -86.816667
+    }
+  },
+  {
+    "iso3": "HRV",
+    "iso2": "HR",
+    "isoNumeric": "191",
+    "names": {
+      "common": "Croatia",
+      "official": "Croatia",
+      "alt": [
+        "CRO",
+        "HR",
+        "HRV",
+        "RH",
+        "Republic of Croatia"
+      ]
+    },
+    "coord": {
+      "lat": 45.25,
+      "lng": 15.466667
+    }
+  },
+  {
+    "iso3": "HTI",
+    "iso2": "HT",
+    "isoNumeric": "332",
+    "names": {
+      "common": "Haiti",
+      "official": "Haiti",
+      "alt": [
+        "Ayiti",
+        "HAI",
+        "Haitian Republic",
+        "Hayti",
+        "Republic of Haiti",
+        "ht"
+      ]
+    },
+    "coord": {
+      "lat": 19,
+      "lng": -72.8
+    }
+  },
+  {
+    "iso3": "HUN",
+    "iso2": "HU",
+    "isoNumeric": "348",
+    "names": {
+      "common": "Hungary",
+      "official": "Hungary",
+      "alt": []
+    },
+    "coord": {
+      "lat": 47,
+      "lng": 19
+    }
+  },
+  {
+    "iso3": "IDN",
+    "iso2": "ID",
+    "isoNumeric": "360",
+    "names": {
+      "common": "Indonesia",
+      "official": "Indonesia",
+      "alt": [
+        "Republic of Indonesia",
+        "id"
+      ]
+    },
+    "coord": {
+      "lat": -2,
+      "lng": 118
+    }
+  },
+  {
+    "iso3": "IMN",
+    "iso2": "IM",
+    "isoNumeric": "833",
+    "names": {
+      "common": "Isle of Man",
+      "official": "Isle of Man",
+      "alt": [
+        "I. M.",
+        "I. Man",
+        "I. Mann",
+        "I. Mannin",
+        "Isle of Mann",
+        "Man",
+        "Mann",
+        "Manx",
+        "the Isle of Man"
+      ]
+    },
+    "coord": {
+      "lat": 54.235,
+      "lng": -4.525
+    }
+  },
+  {
+    "iso3": "IND",
+    "iso2": "IN",
+    "isoNumeric": "356",
+    "names": {
+      "common": "India",
+      "official": "Republic of India",
+      "alt": [
+        "Al Hind",
+        "Bharat Ganarajya",
+        "Bharata",
+        "Bharatvarsh",
+        "Hindoostan",
+        "Hindustan",
+        "Indostan",
+        "Republic of India",
+        "Tenjiku",
+        "Tianzhu"
+      ]
+    },
+    "coord": {
+      "lat": 22.8,
+      "lng": 83
+    }
+  },
+  {
+    "iso3": "IOT",
+    "iso2": "IO",
+    "isoNumeric": "086",
+    "names": {
+      "common": "British Indian Ocean Territory",
+      "official": "British Indian Ocean Territory",
+      "alt": [
+        "BIOT",
+        "The British Indian Ocean Territory",
+        "io",
+        "🇮🇴"
+      ]
+    },
+    "coord": {
+      "lat": -6,
+      "lng": 71.5
+    }
+  },
+  {
+    "iso3": "IRL",
+    "iso2": "IE",
+    "isoNumeric": "372",
+    "names": {
+      "common": "Ireland",
+      "official": "Ireland",
+      "alt": [
+        "Irish Republic",
+        "Republic of Ireland",
+        "Southern Ireland"
+      ]
+    },
+    "coord": {
+      "lat": 53,
+      "lng": -8
+    }
+  },
+  {
+    "iso3": "IRN",
+    "iso2": "IR",
+    "isoNumeric": "364",
+    "names": {
+      "common": "Iran",
+      "official": "Iran",
+      "alt": [
+        "IRI",
+        "Islamic Rep. Iran",
+        "Islamic Republic of Iran",
+        "ir"
+      ]
+    },
+    "coord": {
+      "lat": 32,
+      "lng": 53
+    }
+  },
+  {
+    "iso3": "IRQ",
+    "iso2": "IQ",
+    "isoNumeric": "368",
+    "names": {
+      "common": "Iraq",
+      "official": "Republic of Iraq",
+      "alt": [
+        "Republic of Iraq",
+        "iq"
+      ]
+    },
+    "coord": {
+      "lat": 33,
+      "lng": 43
+    }
+  },
+  {
+    "iso3": "ISL",
+    "iso2": "IS",
+    "isoNumeric": "352",
+    "names": {
+      "common": "Iceland",
+      "official": "Iceland",
+      "alt": [
+        "Icelandic republic",
+        "Isl.",
+        "Republic of Iceland",
+        "Ysland"
+      ]
+    },
+    "coord": {
+      "lat": 65,
+      "lng": -19
+    }
+  },
+  {
+    "iso3": "ISR",
+    "iso2": "IL",
+    "isoNumeric": "376",
+    "names": {
+      "common": "Israel",
+      "official": "Israel",
+      "alt": [
+        "ISR",
+        "State of Israel",
+        "Yisrael",
+        "il"
+      ]
+    },
+    "coord": {
+      "lat": 31,
+      "lng": 35
+    }
+  },
+  {
+    "iso3": "ITA",
+    "iso2": "IT",
+    "isoNumeric": "380",
+    "names": {
+      "common": "Italy",
+      "official": "Italy",
+      "alt": [
+        "Italian Republic",
+        "Republic of Italy"
+      ]
+    },
+    "coord": {
+      "lat": 42.5,
+      "lng": 12.5
+    }
+  },
+  {
+    "iso3": "JAM",
+    "iso2": "JM",
+    "isoNumeric": "388",
+    "names": {
+      "common": "Jamaica",
+      "official": "Jamaica",
+      "alt": [
+        "Commonwealth of Jamaica",
+        "JA"
+      ]
+    },
+    "coord": {
+      "lat": 18.18,
+      "lng": -77.4
+    }
+  },
+  {
+    "iso3": "JEY",
+    "iso2": "JE",
+    "isoNumeric": "832",
+    "names": {
+      "common": "Jersey",
+      "official": "Jersey",
+      "alt": [
+        "Bailliage de Jerri",
+        "Bailliage de Jersey",
+        "Bailliage de Jèrri",
+        "Balliwick of Jersey",
+        "I. Iersey",
+        "I. Jersey",
+        "Iersey",
+        "Iersey I.",
+        "Isle of Jersey",
+        "Jerri",
+        "Jersey I.",
+        "Jersey Island",
+        "Jèrri",
+        "je"
+      ]
+    },
+    "coord": {
+      "lat": 49.19,
+      "lng": -2.11
+    }
+  },
+  {
+    "iso3": "JOR",
+    "iso2": "JO",
+    "isoNumeric": "400",
+    "names": {
+      "common": "Jordan",
+      "official": "Jordan",
+      "alt": [
+        "Giordania",
+        "HKJ",
+        "Hashemite Kingdom of Jordan",
+        "ISO 3166-1:JO",
+        "Kingdom of Jordan",
+        "State of Jordan",
+        "Yarden"
+      ]
+    },
+    "coord": {
+      "lat": 31.2,
+      "lng": 36.5
+    }
+  },
+  {
+    "iso3": "JPN",
+    "iso2": "JP",
+    "isoNumeric": "392",
+    "names": {
+      "common": "Japan",
+      "official": "Japan",
+      "alt": [
+        "Iapan",
+        "Iapon",
+        "Land of Rising Sun",
+        "Land of the Rising Sun",
+        "Nihon-koku",
+        "Nippon-koku",
+        "State of Japan"
+      ]
+    },
+    "coord": {
+      "lat": 35,
+      "lng": 136
+    }
+  },
+  {
+    "iso3": "KAZ",
+    "iso2": "KZ",
+    "isoNumeric": "398",
+    "names": {
+      "common": "Kazakhstan",
+      "official": "Kazakhstan",
+      "alt": [
+        "Qazaqstan",
+        "Republic of Kazakhstan",
+        "Republic of Qazaqstan",
+        "kz"
+      ]
+    },
+    "coord": {
+      "lat": 48,
+      "lng": 68
+    }
+  },
+  {
+    "iso3": "KEN",
+    "iso2": "KE",
+    "isoNumeric": "404",
+    "names": {
+      "common": "Kenya",
+      "official": "Republic of Kenya",
+      "alt": [
+        "Republic of Kenya",
+        "ke"
+      ]
+    },
+    "coord": {
+      "lat": 0.1,
+      "lng": 38
+    }
+  },
+  {
+    "iso3": "KGZ",
+    "iso2": "KG",
+    "isoNumeric": "417",
+    "names": {
+      "common": "Kyrgyzstan",
+      "official": "Kyrgyzstan",
+      "alt": [
+        "Kyrgyz Republic",
+        "kg"
+      ]
+    },
+    "coord": {
+      "lat": 41,
+      "lng": 75
+    }
+  },
+  {
+    "iso3": "KHM",
+    "iso2": "KH",
+    "isoNumeric": "116",
+    "names": {
+      "common": "Cambodia",
+      "official": "Kingdom of Cambodia",
+      "alt": [
+        "Camboya",
+        "Campuchia",
+        "Kambodzha",
+        "Kamboja",
+        "Kampuchea",
+        "Kingdom of Cambodia",
+        "kh"
+      ]
+    },
+    "coord": {
+      "lat": 12.5,
+      "lng": 105
+    }
+  },
+  {
+    "iso3": "KIR",
+    "iso2": "KI",
+    "isoNumeric": "296",
+    "names": {
+      "common": "Kiribati",
+      "official": "Republic of Kiribati",
+      "alt": [
+        "Republic of Kiribati",
+        "ki"
+      ]
+    },
+    "coord": {
+      "lat": 1.4666666666667,
+      "lng": 173.03333333333
+    }
+  },
+  {
+    "iso3": "KNA",
+    "iso2": "KN",
+    "isoNumeric": "659",
+    "names": {
+      "common": "Saint Kitts and Nevis",
+      "official": "Saint Kitts and Nevis",
+      "alt": [
+        "Federation of Saint Christopher and Nevis",
+        "Federation of Saint Kitts and Nevis",
+        "Kitts & Nevis",
+        "Kitts and Nevis",
+        "SKN",
+        "Saint Christopher and Nevis",
+        "St Kitts & Nevis",
+        "St Kitts and Nevis",
+        "St. Kitts & Nevis",
+        "St. Kitts and Nevis"
+      ]
+    },
+    "coord": {
+      "lat": 17.271666666667,
+      "lng": -62.666669444444
+    }
+  },
+  {
+    "iso3": "KOR",
+    "iso2": "KR",
+    "isoNumeric": "410",
+    "names": {
+      "common": "South Korea",
+      "official": "Republic of Korea",
+      "alt": [
+        "Choson",
+        "Daehan Minguk",
+        "Daehanminguk",
+        "Hanguk",
+        "Korea (South)",
+        "Korea Republic",
+        "Rep. Korea",
+        "Republic of Korea",
+        "S. Korea",
+        "Silla"
+      ]
+    },
+    "coord": {
+      "lat": 36,
+      "lng": 128
+    }
+  },
+  {
+    "iso3": "KWT",
+    "iso2": "KW",
+    "isoNumeric": "414",
+    "names": {
+      "common": "Kuwait",
+      "official": "Kuwait",
+      "alt": [
+        "State of Kuwait",
+        "kw"
+      ]
+    },
+    "coord": {
+      "lat": 29.166667,
+      "lng": 47.6
+    }
+  },
+  {
+    "iso3": "LAO",
+    "iso2": "LA",
+    "isoNumeric": "418",
+    "names": {
+      "common": "Laos",
+      "official": "Laos",
+      "alt": [
+        "Lao PDR",
+        "Lao People's Democratic Republic",
+        "la"
+      ]
+    },
+    "coord": {
+      "lat": 18.2,
+      "lng": 104.1
+    }
+  },
+  {
+    "iso3": "LBN",
+    "iso2": "LB",
+    "isoNumeric": "422",
+    "names": {
+      "common": "Lebanon",
+      "official": "Lebanese Republic",
+      "alt": [
+        "Lebanese Republic",
+        "Lubnan",
+        "Republic of Lebanon",
+        "State of Lebanon",
+        "lb"
+      ]
+    },
+    "coord": {
+      "lat": 33.833333,
+      "lng": 35.766667
+    }
+  },
+  {
+    "iso3": "LBR",
+    "iso2": "LR",
+    "isoNumeric": "430",
+    "names": {
+      "common": "Liberia",
+      "official": "Liberia",
+      "alt": [
+        "Liber",
+        "Republic of Liberia",
+        "lr"
+      ]
+    },
+    "coord": {
+      "lat": 6.533333,
+      "lng": -9.75
+    }
+  },
+  {
+    "iso3": "LBY",
+    "iso2": "LY",
+    "isoNumeric": "434",
+    "names": {
+      "common": "Libya",
+      "official": "State of Libya",
+      "alt": [
+        "LBA",
+        "State of Libya",
+        "ly"
+      ]
+    },
+    "coord": {
+      "lat": 27,
+      "lng": 17
+    }
+  },
+  {
+    "iso3": "LCA",
+    "iso2": "LC",
+    "isoNumeric": "662",
+    "names": {
+      "common": "Saint Lucia",
+      "official": "Saint Lucia",
+      "alt": [
+        "Hewanorra",
+        "Iyonola",
+        "St Lucia",
+        "St. Lucia",
+        "lc",
+        "lca"
+      ]
+    },
+    "coord": {
+      "lat": 13.883333333333,
+      "lng": -60.966666666667
+    }
+  },
+  {
+    "iso3": "LIE",
+    "iso2": "LI",
+    "isoNumeric": "438",
+    "names": {
+      "common": "Liechtenstein",
+      "official": "Liechtenstein",
+      "alt": [
+        "FL",
+        "Principality of Liechtenstein",
+        "li"
+      ]
+    },
+    "coord": {
+      "lat": 47.145,
+      "lng": 9.553889
+    }
+  },
+  {
+    "iso3": "LKA",
+    "iso2": "LK",
+    "isoNumeric": "144",
+    "names": {
+      "common": "Sri Lanka",
+      "official": "Sri Lanka",
+      "alt": [
+        "Ceylan",
+        "Democratic Socialist Republic of Sri Lanka",
+        "Lanka, Sri",
+        "SRI",
+        "Serendib",
+        "Srilanka",
+        "Taprobane",
+        "ce",
+        "lk",
+        "lke",
+        "sri"
+      ]
+    },
+    "coord": {
+      "lat": 7,
+      "lng": 81
+    }
+  },
+  {
+    "iso3": "LSO",
+    "iso2": "LS",
+    "isoNumeric": "426",
+    "names": {
+      "common": "Lesotho",
+      "official": "Kingdom of Lesotho",
+      "alt": [
+        "Kingdom of Lesotho",
+        "LES",
+        "The Mountain Kingdom",
+        "ls"
+      ]
+    },
+    "coord": {
+      "lat": -29.55,
+      "lng": 28.25
+    }
+  },
+  {
+    "iso3": "LTU",
+    "iso2": "LT",
+    "isoNumeric": "440",
+    "names": {
+      "common": "Lithuania",
+      "official": "Lithuania",
+      "alt": [
+        "Republic of Lithuania"
+      ]
+    },
+    "coord": {
+      "lat": 55.2,
+      "lng": 24
+    }
+  },
+  {
+    "iso3": "LUX",
+    "iso2": "LU",
+    "isoNumeric": "442",
+    "names": {
+      "common": "Luxembourg",
+      "official": "Grand Duchy of Luxembourg",
+      "alt": [
+        "Grand Duchy of Luxembourg"
+      ]
+    },
+    "coord": {
+      "lat": 49.77,
+      "lng": 6.13
+    }
+  },
+  {
+    "iso3": "LVA",
+    "iso2": "LV",
+    "isoNumeric": "428",
+    "names": {
+      "common": "Latvia",
+      "official": "Latvia",
+      "alt": [
+        "Latveja",
+        "Latvejas Republika",
+        "Latvian Republic",
+        "Latvija",
+        "Latvijas Republika",
+        "Leţmо̄",
+        "Leţmо̄ Vabāmо̄",
+        "Republic of Latvia",
+        "lv"
+      ]
+    },
+    "coord": {
+      "lat": 57,
+      "lng": 25
+    }
+  },
+  {
+    "iso3": "MAC",
+    "iso2": "MO",
+    "isoNumeric": "446",
+    "names": {
+      "common": "Macau",
+      "official": "Macau",
+      "alt": [
+        "Aomen",
+        "Macao S.A.R.",
+        "Macao SAR",
+        "Macao SAR, China",
+        "Macao Special Administrative Region",
+        "Macao Special Administrative Region of the People's Republic of China",
+        "Macau SAR",
+        "Macau SAR, China",
+        "Macau Special Administrative Region",
+        "Macau Special Administrative Region of the People's Republic of China"
+      ]
+    },
+    "coord": {
+      "lat": 22.19,
+      "lng": 113.53805555556
+    }
+  },
+  {
+    "iso3": "MAF",
+    "iso2": "MF",
+    "isoNumeric": "663",
+    "names": {
+      "common": "Saint-Martin",
+      "official": "Saint-Martin",
+      "alt": [
+        "Collectivity of Saint Martin",
+        "FR-MF",
+        "Saint Martin (France)",
+        "Saint Martin (French part)",
+        "St Martin",
+        "St. Martin",
+        "St. Martin (French part)",
+        "mf"
+      ]
+    },
+    "coord": {
+      "lat": 18.075277777778,
+      "lng": -63.06
+    }
+  },
+  {
+    "iso3": "MAR",
+    "iso2": "MA",
+    "isoNumeric": "504",
+    "names": {
+      "common": "Morocco",
+      "official": "Kingdom of Morocco",
+      "alt": [
+        "Kingdom of Morocco",
+        "Lmaġrib",
+        "Maroc",
+        "Marocco",
+        "al-Maġrib"
+      ]
+    },
+    "coord": {
+      "lat": 32,
+      "lng": -6
+    }
+  },
+  {
+    "iso3": "MCO",
+    "iso2": "MC",
+    "isoNumeric": "492",
+    "names": {
+      "common": "Monaco",
+      "official": "Monaco",
+      "alt": [
+        "Fort-Hercule",
+        "Mùnegu",
+        "Principality and Diocese of Monaco",
+        "Principality of Monaco",
+        "Principato di Monaco",
+        "Principatu de Mu̍negu",
+        "Principauté de Monaco",
+        "Prinçipatu de Mùnegu",
+        "mc"
+      ]
+    },
+    "coord": {
+      "lat": 43.731111111111,
+      "lng": 7.42
+    }
+  },
+  {
+    "iso3": "MDA",
+    "iso2": "MD",
+    "isoNumeric": "498",
+    "names": {
+      "common": "Moldova",
+      "official": "Moldova",
+      "alt": [
+        "Moldavia",
+        "Republic of Moldova",
+        "Republica Moldova"
+      ]
+    },
+    "coord": {
+      "lat": 47.25,
+      "lng": 28.516667
+    }
+  },
+  {
+    "iso3": "MDG",
+    "iso2": "MG",
+    "isoNumeric": "450",
+    "names": {
+      "common": "Madagascar",
+      "official": "Madagascar",
+      "alt": [
+        "Malagascar",
+        "Malagaskar",
+        "Republic of Madagascar",
+        "mg"
+      ]
+    },
+    "coord": {
+      "lat": -20,
+      "lng": 47
+    }
+  },
+  {
+    "iso3": "MDV",
+    "iso2": "MV",
+    "isoNumeric": "462",
+    "names": {
+      "common": "Maldives",
+      "official": "Maldives",
+      "alt": [
+        "MDV",
+        "Republic of Maldives",
+        "mv"
+      ]
+    },
+    "coord": {
+      "lat": 4.18,
+      "lng": 73.51
+    }
+  },
+  {
+    "iso3": "MEX",
+    "iso2": "MX",
+    "isoNumeric": "484",
+    "names": {
+      "common": "Mexico",
+      "official": "United Mexican States",
+      "alt": [
+        "MXN",
+        "Mexican Republic",
+        "Mexican United States",
+        "US of M",
+        "United Mexican States",
+        "United States of Mexico",
+        "mx"
+      ]
+    },
+    "coord": {
+      "lat": 23,
+      "lng": -102
+    }
+  },
+  {
+    "iso3": "MHL",
+    "iso2": "MH",
+    "isoNumeric": "584",
+    "names": {
+      "common": "Marshall Islands",
+      "official": "Marshall Islands",
+      "alt": [
+        "Republic of the Marshall Islands",
+        "mh"
+      ]
+    },
+    "coord": {
+      "lat": 9.82,
+      "lng": 169.29
+    }
+  },
+  {
+    "iso3": "MKD",
+    "iso2": "MK",
+    "isoNumeric": "807",
+    "names": {
+      "common": "North Macedonia",
+      "official": "North Macedonia",
+      "alt": [
+        "FYR Macedonia",
+        "Former Yugoslav Republic of Macedonia",
+        "MK",
+        "MKD",
+        "Macedonia",
+        "Makedonia",
+        "NM",
+        "Republic of Macedonia",
+        "Republic of North Macedonia"
+      ]
+    },
+    "coord": {
+      "lat": 41.65,
+      "lng": 21.716667
+    }
+  },
+  {
+    "iso3": "MLI",
+    "iso2": "ML",
+    "isoNumeric": "466",
+    "names": {
+      "common": "Mali",
+      "official": "Mali",
+      "alt": [
+        "Republic of Mali",
+        "ml"
+      ]
+    },
+    "coord": {
+      "lat": 17,
+      "lng": -4
+    }
+  },
+  {
+    "iso3": "MLT",
+    "iso2": "MT",
+    "isoNumeric": "470",
+    "names": {
+      "common": "Malta",
+      "official": "Malta",
+      "alt": [
+        "Republic of Malta"
+      ]
+    },
+    "coord": {
+      "lat": 35.9,
+      "lng": 14.4
+    }
+  },
+  {
+    "iso3": "MMR",
+    "iso2": "MM",
+    "isoNumeric": "104",
+    "names": {
+      "common": "Myanmar",
+      "official": "Socialist Republic of the Union of Burma",
+      "alt": [
+        "Burma",
+        "Republic of the Union of Myanmar",
+        "Union of Burma"
+      ]
+    },
+    "coord": {
+      "lat": 22,
+      "lng": 96
+    }
+  },
+  {
+    "iso3": "MNE",
+    "iso2": "ME",
+    "isoNumeric": "499",
+    "names": {
+      "common": "Montenegro",
+      "official": "Montenegro",
+      "alt": [
+        "ME",
+        "Republic of Montenegro"
+      ]
+    },
+    "coord": {
+      "lat": 42.766667,
+      "lng": 19.216667
+    }
+  },
+  {
+    "iso3": "MNG",
+    "iso2": "MN",
+    "isoNumeric": "496",
+    "names": {
+      "common": "Mongolia",
+      "official": "Mongolia",
+      "alt": [
+        "Mongol State",
+        "State of Mongolia"
+      ]
+    },
+    "coord": {
+      "lat": 46,
+      "lng": 105
+    }
+  },
+  {
+    "iso3": "MNP",
+    "iso2": "MP",
+    "isoNumeric": "580",
+    "names": {
+      "common": "Northern Mariana Islands",
+      "official": "Commonwealth of the Northern Mariana Islands",
+      "alt": [
+        "CNMI",
+        "Commonwealth of the Northern Maria Islands",
+        "Commonwealth of the Northern Mariana Islands",
+        "ISO 3166-1:MP",
+        "MP",
+        "NMI",
+        "Northern Marianas",
+        "US-MP",
+        "mp",
+        "nmi",
+        "the Northern Mariana Islands"
+      ]
+    },
+    "coord": {
+      "lat": 16.705,
+      "lng": 145.78
+    }
+  },
+  {
+    "iso3": "MOZ",
+    "iso2": "MZ",
+    "isoNumeric": "508",
+    "names": {
+      "common": "Mozambique",
+      "official": "Mozambique",
+      "alt": [
+        "Moçambique",
+        "Republic of Mozambique",
+        "República de Moçambique",
+        "mz"
+      ]
+    },
+    "coord": {
+      "lat": -19,
+      "lng": 35
+    }
+  },
+  {
+    "iso3": "MRT",
+    "iso2": "MR",
+    "isoNumeric": "478",
+    "names": {
+      "common": "Mauritania",
+      "official": "Mauritania",
+      "alt": [
+        "Agawej",
+        "Gannaar",
+        "Gànnaar",
+        "Islamic Republic of Mauritania",
+        "Mauretania",
+        "Moritani",
+        "Muritanya",
+        "Murutaane",
+        "mr"
+      ]
+    },
+    "coord": {
+      "lat": 21,
+      "lng": -11
+    }
+  },
+  {
+    "iso3": "MSR",
+    "iso2": "MS",
+    "isoNumeric": "500",
+    "names": {
+      "common": "Montserrat",
+      "official": "Montserrat",
+      "alt": [
+        "Island of Montserrat",
+        "MS",
+        "MSR",
+        "ms"
+      ]
+    },
+    "coord": {
+      "lat": 16.75,
+      "lng": -62.2
+    }
+  },
+  {
+    "iso3": "MTQ",
+    "iso2": "MQ",
+    "isoNumeric": "474",
+    "names": {
+      "common": "Martinique",
+      "official": "Martinique",
+      "alt": [
+        "Jouanacaëra",
+        "Madiana",
+        "Madinina",
+        "Martinica",
+        "Matinik",
+        "Matinino",
+        "Matnik",
+        "Territorial Collectivity of Martinique",
+        "Wanakaera"
+      ]
+    },
+    "coord": {
+      "lat": 14.65,
+      "lng": -61.015
+    }
+  },
+  {
+    "iso3": "MUS",
+    "iso2": "MU",
+    "isoNumeric": "480",
+    "names": {
+      "common": "Mauritius",
+      "official": "Mauritius",
+      "alt": [
+        "MRI",
+        "MU",
+        "Maurice",
+        "Moris",
+        "Republic of Mauritius"
+      ]
+    },
+    "coord": {
+      "lat": -20.2,
+      "lng": 57.5
+    }
+  },
+  {
+    "iso3": "MWI",
+    "iso2": "MW",
+    "isoNumeric": "454",
+    "names": {
+      "common": "Malawi",
+      "official": "Malawi",
+      "alt": [
+        "MAW",
+        "Republic of Malawi",
+        "mw"
+      ]
+    },
+    "coord": {
+      "lat": -13,
+      "lng": 34
+    }
+  },
+  {
+    "iso3": "MYS",
+    "iso2": "MY",
+    "isoNumeric": "458",
+    "names": {
+      "common": "Malaysia",
+      "official": "Malaysia",
+      "alt": [
+        "Federation of Malaysia",
+        "Malaysia Federation"
+      ]
+    },
+    "coord": {
+      "lat": 3.7805111,
+      "lng": 102.31436166667
+    }
+  },
+  {
+    "iso3": "MYT",
+    "iso2": "YT",
+    "isoNumeric": "175",
+    "names": {
+      "common": "Mayotte",
+      "official": "Mayotte",
+      "alt": [
+        "Department of Mayotte"
+      ]
+    },
+    "coord": {
+      "lat": -12.843055555556,
+      "lng": 45.138333333333
+    }
+  },
+  {
+    "iso3": "NAM",
+    "iso2": "NA",
+    "isoNumeric": "516",
+    "names": {
+      "common": "Namibia",
+      "official": "Namibia",
+      "alt": [
+        "Republic of Namibia",
+        "na"
+      ]
+    },
+    "coord": {
+      "lat": -23,
+      "lng": 17
+    }
+  },
+  {
+    "iso3": "NCL",
+    "iso2": "NC",
+    "isoNumeric": "540",
+    "names": {
+      "common": "New Caledonia",
+      "official": "New Caledonia",
+      "alt": [
+        "New Cal",
+        "Territory of New Caledonia and Dependencies"
+      ]
+    },
+    "coord": {
+      "lat": -21.25,
+      "lng": 165.3
+    }
+  },
+  {
+    "iso3": "NER",
+    "iso2": "NE",
+    "isoNumeric": "562",
+    "names": {
+      "common": "Niger",
+      "official": "Niger",
+      "alt": [
+        "Republic Niger",
+        "Republic of Niger",
+        "Republic of the Niger",
+        "The Niger",
+        "ne"
+      ]
+    },
+    "coord": {
+      "lat": 17,
+      "lng": 10
+    }
+  },
+  {
+    "iso3": "NFK",
+    "iso2": "NF",
+    "isoNumeric": "574",
+    "names": {
+      "common": "Norfolk Island",
+      "official": "Territory of Norfolk Island",
+      "alt": [
+        "Norfolk Island, Australia",
+        "Norfolk Island, Other Territories",
+        "Norfolk Island, Other Territories, Australia",
+        "Territory of Norfolk Island"
+      ]
+    },
+    "coord": {
+      "lat": -29.033333333333,
+      "lng": 167.94972222222
+    }
+  },
+  {
+    "iso3": "NGA",
+    "iso2": "NG",
+    "isoNumeric": "566",
+    "names": {
+      "common": "Nigeria",
+      "official": "Federal Republic of Nigeria",
+      "alt": [
+        "Federal Republic of Nigeria",
+        "Naija"
+      ]
+    },
+    "coord": {
+      "lat": 9,
+      "lng": 8
+    }
+  },
+  {
+    "iso3": "NIC",
+    "iso2": "NI",
+    "isoNumeric": "558",
+    "names": {
+      "common": "Nicaragua",
+      "official": "Nicaragua",
+      "alt": [
+        "NCA",
+        "NI",
+        "NIC",
+        "Republic of Nicaragua",
+        "ni"
+      ]
+    },
+    "coord": {
+      "lat": 13,
+      "lng": -85
+    }
+  },
+  {
+    "iso3": "NIU",
+    "iso2": "NU",
+    "isoNumeric": "570",
+    "names": {
+      "common": "Niue",
+      "official": "Niue",
+      "alt": [
+        "nu"
+      ]
+    },
+    "coord": {
+      "lat": -19.05,
+      "lng": -169.91666666667
+    }
+  },
+  {
+    "iso3": "NLD",
+    "iso2": "NL",
+    "isoNumeric": "528",
+    "names": {
+      "common": "Netherlands",
+      "official": "Netherlands",
+      "alt": [
+        "Kingdom of Netherlands",
+        "Nederlanden",
+        "the Netherlands"
+      ]
+    },
+    "coord": {
+      "lat": 52.366666666667,
+      "lng": 4.8833333333333
+    }
+  },
+  {
+    "iso3": "NOR",
+    "iso2": "NO",
+    "isoNumeric": "578",
+    "names": {
+      "common": "Norway",
+      "official": "Norway",
+      "alt": [
+        "Kingdom of Norway"
+      ]
+    },
+    "coord": {
+      "lat": 59.933333333333,
+      "lng": 10.683333333333
+    }
+  },
+  {
+    "iso3": "NPL",
+    "iso2": "NP",
+    "isoNumeric": "524",
+    "names": {
+      "common": "Nepal",
+      "official": "Nepal",
+      "alt": [
+        "Bal-bo",
+        "Bal-po'i yul",
+        "Bal-yul",
+        "Balbo",
+        "Balpo",
+        "Balpo-yul",
+        "Federal Democratic Republic of Nepal",
+        "Naipala",
+        "Naipál",
+        "Naipála",
+        "Ne-pel",
+        "Necbal",
+        "Nehpal",
+        "Nei-pal",
+        "Nekbal",
+        "Nekpal",
+        "Nepall",
+        "Nepaul",
+        "Nepál",
+        "Nercerri",
+        "Ni-po-lo",
+        "Ni-po-louo",
+        "Niepal",
+        "Nipal",
+        "Népaal",
+        "Népál",
+        "Pa-eul-pou",
+        "Pa-le-pou",
+        "Pa-lo-pou",
+        "Pai-pou",
+        "Palpa",
+        "Palpou",
+        "Paï-pou"
+      ]
+    },
+    "coord": {
+      "lat": 28,
+      "lng": 84
+    }
+  },
+  {
+    "iso3": "NRU",
+    "iso2": "NR",
+    "isoNumeric": "520",
+    "names": {
+      "common": "Nauru",
+      "official": "Republic of Naoero",
+      "alt": [
+        "Naoero",
+        "Pleasant Island",
+        "Republic of Naoero",
+        "Republic of Nauru"
+      ]
+    },
+    "coord": {
+      "lat": -0.5275,
+      "lng": 166.935
+    }
+  },
+  {
+    "iso3": "NZL",
+    "iso2": "NZ",
+    "isoNumeric": "554",
+    "names": {
+      "common": "New Zealand",
+      "official": "New Zealand",
+      "alt": [
+        "Aotearoa New Zealand",
+        "Dominion of New Zealand",
+        "nz"
+      ]
+    },
+    "coord": {
+      "lat": -41.2,
+      "lng": 174
+    }
+  },
+  {
+    "iso3": "OMN",
+    "iso2": "OM",
+    "isoNumeric": "512",
+    "names": {
+      "common": "Oman",
+      "official": "Oman",
+      "alt": [
+        "Sultanate of Oman",
+        "Uman",
+        "om",
+        "omn"
+      ]
+    },
+    "coord": {
+      "lat": 21,
+      "lng": 57
+    }
+  },
+  {
+    "iso3": "PAK",
+    "iso2": "PK",
+    "isoNumeric": "586",
+    "names": {
+      "common": "Pakistan",
+      "official": "Pakistan",
+      "alt": [
+        "Hồi Quốc",
+        "Islamic Republic of Pakistan",
+        "Republic of Pakistan",
+        "Tây Hồi",
+        "pk"
+      ]
+    },
+    "coord": {
+      "lat": 30,
+      "lng": 71
+    }
+  },
+  {
+    "iso3": "PAN",
+    "iso2": "PA",
+    "isoNumeric": "591",
+    "names": {
+      "common": "Panama",
+      "official": "Panama",
+      "alt": [
+        "Republic of Panama",
+        "pa"
+      ]
+    },
+    "coord": {
+      "lat": 8.616667,
+      "lng": -80.366667
+    }
+  },
+  {
+    "iso3": "PCN",
+    "iso2": "PN",
+    "isoNumeric": "612",
+    "names": {
+      "common": "Pitcairn Islands",
+      "official": "Pitcairn",
+      "alt": [
+        "Occas Island",
+        "Pitcairn, Henderson, Ducie and Oeno Islands",
+        "pn"
+      ]
+    },
+    "coord": {
+      "lat": -25.0677812,
+      "lng": -130.1045778
+    }
+  },
+  {
+    "iso3": "PER",
+    "iso2": "PE",
+    "isoNumeric": "604",
+    "names": {
+      "common": "Peru",
+      "official": "Peru",
+      "alt": [
+        "Republic of Peru",
+        "Republica del Peru",
+        "pe",
+        "per"
+      ]
+    },
+    "coord": {
+      "lat": -9.4,
+      "lng": -76
+    }
+  },
+  {
+    "iso3": "PHL",
+    "iso2": "PH",
+    "isoNumeric": "608",
+    "names": {
+      "common": "Philippines",
+      "official": "Republic of the Philippines",
+      "alt": [
+        "Philippine Islands",
+        "RP",
+        "Republic of the Philippines",
+        "The Philippines"
+      ]
+    },
+    "coord": {
+      "lat": 12,
+      "lng": 123
+    }
+  },
+  {
+    "iso3": "PLW",
+    "iso2": "PW",
+    "isoNumeric": "585",
+    "names": {
+      "common": "Palau",
+      "official": "Palau",
+      "alt": [
+        "Belau",
+        "Peeloo",
+        "Pelew",
+        "Pelew islands",
+        "Pellew",
+        "Republic of Belau",
+        "Republic of Palau",
+        "pw"
+      ]
+    },
+    "coord": {
+      "lat": 7.466667,
+      "lng": 134.55
+    }
+  },
+  {
+    "iso3": "PNG",
+    "iso2": "PG",
+    "isoNumeric": "598",
+    "names": {
+      "common": "Papua New Guinea",
+      "official": "Papua New Guinea",
+      "alt": [
+        "Independent State of Papua New Guinea"
+      ]
+    },
+    "coord": {
+      "lat": -6.3,
+      "lng": 147
+    }
+  },
+  {
+    "iso3": "POL",
+    "iso2": "PL",
+    "isoNumeric": "616",
+    "names": {
+      "common": "Poland",
+      "official": "Poland",
+      "alt": [
+        "Republic of Poland"
+      ]
+    },
+    "coord": {
+      "lat": 52,
+      "lng": 19
+    }
+  },
+  {
+    "iso3": "PRI",
+    "iso2": "PR",
+    "isoNumeric": "630",
+    "names": {
+      "common": "Puerto Rico",
+      "official": "Commonwealth of Puerto Rico",
+      "alt": [
+        "Borikén",
+        "Borinquen",
+        "Boriquén",
+        "Commonwealth of Puerto Rico",
+        "Free Associated State of Puerto Rico",
+        "Island of Enchantment",
+        "Isle of Enchantment",
+        "Porto Rico",
+        "Territory of Porto Rico",
+        "Territory of Puerto Rico"
+      ]
+    },
+    "coord": {
+      "lat": 18.25,
+      "lng": -66.5
+    }
+  },
+  {
+    "iso3": "PRK",
+    "iso2": "KP",
+    "isoNumeric": "408",
+    "names": {
+      "common": "North Korea",
+      "official": "North Korea",
+      "alt": [
+        "DPR Korea",
+        "DPRK",
+        "Democratic People's Republic of Korea",
+        "N. Korea",
+        "kp"
+      ]
+    },
+    "coord": {
+      "lat": 40,
+      "lng": 127
+    }
+  },
+  {
+    "iso3": "PRT",
+    "iso2": "PT",
+    "isoNumeric": "620",
+    "names": {
+      "common": "Portugal",
+      "official": "Portugal",
+      "alt": [
+        "POR",
+        "Portuguese Republic"
+      ]
+    },
+    "coord": {
+      "lat": 38.7,
+      "lng": -9.1833333333333
+    }
+  },
+  {
+    "iso3": "PRY",
+    "iso2": "PY",
+    "isoNumeric": "600",
+    "names": {
+      "common": "Paraguay",
+      "official": "Paraguay",
+      "alt": [
+        "Heart of South America",
+        "Republic of Paraguay"
+      ]
+    },
+    "coord": {
+      "lat": -23.5,
+      "lng": -58
+    }
+  },
+  {
+    "iso3": "PSE",
+    "iso2": "PS",
+    "isoNumeric": "275",
+    "names": {
+      "common": "Palestine",
+      "official": "Palestine",
+      "alt": [
+        "PSE",
+        "Palestinian Authority",
+        "Palestinian National Authority",
+        "State of Palestine"
+      ]
+    },
+    "coord": {
+      "lat": 32,
+      "lng": 35.25
+    }
+  },
+  {
+    "iso3": "PYF",
+    "iso2": "PF",
+    "isoNumeric": "258",
+    "names": {
+      "common": "French Polynesia",
+      "official": "French Polynesia",
+      "alt": [
+        "French Establishments in Oceania",
+        "French Oceania",
+        "French Settlements in Oceania",
+        "Territory of French Polynesia",
+        "pf"
+      ]
+    },
+    "coord": {
+      "lat": -17.7,
+      "lng": -149.4
+    }
+  },
+  {
+    "iso3": "QAT",
+    "iso2": "QA",
+    "isoNumeric": "634",
+    "names": {
+      "common": "Qatar",
+      "official": "Qatar",
+      "alt": [
+        "State of Qatar",
+        "qa",
+        "qat"
+      ]
+    },
+    "coord": {
+      "lat": 25.269535,
+      "lng": 51.212767
+    }
+  },
+  {
+    "iso3": "REU",
+    "iso2": "RE",
+    "isoNumeric": "638",
+    "names": {
+      "common": "Réunion",
+      "official": "Réunion",
+      "alt": [
+        ".re",
+        "Bourbon Island",
+        "ISO 3166-1:RE",
+        "La Reunion",
+        "La Réunion",
+        "La Réunion Island",
+        "Reunion Island",
+        "re",
+        "Île de Bourbon",
+        "Île de La Réunion",
+        "Île de la Réunion"
+      ]
+    },
+    "coord": {
+      "lat": -21.114444444444,
+      "lng": 55.5325
+    }
+  },
+  {
+    "iso3": "ROU",
+    "iso2": "RO",
+    "isoNumeric": "642",
+    "names": {
+      "common": "Romania",
+      "official": "Romania",
+      "alt": [
+        "Roumania",
+        "Rumania"
+      ]
+    },
+    "coord": {
+      "lat": 46,
+      "lng": 25
+    }
+  },
+  {
+    "iso3": "RUS",
+    "iso2": "RU",
+    "isoNumeric": "643",
+    "names": {
+      "common": "Russia",
+      "official": "Russia",
+      "alt": [
+        "Russian Federation"
+      ]
+    },
+    "coord": {
+      "lat": 66.416666666667,
+      "lng": 94.25
+    }
+  },
+  {
+    "iso3": "RWA",
+    "iso2": "RW",
+    "isoNumeric": "646",
+    "names": {
+      "common": "Rwanda",
+      "official": "Republic of Rwanda",
+      "alt": [
+        "Republic of Rwanda",
+        "The Land of a Thousand Hills"
+      ]
+    },
+    "coord": {
+      "lat": -2,
+      "lng": 30
+    }
+  },
+  {
+    "iso3": "SAU",
+    "iso2": "SA",
+    "isoNumeric": "682",
+    "names": {
+      "common": "Saudi Arabia",
+      "official": "Saudi Arabia",
+      "alt": [
+        "Kingdom of Saudi Arabia",
+        "Saudi"
+      ]
+    },
+    "coord": {
+      "lat": 23.716667,
+      "lng": 44.116667
+    }
+  },
+  {
+    "iso3": "SDN",
+    "iso2": "SD",
+    "isoNumeric": "729",
+    "names": {
+      "common": "Sudan",
+      "official": "Sudan",
+      "alt": [
+        "North Sudan",
+        "Republic of Sudan",
+        "Republic of the Sudan",
+        "SUD",
+        "Soudan",
+        "al-Sudan",
+        "as-Sudan",
+        "as-Sūdān",
+        "sd",
+        "the Sudan"
+      ]
+    },
+    "coord": {
+      "lat": 15,
+      "lng": 32
+    }
+  },
+  {
+    "iso3": "SEN",
+    "iso2": "SN",
+    "isoNumeric": "686",
+    "names": {
+      "common": "Senegal",
+      "official": "Senegal",
+      "alt": [
+        "Republic of Senegal"
+      ]
+    },
+    "coord": {
+      "lat": 14.366667,
+      "lng": -14.283333
+    }
+  },
+  {
+    "iso3": "SGP",
+    "iso2": "SG",
+    "isoNumeric": "702",
+    "names": {
+      "common": "Singapore",
+      "official": "Republic of Singapore",
+      "alt": [
+        "Garden City",
+        "Lion City",
+        "Republic of Singapore",
+        "S'pore",
+        "Singapore City",
+        "sg"
+      ]
+    },
+    "coord": {
+      "lat": 1.3,
+      "lng": 103.8
+    }
+  },
+  {
+    "iso3": "SGS",
+    "iso2": "GS",
+    "isoNumeric": "239",
+    "names": {
+      "common": "South Georgia and the South Sandwich Islands",
+      "official": "South Georgia and the South Sandwich Islands",
+      "alt": [
+        "SGSSI",
+        "South Georgia",
+        "South Georgia and South Sandwich Islands",
+        "South Sandwich Islands",
+        "gs"
+      ]
+    },
+    "coord": {
+      "lat": -54.25,
+      "lng": -36.75
+    }
+  },
+  {
+    "iso3": "SHN",
+    "iso2": "SH",
+    "isoNumeric": "654",
+    "names": {
+      "common": "Saint Helena, Ascension and Tristan da Cunha",
+      "official": "St Helena, Ascension & Tristan da Cunha",
+      "alt": [
+        "Saint Helena and Dependencies",
+        "Saint Helena, Ascension, and Tristan da Cunha"
+      ]
+    },
+    "coord": {
+      "lat": -15.9245,
+      "lng": -5.7181
+    }
+  },
+  {
+    "iso3": "SJM",
+    "iso2": "SJ",
+    "isoNumeric": "744",
+    "names": {
+      "common": "Svalbard and Jan Mayen",
+      "official": "Svalbard and Jan Mayen",
+      "alt": [
+        "sj",
+        "🇸🇯"
+      ]
+    },
+    "coord": {
+      "lat": 78.6351661,
+      "lng": 21.9939078
+    }
+  },
+  {
+    "iso3": "SLB",
+    "iso2": "SB",
+    "isoNumeric": "090",
+    "names": {
+      "common": "Solomon Islands",
+      "official": "Solomon Islands",
+      "alt": [
+        "SOL",
+        "sb",
+        "the Solomon Islands"
+      ]
+    },
+    "coord": {
+      "lat": -9.4666666666667,
+      "lng": 159.81666666667
+    }
+  },
+  {
+    "iso3": "SLE",
+    "iso2": "SL",
+    "isoNumeric": "694",
+    "names": {
+      "common": "Sierra Leone",
+      "official": "Sierra Leone",
+      "alt": [
+        "Republic of Sierra Leone",
+        "SLE",
+        "sl"
+      ]
+    },
+    "coord": {
+      "lat": 8.5,
+      "lng": -12.1
+    }
+  },
+  {
+    "iso3": "SLV",
+    "iso2": "SV",
+    "isoNumeric": "222",
+    "names": {
+      "common": "El Salvador",
+      "official": "El Salvador",
+      "alt": [
+        "ESA",
+        "Republic of El Salvador",
+        "Salvador",
+        "sv"
+      ]
+    },
+    "coord": {
+      "lat": 13.668889,
+      "lng": -88.866111
+    }
+  },
+  {
+    "iso3": "SMR",
+    "iso2": "SM",
+    "isoNumeric": "674",
+    "names": {
+      "common": "San Marino",
+      "official": "San Marino",
+      "alt": [
+        "Most Serene Republic of San Marino",
+        "sm"
+      ]
+    },
+    "coord": {
+      "lat": 43.933333333333,
+      "lng": 12.466666666667
+    }
+  },
+  {
+    "iso3": "SOM",
+    "iso2": "SO",
+    "isoNumeric": "706",
+    "names": {
+      "common": "Somalia",
+      "official": "Federal Republic of Somalia",
+      "alt": [
+        "Federal Republic of Somalia"
+      ]
+    },
+    "coord": {
+      "lat": 6,
+      "lng": 47
+    }
+  },
+  {
+    "iso3": "SPM",
+    "iso2": "PM",
+    "isoNumeric": "666",
+    "names": {
+      "common": "Saint Pierre and Miquelon",
+      "official": "Saint Pierre and Miquelon",
+      "alt": [
+        "FR-PM",
+        "Saint Pierre & Miquelon",
+        "Saint-Pierre & Miquelon",
+        "Saint-Pierre and Miquelon",
+        "St Pierre & Miquelon",
+        "St Pierre and Miquelon",
+        "St-Pierre & Miquelon",
+        "St. Pierre & Miquelon",
+        "St. Pierre and Miquelon",
+        "St.-Pierre & Miquelon",
+        "St.-Pierre and Miquelon",
+        "Territorial Collectivity of Saint Pierre and Miquelon",
+        "pm"
+      ]
+    },
+    "coord": {
+      "lat": 46.85,
+      "lng": -56.3
+    }
+  },
+  {
+    "iso3": "SRB",
+    "iso2": "RS",
+    "isoNumeric": "688",
+    "names": {
+      "common": "Serbia",
+      "official": "Serbia",
+      "alt": [
+        "RS",
+        "Republic of Serbia"
+      ]
+    },
+    "coord": {
+      "lat": 43.95,
+      "lng": 20.933333333333
+    }
+  },
+  {
+    "iso3": "SSD",
+    "iso2": "SS",
+    "isoNumeric": "728",
+    "names": {
+      "common": "South Sudan",
+      "official": "Republic of South Sudan",
+      "alt": [
+        "Republic of South Sudan",
+        "SSD",
+        "Southern Sudan",
+        "ss"
+      ]
+    },
+    "coord": {
+      "lat": 7,
+      "lng": 30
+    }
+  },
+  {
+    "iso3": "STP",
+    "iso2": "ST",
+    "isoNumeric": "678",
+    "names": {
+      "common": "São Tomé and Príncipe",
+      "official": "São Tomé and Príncipe",
+      "alt": [
+        "Democratic Republic of São Tomé and Príncipe",
+        "Sao Tome & Principe",
+        "Sao Tome and Principe",
+        "São Tomé og Príncipe",
+        "st"
+      ]
+    },
+    "coord": {
+      "lat": 0.316667,
+      "lng": 6.6
+    }
+  },
+  {
+    "iso3": "SUR",
+    "iso2": "SR",
+    "isoNumeric": "740",
+    "names": {
+      "common": "Suriname",
+      "official": "Suriname",
+      "alt": [
+        "Dutch Guiana",
+        "Republic of Surinam",
+        "Republic of Suriname",
+        "Surinam",
+        "Surrinam",
+        "sr"
+      ]
+    },
+    "coord": {
+      "lat": 4,
+      "lng": -56
+    }
+  },
+  {
+    "iso3": "SVK",
+    "iso2": "SK",
+    "isoNumeric": "703",
+    "names": {
+      "common": "Slovakia",
+      "official": "Slovakia",
+      "alt": [
+        "SK",
+        "SVK",
+        "Slovak Republic"
+      ]
+    },
+    "coord": {
+      "lat": 48.7,
+      "lng": 19.7
+    }
+  },
+  {
+    "iso3": "SVN",
+    "iso2": "SI",
+    "isoNumeric": "705",
+    "names": {
+      "common": "Slovenia",
+      "official": "Slovenia",
+      "alt": [
+        "Republic of Slovenia",
+        "Slovenija",
+        "si",
+        "slo",
+        "svn"
+      ]
+    },
+    "coord": {
+      "lat": 46,
+      "lng": 15
+    }
+  },
+  {
+    "iso3": "SWE",
+    "iso2": "SE",
+    "isoNumeric": "752",
+    "names": {
+      "common": "Sweden",
+      "official": "Sweden",
+      "alt": [
+        "Kingdom of Sweden",
+        "Swedish Kingdom",
+        "se"
+      ]
+    },
+    "coord": {
+      "lat": 61,
+      "lng": 15
+    }
+  },
+  {
+    "iso3": "SWZ",
+    "iso2": "SZ",
+    "isoNumeric": "748",
+    "names": {
+      "common": "Eswatini",
+      "official": "Kingdom of Eswatini",
+      "alt": [
+        "Kingdom of Eswatini",
+        "Kingdom of Swaziland",
+        "Swaziland",
+        "Umbuso weSwatini",
+        "sz"
+      ]
+    },
+    "coord": {
+      "lat": -26.483333,
+      "lng": 31.433333
+    }
+  },
+  {
+    "iso3": "SXM",
+    "iso2": "SX",
+    "isoNumeric": "534",
+    "names": {
+      "common": "Sint Maarten",
+      "official": "Sint Maarten",
+      "alt": [
+        "NL-SX",
+        "SX",
+        "Saint Martin",
+        "Saint Martin (Dutch part)",
+        "Sint Maarten (Dutch part)",
+        "Sint Martin",
+        "St Martin",
+        "St. Maarten",
+        "sxm"
+      ]
+    },
+    "coord": {
+      "lat": 18.031944444444,
+      "lng": -63.067777777778
+    }
+  },
+  {
+    "iso3": "SYC",
+    "iso2": "SC",
+    "isoNumeric": "690",
+    "names": {
+      "common": "Seychelles",
+      "official": "Seychelles",
+      "alt": [
+        "Republic of Seychelles",
+        "SEY",
+        "sc"
+      ]
+    },
+    "coord": {
+      "lat": -7.1,
+      "lng": 52.766667
+    }
+  },
+  {
+    "iso3": "SYR",
+    "iso2": "SY",
+    "isoNumeric": "760",
+    "names": {
+      "common": "Syria",
+      "official": "Syrian Arab Republic",
+      "alt": [
+        "Surya",
+        "Syrian Arab Republic"
+      ]
+    },
+    "coord": {
+      "lat": 35.216667,
+      "lng": 38.583333
+    }
+  },
+  {
+    "iso3": "TCA",
+    "iso2": "TC",
+    "isoNumeric": "796",
+    "names": {
+      "common": "Turks and Caicos Islands",
+      "official": "Turks and Caicos Islands",
+      "alt": [
+        "TCI",
+        "Turks & Caicos",
+        "Turks and Caicos",
+        "tc"
+      ]
+    },
+    "coord": {
+      "lat": 21.78,
+      "lng": -71.8
+    }
+  },
+  {
+    "iso3": "TCD",
+    "iso2": "TD",
+    "isoNumeric": "148",
+    "names": {
+      "common": "Chad",
+      "official": "Republic of Chad",
+      "alt": [
+        "CHA",
+        "GUM",
+        "Republic of Chad",
+        "td"
+      ]
+    },
+    "coord": {
+      "lat": 15.466667,
+      "lng": 19.4
+    }
+  },
+  {
+    "iso3": "TGO",
+    "iso2": "TG",
+    "isoNumeric": "768",
+    "names": {
+      "common": "Togo",
+      "official": "Togo",
+      "alt": [
+        "Togolese Republic",
+        "tg"
+      ]
+    },
+    "coord": {
+      "lat": 8.25,
+      "lng": 1.183333
+    }
+  },
+  {
+    "iso3": "THA",
+    "iso2": "TH",
+    "isoNumeric": "764",
+    "names": {
+      "common": "Thailand",
+      "official": "Kingdom of Thailand",
+      "alt": [
+        "Kingdom of Siam",
+        "Kingdom of Thailand",
+        "Prathet Thai",
+        "Ratcha-anachak Thai",
+        "Thai",
+        "The Kingdom of Siam",
+        "The Kingdom of Thailand",
+        "th"
+      ]
+    },
+    "coord": {
+      "lat": 14,
+      "lng": 101
+    }
+  },
+  {
+    "iso3": "TJK",
+    "iso2": "TJ",
+    "isoNumeric": "762",
+    "names": {
+      "common": "Tajikistan",
+      "official": "Tajikistan",
+      "alt": [
+        "Republic of Tajikistan",
+        "tj"
+      ]
+    },
+    "coord": {
+      "lat": 38.583333,
+      "lng": 71.366667
+    }
+  },
+  {
+    "iso3": "TKL",
+    "iso2": "TK",
+    "isoNumeric": "772",
+    "names": {
+      "common": "Tokelau",
+      "official": "Tokelau",
+      "alt": [
+        "Tokelau Islands",
+        "Union Islands",
+        "tk"
+      ]
+    },
+    "coord": {
+      "lat": -9.1666666666667,
+      "lng": -171.83333333333
+    }
+  },
+  {
+    "iso3": "TKM",
+    "iso2": "TM",
+    "isoNumeric": "795",
+    "names": {
+      "common": "Turkmenistan",
+      "official": "Turkmenistan",
+      "alt": [
+        "TKM",
+        "Turkmenia",
+        "tm"
+      ]
+    },
+    "coord": {
+      "lat": 39,
+      "lng": 60
+    }
+  },
+  {
+    "iso3": "TLS",
+    "iso2": "TL",
+    "isoNumeric": "626",
+    "names": {
+      "common": "Timor-Leste",
+      "official": "Timor-Leste",
+      "alt": [
+        "Democratic Republic of Timor-Leste",
+        "East Timor",
+        "TL"
+      ]
+    },
+    "coord": {
+      "lat": -8.966667,
+      "lng": 125.75
+    }
+  },
+  {
+    "iso3": "TON",
+    "iso2": "TO",
+    "isoNumeric": "776",
+    "names": {
+      "common": "Tonga",
+      "official": "Tonga",
+      "alt": [
+        "Friendly Islands",
+        "Kingdom of Tonga",
+        "TGA",
+        "Tonga Islands",
+        "to"
+      ]
+    },
+    "coord": {
+      "lat": -20.587778,
+      "lng": -174.810278
+    }
+  },
+  {
+    "iso3": "TTO",
+    "iso2": "TT",
+    "isoNumeric": "780",
+    "names": {
+      "common": "Trinidad and Tobago",
+      "official": "Trinidad and Tobago",
+      "alt": [
+        "Republic of Trinidad and Tobago",
+        "Trinidad & Tobago",
+        "tt"
+      ]
+    },
+    "coord": {
+      "lat": 10.666666666667,
+      "lng": -61.516666666667
+    }
+  },
+  {
+    "iso3": "TUN",
+    "iso2": "TN",
+    "isoNumeric": "788",
+    "names": {
+      "common": "Tunisia",
+      "official": "Republic of Tunisia",
+      "alt": [
+        "Republic of Tunisia",
+        "Tunisian Republic",
+        "tn"
+      ]
+    },
+    "coord": {
+      "lat": 34,
+      "lng": 10
+    }
+  },
+  {
+    "iso3": "TUR",
+    "iso2": "TR",
+    "isoNumeric": "792",
+    "names": {
+      "common": "Turkey",
+      "official": "Turkey",
+      "alt": [
+        "Republic of Turkey",
+        "Republic of Türkiye",
+        "Turkiye",
+        "Türkiye"
+      ]
+    },
+    "coord": {
+      "lat": 39,
+      "lng": 36
+    }
+  },
+  {
+    "iso3": "TUV",
+    "iso2": "TV",
+    "isoNumeric": "798",
+    "names": {
+      "common": "Tuvalu",
+      "official": "Tuvalu",
+      "alt": [
+        "Ellice Islands",
+        "TUV",
+        "tv"
+      ]
+    },
+    "coord": {
+      "lat": -7.475,
+      "lng": 178.005556
+    }
+  },
+  {
+    "iso3": "TWN",
+    "iso2": "TW",
+    "isoNumeric": "158",
+    "names": {
+      "common": "Taiwan",
+      "official": "Taiwan",
+      "alt": [
+        "China, Republic of",
+        "Chinese Republic",
+        "Chinese Taipei",
+        "Chunghwa Minkuo",
+        "Chunghwa Minkwo",
+        "Free China",
+        "Nationalist China",
+        "ROC",
+        "Republic of China",
+        "Republic of China (Taiwan)",
+        "TW",
+        "TWN",
+        "Taiwan ROC",
+        "The ROC"
+      ]
+    },
+    "coord": {
+      "lat": 24,
+      "lng": 121
+    }
+  },
+  {
+    "iso3": "TZA",
+    "iso2": "TZ",
+    "isoNumeric": "834",
+    "names": {
+      "common": "Tanzania",
+      "official": "Tanzania",
+      "alt": [
+        "Tanzania, United Republic of",
+        "United Republic of Tanganyika and Zanzibar",
+        "United Republic of Tanzania",
+        "tz",
+        "tza"
+      ]
+    },
+    "coord": {
+      "lat": -6.3069444444444,
+      "lng": 34.853888888889
+    }
+  },
+  {
+    "iso3": "UGA",
+    "iso2": "UG",
+    "isoNumeric": "800",
+    "names": {
+      "common": "Uganda",
+      "official": "Uganda",
+      "alt": [
+        "+256",
+        "Ouganda",
+        "Pearl of Africa",
+        "Republic of Uganda",
+        "The Republic of Uganda",
+        "Ugandah",
+        "ug"
+      ]
+    },
+    "coord": {
+      "lat": 1.28,
+      "lng": 32.39
+    }
+  },
+  {
+    "iso3": "UKR",
+    "iso2": "UA",
+    "isoNumeric": "804",
+    "names": {
+      "common": "Ukraine",
+      "official": "Ukraine",
+      "alt": [
+        "Ukr.",
+        "Ukraina",
+        "Ukrainia",
+        "Ukraïna"
+      ]
+    },
+    "coord": {
+      "lat": 49,
+      "lng": 32
+    }
+  },
+  {
+    "iso3": "UMI",
+    "iso2": "UM",
+    "isoNumeric": "581",
+    "names": {
+      "common": "United States Minor Outlying Islands",
+      "official": "United States Minor Outlying Islands",
+      "alt": [
+        "U.S. Minor Outlying Islands",
+        "US Minor Outlying Islands",
+        "US-UM",
+        "USMOI",
+        "um"
+      ]
+    },
+    "coord": {
+      "lat": 19.3,
+      "lng": 166.633333
+    }
+  },
+  {
+    "iso3": "URY",
+    "iso2": "UY",
+    "isoNumeric": "858",
+    "names": {
+      "common": "Uruguay",
+      "official": "Uruguay",
+      "alt": [
+        "Eastern Republic of Uruguay",
+        "Oriental Republic of Uruguay",
+        "URU",
+        "uy"
+      ]
+    },
+    "coord": {
+      "lat": -33,
+      "lng": -56
+    }
+  },
+  {
+    "iso3": "USA",
+    "iso2": "US",
+    "isoNumeric": "840",
+    "names": {
+      "common": "United States",
+      "official": "the United States of America",
+      "alt": [
+        "Merica",
+        "Murica",
+        "U. S.",
+        "U. S. A.",
+        "U.S. of America",
+        "US of A",
+        "US of America",
+        "United States of America",
+        "the States",
+        "the U.S.",
+        "the U.S. of A",
+        "the U.S. of America",
+        "the U.S.A.",
+        "the US",
+        "the US of A",
+        "the US of America",
+        "the USA",
+        "the United States",
+        "the United States of America"
+      ]
+    },
+    "coord": {
+      "lat": 39.828175,
+      "lng": -98.5795
+    }
+  },
+  {
+    "iso3": "UZB",
+    "iso2": "UZ",
+    "isoNumeric": "860",
+    "names": {
+      "common": "Uzbekistan",
+      "official": "Uzbekistan",
+      "alt": [
+        "Republic of Uzbekistan"
+      ]
+    },
+    "coord": {
+      "lat": 41,
+      "lng": 66
+    }
+  },
+  {
+    "iso3": "VAT",
+    "iso2": "VA",
+    "isoNumeric": "336",
+    "names": {
+      "common": "Vatican City",
+      "official": "Vatican City",
+      "alt": [
+        "Città del Vaticano",
+        "Holy See",
+        "Papal State",
+        "State of Vatican City",
+        "Stato della Città del Vaticano",
+        "Status Civitatis Vaticanae",
+        "The Vatican",
+        "Vatican",
+        "Vatican City State"
+      ]
+    },
+    "coord": {
+      "lat": 41.904,
+      "lng": 12.453
+    }
+  },
+  {
+    "iso3": "VCT",
+    "iso2": "VC",
+    "isoNumeric": "670",
+    "names": {
+      "common": "Saint Vincent and the Grenadines",
+      "official": "Saint Vincent and the Grenadines",
+      "alt": [
+        "Saint Vincent",
+        "St Vincent",
+        "St Vincent and the Grenadines",
+        "St. Vincent",
+        "St. Vincent and the Grenadines",
+        "vc",
+        "vct"
+      ]
+    },
+    "coord": {
+      "lat": 13.0139,
+      "lng": -61.2296
+    }
+  },
+  {
+    "iso3": "VEN",
+    "iso2": "VE",
+    "isoNumeric": "862",
+    "names": {
+      "common": "Venezuela",
+      "official": "Bolivarian Republic of Venezuela",
+      "alt": [
+        "BR Venezuela",
+        "Bolivarian Republic of Venezuela",
+        "Republic of Venezuela"
+      ]
+    },
+    "coord": {
+      "lat": 8,
+      "lng": -67
+    }
+  },
+  {
+    "iso3": "VGB",
+    "iso2": "VG",
+    "isoNumeric": "092",
+    "names": {
+      "common": "British Virgin Islands",
+      "official": "British Virgin Islands",
+      "alt": [
+        "B.V.I.",
+        "BVI",
+        "IVB",
+        "Virgin Islands of the United Kingdom",
+        "Virgin Islands, United Kingdom",
+        "vg"
+      ]
+    },
+    "coord": {
+      "lat": 18.445,
+      "lng": -64.54
+    }
+  },
+  {
+    "iso3": "VIR",
+    "iso2": "VI",
+    "isoNumeric": "850",
+    "names": {
+      "common": "United States Virgin Islands",
+      "official": "U.S. Virgin Islands",
+      "alt": [
+        "American Virgin Islands",
+        "U.S. Virgin Islands",
+        "US Virgin Islands",
+        "Virgin Islands of the United States",
+        "the United States Virgin Islands"
+      ]
+    },
+    "coord": {
+      "lat": 18.333333,
+      "lng": -64.833333
+    }
+  },
+  {
+    "iso3": "VNM",
+    "iso2": "VN",
+    "isoNumeric": "704",
+    "names": {
+      "common": "Vietnam",
+      "official": "Socialist Republic of Vietnam",
+      "alt": [
+        "SRV",
+        "Socialist Republic of Viet Nam",
+        "Socialist Republic of Vietnam",
+        "VIE",
+        "VN",
+        "VNM",
+        "Viet Nam",
+        "Việt Nam"
+      ]
+    },
+    "coord": {
+      "lat": 16,
+      "lng": 108
+    }
+  },
+  {
+    "iso3": "VUT",
+    "iso2": "VU",
+    "isoNumeric": "548",
+    "names": {
+      "common": "Vanuatu",
+      "official": "Republic of Vanuatu",
+      "alt": [
+        "Republic of Vanuatu",
+        "VAN",
+        "van",
+        "vu",
+        "vut"
+      ]
+    },
+    "coord": {
+      "lat": -16.633330555556,
+      "lng": 168.01666944444
+    }
+  },
+  {
+    "iso3": "WLF",
+    "iso2": "WF",
+    "isoNumeric": "876",
+    "names": {
+      "common": "Wallis and Futuna",
+      "official": "Wallis and Futuna",
+      "alt": [
+        "Wallis & Futuna",
+        "Wallis and Futuna Islands"
+      ]
+    },
+    "coord": {
+      "lat": -14.30181,
+      "lng": -178.10932
+    }
+  },
+  {
+    "iso3": "WSM",
+    "iso2": "WS",
+    "isoNumeric": "882",
+    "names": {
+      "common": "Samoa",
+      "official": "Western Samoa",
+      "alt": [
+        "Independent State of Samoa",
+        "SAM",
+        "Western Samoa",
+        "ws"
+      ]
+    },
+    "coord": {
+      "lat": -13.745,
+      "lng": -172.2175
+    }
+  },
+  {
+    "iso3": "XKS",
+    "iso2": "XK",
+    "isoNumeric": null,
+    "names": {
+      "common": "Kosovo",
+      "official": "Kosovo",
+      "alt": [
+        "KOS",
+        "KV",
+        "Kosova",
+        "RKS",
+        "Republic of Kosovo",
+        "XK",
+        "XKX"
+      ]
+    },
+    "coord": {
+      "lat": 42.55,
+      "lng": 20.833333333333
+    }
+  },
+  {
+    "iso3": "XKX",
+    "iso2": "XK",
+    "isoNumeric": null,
+    "names": {
+      "common": "Kosovo",
+      "official": "Kosovo",
+      "alt": [
+        "KOS",
+        "KV",
+        "Kosova",
+        "RKS",
+        "Republic of Kosovo",
+        "XK",
+        "XKX"
+      ]
+    },
+    "coord": {
+      "lat": 42.55,
+      "lng": 20.833333333333
+    }
+  },
+  {
+    "iso3": "YEM",
+    "iso2": "YE",
+    "isoNumeric": "887",
+    "names": {
+      "common": "Yemen",
+      "official": "Yemen",
+      "alt": [
+        "Rep. Yemen",
+        "Republic of Yemen",
+        "ye"
+      ]
+    },
+    "coord": {
+      "lat": 15.5,
+      "lng": 48
+    }
+  },
+  {
+    "iso3": "ZAF",
+    "iso2": "ZA",
+    "isoNumeric": "710",
+    "names": {
+      "common": "South Africa",
+      "official": "Republic of South Africa",
+      "alt": [
+        "R.S.A.",
+        "RSA",
+        "Republic of South Africa",
+        "SA",
+        "zaf"
+      ]
+    },
+    "coord": {
+      "lat": -29,
+      "lng": 24
+    }
+  },
+  {
+    "iso3": "ZMB",
+    "iso2": "ZM",
+    "isoNumeric": "894",
+    "names": {
+      "common": "Zambia",
+      "official": "Zambia",
+      "alt": [
+        "Republic of Zambia",
+        "Zed"
+      ]
+    },
+    "coord": {
+      "lat": -14,
+      "lng": 28
+    }
+  },
+  {
+    "iso3": "ZWE",
+    "iso2": "ZW",
+    "isoNumeric": "716",
+    "names": {
+      "common": "Zimbabwe",
+      "official": "Zimbabwe",
+      "alt": [
+        "Republic of Zimbabwe",
+        "Rhodesia",
+        "Southern Rhodesia",
+        "Zimbabwe Rhodesia"
+      ]
+    },
+    "coord": {
+      "lat": -19,
+      "lng": 30
+    }
+  }
+]

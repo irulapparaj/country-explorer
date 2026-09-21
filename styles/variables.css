@@ -1,0 +1,95 @@
+:root {
+  /* Surfaces — warm paper / editorial atlas, not a dark dashboard */
+  --color-canvas: oklch(96% 0.008 75);
+  --color-surface: oklch(99% 0.003 75);
+  --color-surface-sunken: oklch(93% 0.012 80);
+  --color-border: oklch(85% 0.014 80);
+  --color-border-strong: oklch(70% 0.02 80);
+
+  /* Text */
+  --color-ink: oklch(22% 0.015 60);
+  --color-ink-muted: oklch(45% 0.015 60);
+  --color-ink-faint: oklch(62% 0.012 60);
+
+  /* Map canvas */
+  --color-ocean: oklch(87% 0.045 228);
+  --color-ocean-deep: oklch(78% 0.06 228);
+  --map-border: oklch(45% 0.02 80);
+  --map-border-soft: oklch(60% 0.02 80 / 0.5);
+  --map-nodata: oklch(88% 0.01 80);
+  --map-1: oklch(80% 0.05 95);
+  --map-2: oklch(78% 0.06 145);
+  --map-3: oklch(80% 0.05 40);
+  --map-4: oklch(80% 0.06 300);
+  --map-5: oklch(81% 0.05 170);
+  --map-6: oklch(79% 0.06 20);
+  --map-7: oklch(83% 0.04 60);
+
+  /* Geographic-regions palette: one muted hue per continent, hue-spaced so neighbors read
+     apart, kept close in lightness so no continent shouts over another */
+  --continent-africa: oklch(80% 0.09 78);
+  --continent-antarctica: oklch(96% 0.015 225);
+  --continent-asia: oklch(79% 0.075 150);
+  --continent-europe: oklch(79% 0.075 340);
+  --continent-north-america: oklch(80% 0.08 35);
+  --continent-oceania: oklch(78% 0.07 300);
+  --continent-south-america: oklch(80% 0.08 115);
+  --color-ice: oklch(96% 0.015 225);
+
+  /* Reference overlays: grid, tropics/polar circles, water names, polar caps */
+  --map-graticule: oklch(58% 0.05 235 / 0.4);
+  --map-line-special: oklch(50% 0.14 40);
+  --color-water-label: oklch(42% 0.09 240);
+  --polar-cap-tint: oklch(97% 0.02 225 / 0.5);
+  --color-selection-ink: oklch(30% 0.1 30);
+
+  /* Semantic accents */
+  --color-accent: oklch(62% 0.15 55);
+  --color-accent-ink: oklch(20% 0.02 55);
+  --color-selection: oklch(53% 0.21 30);
+  --color-hover: oklch(70% 0.11 195);
+  --color-danger: oklch(50% 0.19 20);
+  --color-success: oklch(58% 0.13 150);
+  --color-focus-ring: oklch(55% 0.19 255);
+
+  /* Typography — exactly two families */
+  --font-display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', -apple-system, system-ui, sans-serif;
+
+  --text-xs: clamp(0.72rem, 0.7rem + 0.05vw, 0.78rem);
+  --text-sm: clamp(0.82rem, 0.8rem + 0.08vw, 0.9rem);
+  --text-base: clamp(0.95rem, 0.9rem + 0.15vw, 1.05rem);
+  --text-lg: clamp(1.1rem, 1rem + 0.3vw, 1.3rem);
+  --text-xl: clamp(1.4rem, 1.2rem + 0.6vw, 1.8rem);
+  --text-display: clamp(2rem, 1.4rem + 2.4vw, 3.4rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-section: clamp(2.5rem, 2rem + 3vw, 5rem);
+
+  /* Radii + elevation */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-sm: 0 1px 2px oklch(22% 0.015 60 / 0.08);
+  --shadow-md: 0 8px 24px oklch(22% 0.015 60 / 0.1);
+  --shadow-panel: -24px 0 48px oklch(22% 0.015 60 / 0.12);
+  --shadow-pop: 0 10px 22px oklch(22% 0.015 60 / 0.22);
+
+  /* Motion */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout — the side panel is deliberately compact so it never hides much of the map */
+  --panel-width: clamp(280px, 24vw, 340px);
+  --frame-left: 40px; /* width of the latitude label strip down the map's left edge */
+  --frame-bottom: 22px; /* height of the longitude label strip along its bottom edge */
+}

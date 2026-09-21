@@ -1,0 +1,400 @@
+/* HTML overlays on top of the map: coordinate frame labels, compass, options card, key. */
+
+/* ---- Coordinate frame -------------------------------------------------------------------- */
+
+.map-frame {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink-muted);
+}
+
+.frame-lat {
+  position: absolute;
+  top: 0;
+  bottom: var(--frame-bottom);
+  left: 0;
+  width: var(--frame-left);
+  background: linear-gradient(90deg, oklch(99% 0.003 75 / 0.72) 50%, oklch(99% 0.003 75 / 0));
+}
+
+.frame-lat-label {
+  position: absolute;
+  right: 8px;
+  transform: translateY(-50%);
+  line-height: 1;
+}
+
+.frame-lon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--frame-bottom);
+  background: linear-gradient(0deg, oklch(99% 0.003 75 / 0.72) 50%, oklch(99% 0.003 75 / 0));
+}
+
+.frame-lon-label {
+  position: absolute;
+  bottom: 5px;
+  transform: translateX(-50%);
+  line-height: 1;
+}
+
+/* Named chips for the equator, tropics and polar circles, pinned to the right edge of the
+   map area — which slides left with the side panel, so a chip is never hidden under it. */
+.frame-lines {
+  position: absolute;
+  top: 0;
+  bottom: var(--frame-bottom);
+  right: var(--space-3);
+  width: 0;
+  transition: right var(--duration-normal) var(--ease-out-expo);
+}
+
+@media (min-width: 769px) {
+  #view-map.panel-open .frame-lines {
+    right: calc(var(--panel-width) + var(--space-3));
+  }
+}
+
+.frame-line-chip {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: oklch(99% 0.003 75 / 0.82);
+  border: 1px solid oklch(50% 0.14 40 / 0.35);
+  color: var(--map-line-special);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ---- Compass ------------------------------------------------------------------------------ */
+
+.map-compass-wrap {
+  position: absolute;
+  z-index: 4;
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+  transition: right var(--duration-normal) var(--ease-out-expo);
+}
+
+@media (min-width: 769px) {
+  #view-map.panel-open .map-compass-wrap {
+    right: calc(var(--panel-width) + var(--space-4));
+  }
+}
+
+.map-compass {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 1px 2px oklch(22% 0.015 60 / 0.25));
+}
+
+.compass-ring {
+  fill: oklch(99% 0.003 75 / 0.9);
+  stroke: var(--color-border-strong);
+  stroke-width: 1;
+}
+
+.compass-needle-north {
+  fill: var(--color-selection);
+}
+
+.compass-needle-south {
+  fill: var(--color-ink-muted);
+  opacity: 0.55;
+}
+
+.compass-hub {
+  fill: var(--color-surface);
+}
+
+.compass-dir {
+  font-family: var(--font-body);
+  font-size: 7px;
+  font-weight: 700;
+  fill: var(--color-ink-muted);
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+.compass-dir-north {
+  fill: var(--color-selection);
+  font-size: 8.5px;
+}
+
+/* ---- Options card ------------------------------------------------------------------------- */
+
+.map-options {
+  position: absolute;
+  z-index: 6;
+  top: var(--space-4);
+  left: calc(var(--frame-left) + var(--space-3));
+  width: 232px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-size: var(--text-xs);
+}
+
+.map-options-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-ink);
+  border-radius: var(--radius-md);
+}
+
+.map-options-chevron {
+  color: var(--color-ink-faint);
+  transition: transform var(--duration-fast) ease-out;
+}
+
+.map-options-toggle[aria-expanded='false'] .map-options-chevron {
+  transform: rotate(-90deg);
+}
+
+.map-options-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: 0 var(--space-3) var(--space-3);
+}
+
+.map-options-body[hidden] {
+  display: none;
+}
+
+.map-option-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.map-option-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.seg-row {
+  display: flex;
+  padding: 2px;
+  background: var(--color-surface-sunken);
+  border-radius: var(--radius-pill);
+}
+
+.seg-option {
+  position: relative;
+  flex: 1;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.seg-option input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.seg-option span {
+  display: block;
+  padding: 5px 4px;
+  border-radius: var(--radius-pill);
+  text-align: center;
+  font-weight: 500;
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+  transition: background var(--duration-fast) ease-out, color var(--duration-fast) ease-out;
+}
+
+.seg-option:hover span {
+  color: var(--color-ink);
+}
+
+.seg-option input:checked + span {
+  background: var(--color-surface);
+  color: var(--color-ink);
+  box-shadow: var(--shadow-sm), inset 0 0 0 1px var(--color-border);
+}
+
+.seg-option:focus-within {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 1px;
+}
+
+.map-option-checks {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+}
+
+.map-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.map-check input {
+  accent-color: var(--color-accent);
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
+
+/* ---- Key ----------------------------------------------------------------------------------- */
+
+.map-legend {
+  position: absolute;
+  z-index: 6;
+  left: calc(var(--frame-left) + var(--space-3) + 46px);
+  bottom: calc(var(--frame-bottom) + var(--space-3));
+  width: 200px;
+  max-height: calc(100% - 200px);
+  overflow-y: auto;
+  padding: var(--space-3);
+  background: oklch(99% 0.003 75 / 0.95);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  font-size: var(--text-xs);
+  color: var(--color-ink);
+}
+
+.map-legend[hidden] {
+  display: none;
+}
+
+.map-legend-title {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.map-legend-heading {
+  margin: var(--space-2) 0 var(--space-1);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.map-legend-group:first-of-type .map-legend-heading {
+  margin-top: var(--space-1);
+}
+
+.map-legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  line-height: 1.55;
+}
+
+.map-legend-swatch {
+  flex: none;
+  width: 20px;
+  height: 11px;
+  border-radius: 2px;
+  border: 1px solid oklch(20% 0.02 60 / 0.25);
+}
+
+.continent-africa { background: var(--continent-africa); }
+.continent-antarctica { background: var(--continent-antarctica); }
+.continent-asia { background: var(--continent-asia); }
+.continent-europe { background: var(--continent-europe); }
+.continent-north-america { background: var(--continent-north-america); }
+.continent-oceania { background: var(--continent-oceania); }
+.continent-south-america { background: var(--continent-south-america); }
+
+.map-legend-status {
+  margin-top: var(--space-2);
+  color: var(--color-ink-muted);
+}
+
+.map-legend-status:empty {
+  display: none;
+}
+
+.map-legend-note {
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--color-ink-faint);
+}
+
+/* The centered search bar (420px wide, top of the map) would sit on top of the options card
+   below ~1010px wide, so the card drops beneath it; on phones the compass does too. */
+@media (max-width: 1010px) {
+  .map-options {
+    top: 4.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-options {
+    width: 224px;
+  }
+
+  .map-compass-wrap {
+    top: 4.25rem;
+    right: var(--space-2);
+    width: 44px;
+    height: 44px;
+  }
+
+  .map-legend {
+    width: 176px;
+    max-height: 42%;
+  }
+
+  .map-legend-note {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame-lines,
+  .map-compass-wrap,
+  .map-options-chevron {
+    transition: none;
+  }
+}
+
+.map-load-error {
+  position: absolute;
+  z-index: 7;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}

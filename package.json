@@ -1,0 +1,17 @@
+{
+  "name": "country-explorer-tests",
+  "private": true,
+  "type": "module",
+  "description": "Dev-only test tooling for Country Explorer. The app itself ships as plain static HTML/CSS/JS with zero dependencies; this package.json exists only to run the test suite (see README.md).",
+  "scripts": {
+    "test:unit": "node --test --test-timeout=30000",
+    "test:e2e": "playwright test",
+    "test": "npm run test:unit && npm run test:e2e",
+    "restart-server": "sh scripts/restart-server.sh",
+    "build:ids": "node scripts/build-wikidata-ids.mjs",
+    "build:continents": "node scripts/build-continents.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0"
+  }
+}

@@ -1,0 +1,177 @@
+#side-panel-mount {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.side-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--panel-width);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-panel);
+  transform: translateX(100%);
+  /* Closed = hidden, not merely off-screen: no shadow bleeding onto the map's right edge,
+     and nothing inside it left in the Tab order. Visibility flips after the slide-out. */
+  visibility: hidden;
+  transition: transform var(--duration-normal) var(--ease-out-expo), visibility 0s linear var(--duration-normal);
+  pointer-events: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-panel.open {
+  transform: translateX(0);
+  visibility: visible;
+  transition: transform var(--duration-normal) var(--ease-out-expo), visibility 0s linear 0s;
+}
+
+.side-panel.fullscreen {
+  width: 100%;
+}
+
+.panel-inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  animation: panel-fade var(--duration-fast) ease-out;
+}
+
+@keyframes panel-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-inner {
+    animation: none;
+  }
+}
+
+.panel-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.panel-identity {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.panel-flag {
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+/* The panel is focused from code after "Try again", only to keep a keyboard user's place; there is nothing to
+   operate on it, so no focus ring around the whole panel. */
+.side-panel:focus-visible {
+  outline: none;
+}
+
+.panel-name {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-ink);
+  line-height: 1.2;
+  min-width: 0;
+  /* A long name wraps: truncating it with an ellipsis cut off the "(IND)" that follows the name first. */
+  overflow-wrap: anywhere;
+}
+
+.panel-actions {
+  display: flex;
+  gap: var(--space-1);
+  flex-shrink: 0;
+}
+
+.panel-body {
+  flex: 1;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.panel-anthem-mount {
+  display: contents;
+}
+
+.panel-facts {
+  display: grid;
+  grid-template-columns: 5.6rem minmax(0, 1fr);
+  gap: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+}
+
+.panel-facts dt {
+  color: var(--color-ink-faint);
+  font-weight: 500;
+}
+
+.panel-facts dd {
+  color: var(--color-ink);
+  overflow-wrap: anywhere;
+}
+
+.panel-more-link {
+  display: block;
+  text-align: center;
+  margin-top: auto;
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+}
+
+.panel-more-link:hover {
+  filter: brightness(0.95);
+}
+
+@media (max-width: 768px) {
+  .side-panel {
+    top: auto;
+    width: 100%;
+    height: 48%;
+    transform: translateY(100%);
+    border-top-left-radius: var(--radius-lg);
+    border-top-right-radius: var(--radius-lg);
+  }
+
+  .side-panel.open {
+    transform: translateY(0);
+  }
+
+  .side-panel.fullscreen {
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .panel-facts {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .panel-facts dd {
+    margin-bottom: var(--space-2);
+  }
+}

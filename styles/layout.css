@@ -1,0 +1,90 @@
+html {
+  background: var(--color-canvas);
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: var(--space-2);
+  z-index: 100;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+}
+
+.skip-link:focus-visible {
+  left: var(--space-2);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  text-decoration: none;
+}
+
+.brand-mark {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+}
+
+.brand-tag {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-ink-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.app-main {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.view {
+  height: 100%;
+}
+
+.view[hidden] {
+  display: none !important;
+}
+
+#view-country {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Focused from code after "Try again" only to keep a keyboard user's place: nothing to operate, so no ring
+   around the whole page. */
+#view-country:focus-visible {
+  outline: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .brand-tag {
+    display: none;
+  }
+}
